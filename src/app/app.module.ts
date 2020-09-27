@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
 import { SplashThreeSectionComponent } from './splash-three-section/splash-three-section.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SplashPageComponent,
-    SplashThreeSectionComponent
+    SplashThreeSectionComponent,
+    AboutPageComponent
   ],
   imports: [
     BrowserModule,

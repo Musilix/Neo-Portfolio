@@ -1,6 +1,4 @@
 <div id="splash-content-wrap">
-    <app-splash-three-section></app-splash-three-section>
-
     <div id="nav-wrap">
         <!-- make fake div to just make aligning right easier for other div... -->
         <div class="nav" id="left"></div>
@@ -8,11 +6,12 @@
             <nav>
                 <ul>
                     <li>ABOUT</li>
-                    <li>PROJECTS</li>
+                    <li><a routerLink = "/about" routerLinkActive="active">PROJECTS</a></li>
                     <li>CONTACT</li>
                     <li>EXTRAS</li>
                 </ul>
             </nav>
         </div>
     </div>
+    <app-splash-three-section></app-splash-three-section>
 </div>
