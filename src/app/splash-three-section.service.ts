@@ -63,7 +63,7 @@ export class SplashThreeSectionService {
     this.scene.add(dirLight);
 
     var loader = new GLTFLoader();
-    loader.load( 'scene.glb', (gltf)=>{
+    loader.load( 'assets/scene.glb', (gltf)=>{
       gltf.scene.scale.set(.5,.5,.5);
 
       // let boundingRad = gltf.scene. geometry.boundingSphere.radius;
