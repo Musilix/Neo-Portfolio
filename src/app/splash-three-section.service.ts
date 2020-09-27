@@ -16,6 +16,8 @@ export class SplashThreeSectionService {
   private testModel;
 
   private frameId: number = null;
+  private distTrav = 0;
+  private dir = true; //true means go up, false means down
 
   private loader: GLTFLoader = new GLTFLoader();
 
@@ -48,16 +50,12 @@ export class SplashThreeSectionService {
 
     //stronger lights
     var hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444);
-    hemiLight.position.set(0, 10, 7);
+    hemiLight.position.set(0, 5, 7);
     this.scene.add(hemiLight);
 
     var hemiLight2 = new THREE.HemisphereLight(0xffffff, 0x444444);
-    hemiLight2.position.set(0, -10, 7);
+    hemiLight2.position.set(0, -5, 7);
     this.scene.add(hemiLight2);
-
-    var dirLight = new THREE.DirectionalLight(0xffffff);
-    dirLight.position.set(2.0, 100, 7);
-    this.scene.add(dirLight);
 
     this.loader.load( 'assets/scene.glb', (gltf)=>{
       gltf.scene.scale.set(.7,.7,.7); //do this based on window size?!
@@ -112,8 +110,23 @@ export class SplashThreeSectionService {
       this.render();
     });
 
-    // this.cube.rotation.x += 0.01;
-    // this.cube.rotation.y += 0.01;
+    //animate idle movement - causing error currently
+    // if(this.distTrav >= 1){
+    //   this.distTrav = 0;
+    //   this.dir = false;
+    // }
+    // if(this.distTrav <= -1){
+    //   this.distTrav = 0;
+    //   this.dir = true;
+    // }
+
+    // if(!this.dir){
+    //   this.distTrav -= .01;
+    //   this.testModel.position.y -= .0008;
+    // }else if(this.dir){
+    //   this.distTrav += .01;
+    //   this.testModel.position.y += .0008;
+    // }
 
     this.renderer.render(this.scene, this.camera);
   }
@@ -128,7 +141,7 @@ export class SplashThreeSectionService {
     this.testModel.position.set(-.7 * (width/1000), 0, 0);
     this.scene.add(this.testModel);
 
-    this.renderer.setSize( width, height );
+    this.renderer.setSize(width, height);
 
   }
 }
