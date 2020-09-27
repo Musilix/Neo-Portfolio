@@ -15,7 +15,7 @@ export class SplashThreeSectionService {
   private light: THREE.DirectionalLight;
 
   private cube: THREE.Mesh;
-  private testModel : THREE.Mesh;
+  private testModel;
 
   private frameId: number = null;
 
