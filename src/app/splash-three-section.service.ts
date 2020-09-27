@@ -1,8 +1,6 @@
 import * as THREE from 'three';
 import { Injectable, ElementRef, OnDestroy, NgZone } from '@angular/core';
 import { GLTF, GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { Vector2 } from 'three';
-
 
 @Injectable({
   providedIn: 'root'
@@ -65,7 +63,7 @@ export class SplashThreeSectionService {
     this.scene.add(dirLight);
 
     var loader = new GLTFLoader();
-    loader.load( '../assets/3d-stuff/scene.glb', (gltf)=>{
+    loader.load( '../../scene.glb', (gltf)=>{
       gltf.scene.scale.set(.5,.5,.5);
 
       // let boundingRad = gltf.scene. geometry.boundingSphere.radius;
