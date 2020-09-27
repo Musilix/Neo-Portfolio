@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SplashPageComponent } from './splash-page/splash-page.component';
+import { SplashThreeSectionComponent } from './splash-three-section/splash-three-section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SplashPageComponent
+    SplashPageComponent,
+    SplashThreeSectionComponent
   ],
   imports: [
     BrowserModule,
