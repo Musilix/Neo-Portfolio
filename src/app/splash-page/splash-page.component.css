@@ -64,6 +64,8 @@
     font-weight: bold;
 
     position: relative;
+
+    text-align: center;
 }
 
 .nav#right ul li a{
