@@ -75,7 +75,7 @@
     background: none repeat scroll 0 0 transparent;
     position: absolute;
     bottom: 0;
-    /* left:50%; */
+    left:50%;
 
     content: "";
     display: block;
@@ -90,6 +90,6 @@
 
 .nav#right ul li a:hover::after { 
     width: 100%; 
-    /* left: 0%;  */
+    left: 0%; 
   }
 /* color: #747fe0; */

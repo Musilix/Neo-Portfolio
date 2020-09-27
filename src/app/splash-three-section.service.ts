@@ -62,7 +62,7 @@ export class SplashThreeSectionService {
 
       // gltf.scene.position.set(-vector.x * (boundingRad), 0, 0);
       this.testModel = gltf.scene; //uhhhh
-      this.testModel.position.set(-.7 * (window.innerWidth/1000), 0, 0);
+      this.testModel.position.set(-.5 * (window.innerWidth/1000), 0, 0);
       this.scene.add(gltf.scene);
     }, undefined, function (error){
       console.error( error );
@@ -101,7 +101,6 @@ export class SplashThreeSectionService {
       window.addEventListener('resize', () => {
         this.resize();
       });
-
     });
   }
   
@@ -138,7 +137,7 @@ export class SplashThreeSectionService {
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
  
-    this.testModel.position.set(-.7 * (width/1000), 0, 0);
+    this.testModel.position.set(-.5 * (width/1000), 0, 0);
     this.scene.add(this.testModel);
 
     this.renderer.setSize(width, height);
