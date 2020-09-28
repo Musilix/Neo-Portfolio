@@ -56,7 +56,8 @@
 .nav#right ul li{
     color: #525f7f;
 
-    font-size: 32px;
+    font-family: Inter var,sans-serif;
+    font-size: 48px;
 
     padding: 5px 0px;
     margin: 50px 0px;

@@ -1,1 +1,47 @@
-<p>about-page works!</p>
+<div id="about-content-wrap">
+    <div id="about-inner-wrap">
+        <div id="about-header">
+            <div id="header-logo-wrap">
+                <h1><a routerLink="/" routerLinkActive="active">kareemshehab.github.io</a></h1>
+            </div>
+            <nav id="header-nav-wrap">
+                <ul>
+                    <li><a routerLink="/projects" routerLinkActive="active">PROJECTS</a></li>
+                    <li><a routerLink="/contact" routerLinkActive="active">CONTACT</a></li>
+                    <li><a routerLink="/extras" routerLinkActive="active">EXTRAS</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="about-content">
+            <div class="about-content-item" id="intro">
+                <h2>Hey, I'm Kareem! A <span style="background-color:#F43F3F;color:white">full stack developer</span> with a passion for building visually appealing applications</h2>
+                <p>I've been programming since 2014, finding myself in a range of settings; from 3d modeling and programming for games to building full stack web applications. I aim to go further than is expected, providing not just with my technical ability, but my understanding in experience and design as well. I make it my best effort to better myself in the things I am not acquainted with and work hard when set with a goal.</p>
+                <p>To be a bit more formal, you should take a look at my <a id="resumeLink" href="/assets/resume.pdf">resume</a></p>
+            </div>
+            <div class="about-content-item" id="stats">
+                <div id="time-wrap">
+                    <h2><span style="background-color: rgb(114, 172, 27); color: white">{{totalTime}}</span></h2>
+                    <p>Coding at the speed of light for the last week!</p>
+                </div>
+
+                <div id="stats-data-bars">
+                    <div id="top-stat" class="stats-bar"></div>
+                    <div id="mid-stat" class="stats-bar"></div>
+                    <div id="low-stat" class="stats-bar"></div>
+                </div>
+
+
+                <!-- <h2>What's been on my plate for this <span style="color:coral">past week</span>? Well, I've:</h2>
+                <ul>
+                    <li>Spent ___ hrs working with ____</li>
+                    <li>Fiddled with ____ for ___ hrs</li>
+                    <li>Played around in ____ for ___ hrs</li>
+                    <li>Got serious with ____ for ___ hrs</li>
+                </ul>
+
+                <h2>I spent a total of <span style="background-color:#6c2efc;color:white">{{totalTime}}</span> coding, debugging, and possibly pulling my hair out!</h2>
+                <h2>My most productive day of this week was <span style="background-color:#3de776;color:white">{{bestDay}}</span>. {{dayComments[bestDay]}}</h2> -->
+            </div>
+        </div>
+    </div>
+</div>
