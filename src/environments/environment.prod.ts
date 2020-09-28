@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: "https://wakatime.com"
+  baseUrl: "https://wakatime.com/"
 };
