@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpClientJsonpModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +11,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { ExtrasPageComponent } from './extras-page/extras-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
+import { HttpStatsInterceptor } from './http-stats-interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     HttpClientModule,
     HttpClientJsonpModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpStatsInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

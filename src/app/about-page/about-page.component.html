@@ -14,13 +14,25 @@
         </div>
         <div id="about-content">
             <div class="about-content-item" id="intro">
-                <h2>Hey, I'm Kareem! A <span style="background-color:#F43F3F;color:white">full stack developer</span> with a passion for building visually appealing applications</h2>
-                <p>I've been programming since 2014, finding myself in a range of settings; from 3d modeling and programming for games to building full stack web applications. I aim to go further than is expected, providing not just with my technical ability, but my understanding in experience and design as well. I make it my best effort to better myself in the things I am not acquainted with and work hard when set with a goal.</p>
-                <p>To be a bit more formal, you should take a look at my <a id="resumeLink" href="/assets/resume.pdf">resume</a></p>
+                <div id="intro-header-wrap" class="intro-content">
+                    <h2>Hey, I'm Kareem.</h2>
+                    <h2>A <span style="background-color:#F43F3F;color:white">full stack developer</span> with a full stack of skills!</h2>
+                </div>
+                <div id="intro-depth-wrap" class="intro-content">
+                    <div id="intro-text">
+                        <p>I've been programming since 2014, finding myself in a range of settings; from 3d modeling and programming for games to building full stack web applications. I aim to go further than is expected, providing not just with my technical ability, but my understanding in experience and design as well. I make it my best effort to better myself in the things I am not acquainted with and work hard when set with a goal.</p>
+                        <p>To be a bit more formal, you should take a look at my <a id="resumeLink" href="/assets/resume.pdf">resume</a></p>
+                    </div>
+                    <div id="intro-pic">
+                        <div id="intro-pic-inner">
+                            <img id="me" src="/assets/me.png" alt="Dr. Kareem">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="about-content-item" id="stats">
                 <div id="time-wrap">
-                    <h2><span style="background-color: rgb(114, 172, 27); color: white">{{totalTime}}</span></h2>
+                    <h2><span style="">{{totalTime}}</span></h2>
                     <p>Coding at the speed of light for the last week!</p>
                 </div>
 
@@ -41,6 +53,9 @@
 
                 <h2>I spent a total of <span style="background-color:#6c2efc;color:white">{{totalTime}}</span> coding, debugging, and possibly pulling my hair out!</h2>
                 <h2>My most productive day of this week was <span style="background-color:#3de776;color:white">{{bestDay}}</span>. {{dayComments[bestDay]}}</h2> -->
+            </div>
+            <div id="best-day-msg-wrap">
+                <h2>My most productive day this week was <span style="background-color:#3de776;color:white">{{bestDay}}</span>. {{dayComments[bestDay]}}</h2>
             </div>
         </div>
     </div>
