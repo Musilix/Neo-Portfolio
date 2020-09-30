@@ -3,5 +3,11 @@
         "target": "https://wakatime.com/",
         "secure": false,
         "logLevel": "debug"
+    },
+
+    "https://wakatime.com/*":{
+        "target": "https://wakatime.com/",
+        "secure": false,
+        "logLevel": "debug"
     }
 }
