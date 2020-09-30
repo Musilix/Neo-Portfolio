@@ -28,7 +28,7 @@ export class CodingStatsService {
 
     let base = environment.baseUrl;
     // console.log(base + "api/v1/users/current/stats/last_7_days?api_key=97230bf8-04d3-47c5-b170-105f22575cae");
-    return this.http.get("https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=97230bf8-04d3-47c5-b170-105f22575cae", requestOptions);
+    return this.http.get("https://cors-anywhere.herokuapp.com/https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=97230bf8-04d3-47c5-b170-105f22575cae", requestOptions);
 
   }
 
