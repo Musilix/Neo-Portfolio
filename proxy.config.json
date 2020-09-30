@@ -1,6 +1,6 @@
 {
-    "/api/*":{
-        "target": "https://wakatime.com",
+    "api/*":{
+        "target": "https://wakatime.com/",
         "secure": false,
         "logLevel": "debug"
     }
