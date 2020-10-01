@@ -34,14 +34,27 @@
                 <div id="about-stats-inner">
                     <div id="time-wrap">
                         <h2><span style="">{{totalTime}}</span></h2>
-                        <p>spent this week, coding at the speed of light for the last week!</p>
+                        <p>spent this week, coding at the speed of light!</p>
                     </div>
 
                     <!-- must get the objs that filled the statBarStyles going backwards, as we pushed into stack sequentially intitially -->
                     <div id="stats-data-bars">
-                        <div id="top-stat" class="stats-bar" [ngStyle]="statBarStyles[2]"><p>{{topLangs[0]["lang"]}}</p><p>{{topLangs[0]["hrs"]}} hours and {{topLangs[0]["mins"]}} mins</p></div>
-                        <div id="mid-stat" class="stats-bar" [ngStyle]="statBarStyles[1]"><p>{{topLangs[1]["lang"]}}</p><p>{{topLangs[1]["hrs"]}} hours and {{topLangs[1]["mins"]}} mins</p></div>
-                        <div id="low-stat" class="stats-bar" [ngStyle]="statBarStyles[0]"><p>{{topLangs[2]["lang"]}}</p><p>{{topLangs[2]["hrs"]}} hours and {{topLangs[2]["mins"]}} mins</p></div>
+                        <ng-container *ngFor = "let lang of topLangs; let i = index;">
+                            <div class="stats-bar" [ngStyle]="statBarStyles[topLangLength - 1 - i]">
+                                <!-- {{topLangLength}} -->
+                                <p>
+                                    {{topLangs[i]["lang"]}}
+                                </p>
+                                <p>
+                                    {{timeCheck(topLangs[i]["hrs"], topLangs[i]["mins"])}}
+                                </p>
+                            </div>
+                        </ng-container>
+
+
+                        <!-- <div id="top-stat" class="stats-bar" [ngStyle]="statBarStyles[2]"><p>{{topLangs[0]["lang"]}}</p><p>{{timeCheck(topLangs[0]["hrs"], topLangs[0]["mins"])}}</p></div>
+                        <div id="mid-stat" class="stats-bar" [ngStyle]="statBarStyles[1]"><p>{{topLangs[1]["lang"]}}</p><p>{{timeCheck(topLangs[1]["hrs"], topLangs[1]["mins"])}}</p></div>
+                        <div id="low-stat" class="stats-bar" [ngStyle]="statBarStyles[0]"><p>{{topLangs[2]["lang"]}}</p><p>{{timeCheck(topLangs[2]["hrs"], topLangs[2]["mins"])}}</p></div> -->
                     </div>
                 </div>
             </div>

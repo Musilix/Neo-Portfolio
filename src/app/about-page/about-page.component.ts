@@ -30,14 +30,77 @@ export class AboutPageComponent implements OnInit {
   public bestDay = "...";
 
   public topLangs : Stat[] = [];
+  public topLangLength = 4;
 
   constructor(private statsService: CodingStatsService) { }
 
   normalize(val, topLangs) { 
     let min = topLangs[0]["percent"];
-    let max = topLangs[2]["percent"];
+    let max = topLangs[this.topLangLength-1]["percent"];
 
     return Math.round(((val - min) / (max - min)) * 100); 
+  }
+
+  getToplangLen(){
+    return this.topLangLength;
+  }
+
+  timeCheck(hrs, mins){
+    if(parseInt(hrs) <= 0 && parseInt(mins) <=0){
+      return '';
+    }else{
+      let hrsTxt : String = this.timeStatEnglish(hrs, "hours");
+      let minsTxt : String = this.timeStatEnglish(mins, "minutes");
+      let consolidatedTxt = '';
+
+      if(hrsTxt.length > 0 && minsTxt.length <= 0){
+        consolidatedTxt = `${hrsTxt}`;
+      }else if(hrsTxt.length <= 0 && minsTxt.length > 0){
+        consolidatedTxt = `${minsTxt}`;
+      }else if(hrsTxt.length > 0 && minsTxt.length > 0){
+        consolidatedTxt = `${hrsTxt} and ${minsTxt}`;
+      }else if(hrsTxt.length <= 0 && minsTxt.length <= 0){
+        consolidatedTxt = ``;
+      }
+
+      return consolidatedTxt;
+    }
+  }
+
+  timeStatEnglish(timeAmt, timeUnit){
+    let timeTxt : String = '';
+
+    //could use enum, but am I rlly gonna be that xtra?
+    if(timeUnit == "hours"){
+      if(parseInt(timeAmt) == 1){
+        return `${timeAmt} hour`;
+      }else if(parseInt(timeAmt) > 1){
+        return `${timeAmt} hours`;
+      }else{
+        return timeTxt;
+      }
+    }else if(timeUnit == "minutes"){
+      if(parseInt(timeAmt) == 1){
+        return `${timeAmt} min`;
+      }else if(parseInt(timeAmt) > 1){
+        return `${timeAmt} mins`;
+      }else{
+        return timeTxt;
+      }
+    }
+  }
+
+  getStatTint(i){
+    let base = [39, 57, 214]; //r, g, b
+    let len = this.topLangLength;
+
+    let rt = base[0] + (.5 * 1/(i+1) * (255 - base[0]))
+    let gt = base[1] + (.5 * 1/(i+1)  * (255 - base[1]))
+    let bt = base[2] + (.5 * 1/(i+1)  * (255 - base[2]))
+
+    let newBase = [rt, gt, bt];
+
+    return `rgb(${newBase[0]}, ${newBase[1]}, ${newBase[2]})`;
   }
 
   ngOnInit(): void {
@@ -51,7 +114,7 @@ export class AboutPageComponent implements OnInit {
       this.bestDay = this.days[new Date(this.bestDayDate).getDay()];
 
       //get top 3 languages used this week
-      for(let i = 0; i < 3; i++){
+      for(let i = 0; i < this.topLangLength; i++){
         let langStat : Stat = {
           lang: this.languagesUsed[i]["name"],
           hrs: this.languagesUsed[i]["hours"],
@@ -68,7 +131,7 @@ export class AboutPageComponent implements OnInit {
       for(let i = 0; i < this.topLangs.length; i++){
         this.statBarStyles.push({
           'width': `${this.normalize(this.topLangs[i]['percent'], this.topLangs)}%`,
-          'background': statStates[i]
+          'background': this.getStatTint(i)
         });
       }
     });
