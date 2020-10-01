@@ -5,8 +5,11 @@
         <link rel="icon" type="image/x-icon" href="assets/z.svg">
         <script>
             const path = window.location.pathname.slice(1);
+            console.log(path);
             localStorage.setItem('path', path);
+            console.log(window.location.href);
             window.location.href='/';
+            console.log(window.location.href);
         </script>
     </head>
 </html>
