@@ -11,7 +11,6 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { ExtrasPageComponent } from './extras-page/extras-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
-import { ProdRouteHandlerComponent } from './prod-route-handler/prod-route-handler.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { ProdRouteHandlerComponent } from './prod-route-handler/prod-route-handl
     AboutPageComponent,
     ProjectsPageComponent,
     ExtrasPageComponent,
-    ContactPageComponent,
-    ProdRouteHandlerComponent
+    ContactPageComponent
   ],
   imports: [
     BrowserModule,

@@ -7,15 +7,14 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { ExtrasPageComponent } from './extras-page/extras-page.component';
-import { ProdRouteHandlerComponent } from './prod-route-handler/prod-route-handler.component';
 
 const routes: Routes = [
   { path: '', component: SplashPageComponent},
   { path: 'about', component: AboutPageComponent},
   { path: 'projects', component: ProjectsPageComponent},
   { path: 'contact', component: ContactPageComponent},
-  { path: 'extras', component: ExtrasPageComponent},
-  { path: '**', component: ProdRouteHandlerComponent }  // Wildcard route for a 404 page
+  { path: 'extras', component: ExtrasPageComponent}
+  // { path: '**', component: ProdRouteHandlerComponent }  // Wildcard route for a 404 page
 ];
 
 @NgModule({
