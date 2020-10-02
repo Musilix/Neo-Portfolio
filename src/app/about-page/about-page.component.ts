@@ -1,9 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { CodingStatsService } from '../coding-stats.service';
 import { Stat } from "../stat";
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 
 @Component({
   selector: 'app-about-page',
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ 
+          width: "0%",
+          background: '#747fe0'
+        }),
+        animate('1s ease-out', style({ 
+          width: '{{statWidth}}',
+          background: '{{statBackground}}' 
+        })),
+      ]),
+    ]),
+  ],
   templateUrl: './about-page.component.html',
   styleUrls: ['./about-page.component.css']
 })
@@ -20,6 +42,8 @@ export class AboutPageComponent implements OnInit {
   };
 
   public statBarStyles = [];
+
+  private statsTemplate;
 
   private stats;
   public languagesUsed;
@@ -39,6 +63,11 @@ export class AboutPageComponent implements OnInit {
     let max = topLangs[this.topLangLength-1]["percent"];
 
     return Math.round(((val - min) / (max - min)) * 100); 
+  }
+
+  getStatStyles(i, template){
+    this.statsTemplate = template;
+    return this.statBarStyles[this.topLangLength - 1 - i];
   }
 
   getToplangLen(){
@@ -134,6 +163,14 @@ export class AboutPageComponent implements OnInit {
           'background': this.getStatTint(i)
         });
       }
+
+      console.log(this.statBarStyles);
+      console.log(this.statBarStyles[0]["width"]);
     });
+  }
+
+  ngAfterViewInit(): void{
+
+    // console.log(codingStats);
   }
 }
