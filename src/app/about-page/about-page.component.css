@@ -57,7 +57,7 @@ a:hover{
 #intro h2{
     margin: 0;
     font-family: Inter var,sans-serif;;
-    font-size: 4.7em;
+    font-size: 4.2em;
     font-weight: 800;
     line-height: 1.5;
     color: #747fe0;
@@ -79,8 +79,8 @@ a:hover{
 .about-content-item#intro p{
     /* line-height: 1.25em; */
     /* font-size: 1.5em; */
-    font-size: 20px;
-    line-height: 1.;
+    font-size: 18px;
+    line-height: 1.35;
     font-weight: 100;
     font-family: "Open Sans";
     color: #525f7f;
@@ -120,7 +120,7 @@ a:hover{
 #intro-depth-wrap{
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 50px;
+    gap: 100px;
 }
 
 #intro-pic-inner{
@@ -128,7 +128,7 @@ a:hover{
 }
 
 #intro-pic{
-    max-width: 300px;
+    max-width: 275px;
     position: relative;
 }
 
@@ -246,7 +246,7 @@ a:hover{
 }
 
 .stats-bar p {
-    font-size: 20px;
+    font-size: 16px;
     line-height: 1.55;
     font-weight: 100;
     font-family: "Open Sans";
@@ -295,6 +295,6 @@ a:hover{
 
 #about-content-divider{
     height: 0;
-    border-top: 2px solid #bbb;
+    border-top: 1px solid #9c9898;
     border-radius: 5px;
 }

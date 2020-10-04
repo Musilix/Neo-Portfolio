@@ -13,7 +13,7 @@
     align-items: center;
 
     padding:10px 0px 20px 0px;
-    margin: 50px 0px;
+    margin: 0px 0px 40px 0px;
 }
 
 #header-logo-wrap, #header-nav-wrap{
@@ -23,7 +23,7 @@
 }
 
 #header-logo-wrap h1{
-    font-size: 1.75em !important;
+    font-size: 1.5em !important;
 }
 
 #header-logo-wrap h1 a{
@@ -40,7 +40,7 @@
 #header-nav-wrap ul li{
     /* padding: 4px 10px; */
     margin: 0px 5px;
-    font-size: 0.8em;
+    font-size: .75em;
     font-weight: 800;
 
     display:flex;
