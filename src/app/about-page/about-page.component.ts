@@ -163,9 +163,6 @@ export class AboutPageComponent implements OnInit {
           'background': this.getStatTint(i)
         });
       }
-
-      console.log(this.statBarStyles);
-      console.log(this.statBarStyles[0]["width"]);
     });
   }
 

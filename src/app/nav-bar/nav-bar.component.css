@@ -1,0 +1,63 @@
+:host {
+    width:100%;
+}
+
+#about-header{
+    font-family: Inter var,sans-serif;
+
+    width:100%;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding:10px 0px 20px 0px;
+    margin: 50px 0px;
+}
+
+#header-logo-wrap, #header-nav-wrap{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header-logo-wrap h1{
+    font-size: 1.75em !important;
+}
+
+#header-logo-wrap h1 a{
+    border-radius: 10px;
+}
+
+#header-nav-wrap ul{
+    list-style-type: none;
+
+    display: flex;
+    flex-direction: row;
+}
+
+#header-nav-wrap ul li{
+    /* padding: 4px 10px; */
+    margin: 0px 5px;
+    font-size: 0.8em;
+    font-weight: 800;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color:rgb(58,103,178);
+    padding:4px 10px;
+    border-radius: 1em;
+    background: #d6e2fa;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    /* transition: color .25s linear; */
+}
