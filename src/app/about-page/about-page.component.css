@@ -50,8 +50,12 @@ a:hover{
     /* background: #dbdddf; */
 }
 
+#intro-text p{
+    margin:15px 0px 15px 0px;
+}
+
 .intro-content{
-    margin:20px 0px;
+    margin: 25px 0px;
 }
 
 #intro h2{
@@ -70,7 +74,7 @@ a:hover{
 
 .about-content-item{
     /* padding:30px 60px; */
-    margin: 0px 0px 75px 0px;
+    /* margin: 0px 0px 75px 0px; */
     /* border-radius: 25px;
     background: #fff;
     box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1); */
@@ -94,7 +98,7 @@ a:hover{
     line-height: 1.4;
     font-weight: 800;
 
-    margin:100px 0px 25px 0px;
+    margin:35px 0px;
 
     display: flex;
     flex-direction: column;
@@ -118,9 +122,10 @@ a:hover{
 }
 
 #intro-depth-wrap{
+    min-width: 10%;
     display: grid;
-    grid-template-columns: 3fr 2fr;
-    gap: 100px;
+    grid-template-columns: 4fr 2fr;
+    gap: 50px;
 }
 
 #intro-pic-inner{
@@ -229,7 +234,7 @@ a:hover{
     height: 25%;
     width:0px;
 
-    min-width: 320px;
+    min-width: 260px;
 
     border-radius: 0px 15px 15px 0px;
 
@@ -242,7 +247,7 @@ a:hover{
     justify-content: space-between;
     flex-direction: row;
 
-    transition: width 1.25s ease-out, background 1s ease-out;
+    transition: width 1.25s ease-out, background 2s ease-out;
 }
 
 .stats-bar p {

@@ -59,8 +59,8 @@ export class AboutPageComponent implements OnInit {
   constructor(private statsService: CodingStatsService) { }
 
   normalize(val, topLangs) { 
-    let min = topLangs[0]["percent"];
-    let max = topLangs[this.topLangLength-1]["percent"];
+    let min = topLangs[this.topLangLength-1]["percent"];
+    let max = topLangs[0]["percent"];
 
     return Math.round(((val - min) / (max - min)) * 100); 
   }
@@ -123,9 +123,9 @@ export class AboutPageComponent implements OnInit {
     let base = [39, 57, 214]; //r, g, b
     let len = this.topLangLength;
 
-    let rt = base[0] + (.5 * 1/(i+1) * (255 - base[0]))
-    let gt = base[1] + (.5 * 1/(i+1)  * (255 - base[1]))
-    let bt = base[2] + (.5 * 1/(i+1)  * (255 - base[2]))
+    let rt = base[0] + (.5 * 1/(((len - 1) - i)+1) * (255 - base[0]))
+    let gt = base[1] + (.5 * 1/(((len - 1) - i)+1)  * (255 - base[1]))
+    let bt = base[2] + (.5 * 1/(((len - 1) - i)+1)  * (255 - base[2]))
 
     let newBase = [rt, gt, bt];
 
@@ -135,12 +135,15 @@ export class AboutPageComponent implements OnInit {
   ngOnInit(): void {
     this.statsService.getMyStats().subscribe((data) => {
       this.stats = data["data"];
+      console.log("Stats: ");
+      console.log(this.stats);
+
       this.languagesUsed = this.stats["languages"];
       this.dailyAvgTime = this.stats["human_readable_daily_average"];
       this.totalTime =  this.stats["human_readable_total"];
 
       this.bestDayDate = this.stats["best_day"]["date"];
-      this.bestDay = this.days[new Date(this.bestDayDate).getDay()];
+      this.bestDay = this.days[new Date(this.bestDayDate).getUTCDay()];
 
       //get top 3 languages used this week
       for(let i = 0; i < this.topLangLength; i++){
@@ -157,7 +160,7 @@ export class AboutPageComponent implements OnInit {
       //currently, creating these objs and serving them to ngStyle to dynamically style sta bars, but it doesnt seem there is any binding on ngStyle
       //so fill statBarStyles, and call
       let statStates = ["#8f9afc", "#747fe0 ", "#48519b "]
-      for(let i = 0; i < this.topLangs.length; i++){
+      for(let i = this.topLangs.length - 1; i >= 0; i--){
         this.statBarStyles.push({
           'width': `${this.normalize(this.topLangs[i]['percent'], this.topLangs)}%`,
           'background': this.getStatTint(i)
