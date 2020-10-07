@@ -9,6 +9,13 @@
     align-items: center;
 }
 
+#projects-content{
+    width:100%;
+    display:flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
 #projects-inner-wrap{
     width:70%;
     /* max-width: 1500px; */
@@ -23,61 +30,51 @@
     /* background: #dbdddf; */
 }
 
-.project-synopsis{
-    position: relative;
+.proj-content-item{
+    padding: 25px 0px;
+    margin: 10px 0px;
 }
 
-#project-pic{
-    width: fit-content;
+#proj-list-outer-wrap, #proj-list-literal{
+    width: 100%;
 }
 
-.project-pic img{
-    margin-left: 10%;
-}
-
-.project-peek{
-    width: 90%;
-    height: 75px;
-    background-color: cornflowerblue;
-    background-image: url(/assets/bg-pattern.png);
-    position: absolute;
-    top: 20%;
-    text-align: right;
-    border-radius: 5px;
-    z-index: -1;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.proj-peek-desc{
-    margin-right: .5em;
-    text-align: right;
-}
-
-
-/* .project-synopsis::before{
-    content: ' ';
-    width: 90%;
-    height: 75px;
-    position: absolute;
-    background-color: #E7AAAA;
-    left: 0;
-    right: 0;
-    margin: 0 0;
-    top: 0;
-    -webkit-transform: translate3d(0, 1em, 0);
-    transform: translate3d(0, 1em, 0);
-} */
-
-#projects-list{
-    list-style: none;
-}
-
-.project-pic img{
+#proj-prev-inner img{
     background-color: rgba(0,0,0,0);
-    max-width: 300px;
+    max-width: 700px;
     border-radius: 5px;
     box-shadow: 0 50px 100px rgba(50,50,93,.05), 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,.1);
+}
+
+#proj-list-literal{
+    text-align: center !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.proj-list-wrap{
+    list-style: none;
+    display:inline-block; 
+}
+
+.proj-list-wrap:hover{
+    cursor: pointer;
+}
+
+#proj-list-outer-wrap{
+    display:flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+
+.proj-list-item{
+    padding:20px;
+    margin: 10px 15px;
+    /* float:left; */
+}
+.proj-list-item img{
+    max-width:100px;
+    border-radius: 9999px;
 }

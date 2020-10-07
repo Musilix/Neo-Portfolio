@@ -135,8 +135,6 @@ export class AboutPageComponent implements OnInit {
   ngOnInit(): void {
     this.statsService.getMyStats().subscribe((data) => {
       this.stats = data["data"];
-      console.log("Stats: ");
-      console.log(this.stats);
 
       this.languagesUsed = this.stats["languages"];
       this.dailyAvgTime = this.stats["human_readable_daily_average"];
