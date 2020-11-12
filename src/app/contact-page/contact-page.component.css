@@ -1,24 +1,25 @@
-#contact-content-wrap{
-    font-family: Inter var,sans-serif;
-
-    /* height: 100%; */
+:host{
     width: 100%;
-
-    display:flex;
-    justify-content: center;
-    align-items: center;
 }
 
-#contact-inner-wrap{
-    width:70%;
-    /* max-width: 1500px; */
-    /* height:100%; */
+#contact-content-wrap{
+    width: 100%;
+    height: 100%;
+}
 
-    padding: 20px 50px;
+#contact-content{
+    height: 100%;
+}
 
-    display:flex;
-    flex-direction: column; 
-    align-items: center;
+#contact-content h2{
+    text-align: center;
+    text-transform: uppercase;
+}
 
-    /* background: #dbdddf; */
+#contact-content p{
+    text-align: center;
+}
+
+#contact-inner-content-wrap{
+
 }

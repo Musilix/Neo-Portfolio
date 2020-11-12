@@ -16,6 +16,6 @@ export class SplashThreeSectionComponent implements OnInit {
 
   ngOnInit(){
     this.threeService.createScene(this.rendererCanvas);
-    this.threeService.animate();
+    // this.threeService.animate();
   }
 }

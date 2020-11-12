@@ -104,7 +104,7 @@ export class SplashThreeSectionService {
     });
   }
   
-  public render(): void {
+  public render(): boolean {
     this.frameId = requestAnimationFrame(() => {
       this.render();
     });
@@ -128,6 +128,7 @@ export class SplashThreeSectionService {
     // }
 
     this.renderer.render(this.scene, this.camera);
+    return false;
   }
 
   public resize(): void {
