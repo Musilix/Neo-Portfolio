@@ -12,7 +12,7 @@
     justify-content: space-between;
     align-items: center;
 
-    padding:10px 0px 20px 0px;
+    padding:20px 0px;
     margin: 0px 0px 40px 0px;
 }
 
@@ -60,4 +60,31 @@ a{
     align-items: center;
 
     /* transition: color .25s linear; */
+}
+
+#logo-literal{
+    width:100px;
+    height:100px;
+
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+    #header-logo-wrap h1{
+        display: none;
+    }
+
+    #logo-literal{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 570px){
+    #header-nav-wrap ul{
+        flex-direction: column;
+    }
+
+    #header-nav-wrap ul li{
+        margin: 5px 0px;
+    }
 }
