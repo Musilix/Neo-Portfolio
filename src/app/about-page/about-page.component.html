@@ -12,9 +12,9 @@
                 <p>I've been programming since 2014, finding myself in a range of settings; from 3d modeling and programming for games to building full stack web applications.</p>
             </div>
             <div id="intro-pic">
-                <div id="intro-pic-inner">
+                <picture id="intro-pic-inner">
                     <img id="me" src="assets/me.png" alt="Dr. Kareem">
-                </div>
+                </picture>
             </div>
         </div>
     </div>
@@ -28,6 +28,10 @@
 
             <!-- must get the objs that filled the statBarStyles going backwards, as we pushed into stack sequentially intitially -->
             <div id="stats-data-bars">
+                <div #codingStats class="stats-bar">
+                    <p>Programming Language</p>
+                    <p>13 hrs and 10 mins</p>
+                </div>
                 <ng-container *ngFor = "let lang of topLangs; let i = index;">
                     <div #codingStats class="stats-bar" [ngStyle]="statBarStyles[topLangLength - 1 - i]" [@fadeIn]="{value: false, params: {index: i, statWidth: statBarStyles[topLangLength - 1 - i]['width'], statBackground: statBarStyles[topLangLength - 1 - i]['background']}}">
                         <p>{{topLangs[i]["lang"]}}</p>

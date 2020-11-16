@@ -114,6 +114,8 @@ a:hover{
 #about-stats-inner{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .about-content-item#stats h2{
@@ -141,18 +143,19 @@ a:hover{
 
 #intro-pic{
     max-width: 275px;
+    max-height: 275px;
     position: relative;
 }
 
-#intro-pic::before, #intro-pic::after {
+/* #intro-pic::before, #intro-pic::after {
     content: "";
     display: block;
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 5px;
-    /* transition: var(--transition); */
-}
+    transition: var(--transition);
+} */
 
 /* #intro-pic::before {
     top: 0px;
@@ -161,12 +164,12 @@ a:hover{
     mix-blend-mode: screen;
 } */
 
-#intro-pic::after {
+/* #intro-pic::after {
     border: 2px solid black;
     top: 20px;
     left: 20px;
     z-index: -1;
-}
+} */
 
 /* #intro-pic::after {
     position: absolute;
@@ -241,7 +244,7 @@ a:hover{
     height: 25%;
     width:0px;
 
-    min-width: 260px;
+    min-width: 290px;
 
     border-radius: 0px 15px 15px 0px;
 
@@ -310,4 +313,30 @@ a:hover{
     border-top: 1px solid #9c9898;
     border-radius: 5px;
     margin: 85px 0px;
+}
+
+@media only screen and (max-width: 1050px) {
+    #intro-header-wrap{
+        text-align: center;
+    }
+
+    #intro-depth-wrap{
+        grid-template-columns: auto;
+    }
+
+    #intro-text{
+        grid-row: 2;
+        text-align: center;
+    }
+
+    #intro-pic{
+        grid-row: 1;
+        justify-self: center;
+        align-self: center;
+        padding: 25px;
+    }
+
+    #about-stats-inner{
+        flex-direction: column;
+    }
 }
