@@ -63,6 +63,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+
+    padding: 0px;
+    margin: 0px;
 }
 
 #nav-links  ul li{
@@ -140,6 +143,12 @@
     right:5%;
 }
   
-  #path1 {
+#path1 {
     fill: #2196F3;
-  }
+}
+
+@media screen and (max-width: 1250px){
+    #nav-links ul{
+        justify-content: center;
+    }
+}
