@@ -12,6 +12,10 @@ html, body{
     background-color: #f6f9fc;
 
     font-family: 'Maven Pro', sans-serif;
+
+    position: relative;
+
+    z-index: -2;
 }
 
 body{

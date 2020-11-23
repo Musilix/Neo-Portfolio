@@ -1,23 +1,140 @@
 :host{
     width: 100%;
+    height:100%;
 }
+
+/* #bus{
+    animation: twist 7s linear infinite;
+} */
 
 #background-blob-wrap{
     width: 100%;
-    height: 100%;
+    height: 85%;
 
-    position: fixed;
-    left:0;
-    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: #2196F3; */
+    /* padding: 10px; */
+
+    overflow: hidden;
+}
+
+#inner-blob-content{
+    width: 75%;
+    height:90%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.grid-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#item1 #bus{
+    animation: twist1 7s linear infinite;
+}
+
+#item3{
+    animation: twist3 7s linear infinite;
+}
+
+#item5{
+    animation: twist5 10s linear infinite;
+}
+
+#item7{
+    animation: twist7 5s linear infinite;
+}
+
+#item9{
+    animation: twist9 12s linear infinite;
+}
+
+@keyframes twist1{
+    0%{
+        transform: rotateZ(0deg)
+    }
+    50%{
+        transform: rotateZ(180deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes twist3{
+    0%{
+        transform: rotateZ(0deg)
+    }
+    50%{
+        transform: rotateZ(-180deg);
+    }
+    100%{
+        transform: rotateZ(-360deg);
+    }
+}
+
+@keyframes twist5{
+    0%{
+        transform: rotateZ(0deg)
+    }
+    50%{
+        transform: rotateZ(180deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes twist7{
+    0%{
+        transform: rotateZ(0deg)
+    }
+    50%{
+        transform: rotateZ(180deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes twist9{
+    0%{
+        transform: rotateZ(0deg)
+    }
+    50%{
+        transform: rotateZ(180deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
 }
 
 #background-blob-wrap picture{
-    position: fixed;
-    top:0;
-    left:0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
+/* #background-blob-wrap::after{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    background: url("../../assets/blobs/aboutblobs/blob1.svg");
+    background-repeat: no-repeat;
+    width: 125%;
+    height: 125%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+} */
 
 #projects-content-wrap{
     font-family: Inter var,sans-serif;
