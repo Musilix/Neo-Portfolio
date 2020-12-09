@@ -3,14 +3,20 @@
         <!-- make fake div to just make aligning right easier for other div... -->
         <div class="nav" id="left"></div>
         <div class="nav" id="right">
-            <nav>
-                <ul>
-                    <li><a routerLink = "/about" routerLinkActive = "active">ABOUT</a></li>
-                    <li><a routerLink = "/projects" routerLinkActive="active">PROJECTS</a></li>
-                    <li><a routerLink = "/contact" routerLinkActive = "active">CONTACT</a></li>
-                    <li><a routerLink= "/extras" routerLinkActive="active">EXTRAS</a></li>
-                </ul>
-            </nav>
+            <div id="right-nav-wrap">
+                <div id="splash-intro-text">
+                    <h2>What's up! I'm Kareem</h2>
+                    <p>I'm a software engineer, currently residing over in Atlanta - not Hotlanta - where I focus on building up and publishing projects in various settings</p>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a routerLink = "/about" routerLinkActive = "active">ABOUT</a></li>
+                        <li><a routerLink = "/projects" routerLinkActive="active">PROJECTS</a></li>
+                        <li><a routerLink = "/contact" routerLinkActive = "active">CONTACT</a></li>
+                        <li><a routerLink= "/extras" routerLinkActive="active">EXTRAS</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
     <app-splash-three-section></app-splash-three-section>
