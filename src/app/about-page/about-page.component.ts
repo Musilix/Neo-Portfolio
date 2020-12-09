@@ -74,8 +74,9 @@ export class AboutPageComponent implements OnInit {
     return this.topLangLength;
   }
 
+  //called by ngfor elements, which generate time stamps for each row of data on prog langs used for the week
   timeCheck(hrs, mins){
-    if(parseInt(hrs) <= 0 && parseInt(mins) <=0){
+    if(parseInt(hrs) <= 0 && parseInt(mins) <= 0){
       return '';
     }else{
       let hrsTxt : String = this.timeStatEnglish(hrs, "hours");

@@ -7,7 +7,6 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CodingStatsService {
-  private wakaKey = "97230bf8-04d3-47c5-b170-105f22575cae";
   private wakeUrl = "https://wakatime.com/api/v1/users/current/stats/"
 
   private options: string[] = ["last_7_days"];

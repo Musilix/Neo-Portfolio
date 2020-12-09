@@ -22,12 +22,27 @@
     <div class="about-content-item" id="stats">
         <div id="about-stats-inner">
             <div id="time-wrap">
-                <h2><span style="">{{totalTime}}</span></h2>
-                <p>spent for the last 7 days, coding at the speed of light!</p>
+                <h2>
+                    <span *ngIf = 'totalTime != "0 secs"; else elseBlock'>
+                        {{totalTime}}
+                    </span>
+                </h2>
+                <ng-template #elseBlock>
+                    <span class = "minified">
+                        Nothing!
+                    </span>
+                </ng-template>
+
+                <p *ngIf = 'totalTime != "0 secs"; else elseMsgBlock'>spent over the last 7 days, coding at the speed of light!</p>
+                <ng-template #elseMsgBlock>
+                    <p>
+                        I've done nothing over the past week! Must be on vacay...
+                    </p>
+                </ng-template>
             </div>
 
             <!-- must get the objs that filled the statBarStyles going backwards, as we pushed into stack sequentially intitially -->
-            <div id="stats-data-bars">
+            <div id="stats-data-bars" *ngIf = 'totalTime != "0 secs"'>
                 <ng-container *ngFor = "let lang of topLangs; let i = index;">
                     <div #codingStats class="stats-bar" [ngStyle]="statBarStyles[topLangLength - 1 - i]" [@fadeIn]="{value: false, params: {index: i, statWidth: statBarStyles[topLangLength - 1 - i]['width'], statBackground: statBarStyles[topLangLength - 1 - i]['background']}}">
                         <p>{{topLangs[i]["lang"]}}</p>
@@ -36,8 +51,9 @@
                 </ng-container>
             </div>
         </div>
-    </div>
-    <div id="best-day-msg-wrap">
-        <h2>My most productive day in the past 7 days was <span style="background-color: #e0a674;color:white; padding: 1px">{{bestDay}}</span>. {{dayComments[bestDay]}}</h2>
+
+        <div id="best-day-msg-wrap" *ngIf = 'totalTime != "0 secs"'>
+            <h2>My most productive day in the past 7 days was <span style="background-color: #e0a674;color:white; padding: 1px">{{bestDay}}</span>. {{dayComments[bestDay]}}</h2>
+        </div>
     </div>
 </div>
