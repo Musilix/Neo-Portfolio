@@ -1,11 +1,11 @@
 <div id="about-header">
     <div id="header-logo-wrap">
-        <img id="logo-literal" src="assets/logo.svg"/>
-        <h1><a routerLink="/" routerLinkActive="active">kareemshehab.github.io</a></h1>
+        <a id="img-splash-link" routerLink="/" routerLinkActive="active"><img id="logo-literal" src="assets/logo.svg"/></a>
+        <h1><a id="text-splash-link" class="link-button" routerLink="/" routerLinkActive="active">kareemshehab.github.io</a></h1>
     </div>
     <nav id="header-nav-wrap">
         <ul>
-            <li *ngFor = "let navOption of navOptionsContext">
+            <li class="link-button" *ngFor = "let navOption of navOptionsContext">
                 <a routerLink = "/{{navOption}}" routerLinkActive="active">{{navOption | uppercase}}</a>
             </li>
         </ul>

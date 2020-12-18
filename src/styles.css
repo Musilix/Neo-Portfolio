@@ -21,3 +21,39 @@ html, body{
 body{
     height:100%;
 }
+
+.link-button{
+    text-decoration: none !important;
+    color: rgb(58,103,178) !important;
+    border-radius: 1em !important;
+    background: #d6e2fa !important;
+
+    margin: 0 5px !important;
+    padding: 4px 10px !important;
+
+
+    /*
+    dont want these to be applied to header splash nav button, but I do for the other ones...
+    these styles here are included in the more specific nav links styles in the nav bar component css
+     */
+    /* font-size: .75em !important; */
+    /* font-weight: 800 !important; */
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#splash-button{
+    font-size: .75em !important;
+    font-weight: 800 !important;
+
+    margin: 10px !important;
+    box-shadow: 0px 1px 6px -1px #747fe0 !important;
+    transition: background .25s linear, color .25s linear !important;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(58,103,178) !important;
+}

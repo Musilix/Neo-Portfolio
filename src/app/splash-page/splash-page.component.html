@@ -2,9 +2,12 @@
     <div id="nav-wrap">
         <!-- make fake div to just make aligning right easier for other div... -->
         <div class="nav" id="left">
-            <picture>
+            <!-- stuff both img tags in one picture tag if u want the accent to cover more of the screen -->
+            <picture id="left-wrap">
                 <img id="bg-accent" src="../../assets/blobs/subblobs/blob3.svg">
-                <img id="follower" src="../../assets/blobs/aboutblobs/blob1.svg">
+            </picture>
+            <picture>
+                <img id="follower" src="../../assets/splash_av.gif">
             </picture>
         </div>
         <div class="nav" id="right">
@@ -15,10 +18,10 @@
                 </div>
                 <nav>
                     <ul>
-                        <li><a routerLink = "/about" routerLinkActive = "active">ABOUT</a></li>
-                        <li><a routerLink = "/projects" routerLinkActive="active">PROJECTS</a></li>
-                        <li><a routerLink = "/contact" routerLinkActive = "active">CONTACT</a></li>
-                        <li><a routerLink= "/extras" routerLinkActive="active">EXTRAS</a></li>
+                        <li class="link-button" id="splash-button"><a routerLink = "/about" routerLinkActive = "active">ABOUT</a></li>
+                        <li class="link-button" id="splash-button"><a routerLink = "/projects" routerLinkActive="active">PROJECTS</a></li>
+                        <li class="link-button" id="splash-button"><a routerLink = "/contact" routerLinkActive = "active">CONTACT</a></li>
+                        <li class="link-button" id="splash-button"><a routerLink= "/extras" routerLinkActive="active">EXTRAS</a></li>
                     </ul>
                 </nav>
             </div>

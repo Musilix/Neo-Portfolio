@@ -60,18 +60,22 @@
     align-items: center;
 }
 
-a{
+.text-link{
     text-decoration: none;
-    color:rgb(58,103,178);
-    padding:4px 10px;
-    border-radius: 1em;
-    background: #d6e2fa;
+    /* color:rgb(58,103,178); */
+    /* padding:4px 10px; */
+    /* border-radius: 1em; */
+    /* background: #d6e2fa; */
 
     display:flex;
     justify-content: center;
     align-items: center;
 
     /* transition: color .25s linear; */
+}
+
+#text-splash-link{
+    border-radius: 10px !important;
 }
 
 #logo-literal{
