@@ -1,0 +1,49 @@
+<ng-container *ngFor="let project of getProjs()">
+    <div id="{{'proj' + project.index + '-wrap'}}" class="proj-wrap">
+        <div id="close-project-wrap" (click) = 'closeCurrentProj()'>
+            <img src="../../assets/close.png"/>
+        </div>
+    
+        <picture>
+            <img id="{{'proj' + project.index + '-accent'}}" class="proj-accent" src=""/>
+        </picture>
+    
+        <div id="dynamic-info-wrap" class="proj-info-wrap">
+            <div class="proj-left">
+                <img src="{{project.img}}"/>
+            </div>
+    
+            <div class="proj-right">
+                <div class="proj-right-content">
+                    <h2>
+                        {{project.title}}
+                    </h2>
+                    <p id="proj-description">
+                        {{project.description}}
+                    </p>
+                    <ul class="tech-stack-wrap">
+                        <ng-container *ngFor = "let tech of project.stack">
+                            <li>
+                                <p>
+                                    {{tech}}
+                                </p>
+                            </li>
+                        </ng-container>
+                    </ul>
+                    <ul class="links-wrap">
+                        <li>
+                            <a href="{{project.links[0].link}}">
+                                <img src="../../assets/contact-imgs/git.png"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{project.links[1].link}}">
+                                <img src="../../assets/external.png"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

@@ -1,68 +1,17 @@
 <app-nav-bar context = "projects"></app-nav-bar>
 <section class="proj-outter-wrap">
-     <div id="proj1-wrap" class="proj-wrap">
-        <div id="close-project-wrap" (click) = 'closeCurrentProj()'>
-            <img src="../../assets/close.png"/>
-        </div>
-        <picture>
-            <img id="proj1-accent" class="proj-accent" src=""/>
-        </picture>
-        <div id="proj1-info-wrap" class="proj-info-wrap">
-            <div class="proj-left">
-                <!-- <picture> -->
-                <img src="../../assets/proj2.gif"/>
-                <!-- </picture> -->
-            </div>
-            <div class="proj-right">
-                <div class="proj-right-content">
-                    <h2>Project Xpulser</h2>
-                    <p id="proj-description">This project was when I was in a dark place. I accidentally ended up making a homonculus named George. They have transcended now</p>
-                    <ul class="tech-stack-wrap">
-                        <li>
-                            <p>Angular</p>
-                        </li>
-                        <li>
-                            <p>Python</p>
-                        </li>
-                        <li>
-                            <p>Node</p>
-                        </li>
-                    </ul>
-                    <ul class="links-wrap">
-                        <li>
-                            <a href="www.facebook.com">
-                                <img src="../../assets/contact-imgs/git.png"/>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="www.youtube.com">
-                                <img src="../../assets/external.png"/>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+     <app-project-list></app-project-list>
 
     <div id="projects-outter">
         <div id="projects-inner">
             <ul>
-                <li>
-                    <picture>
-                        <img (click)='displayProj("proj3")' id="proj1" src="../../assets/proj3.gif">
-                    </picture>
-                </li>
-                <li>
-                    <picture>
-                        <img (click)='displayProj("proj1")' id="proj2" src="../../assets/proj1.gif"/>
-                    </picture>
-                </li>
-                <li>
-                    <picture>
-                        <img (click)='displayProj("proj2")' id="proj3" src="../../assets/proj2.gif">
-                    </picture>
-                </li>
+                <ng-container *ngFor="let proj of getProjs()">
+                    <li>
+                        <picture>
+                            <img (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" src="{{proj.img}}">
+                        </picture>
+                    </li>
+                </ng-container>
             </ul>
         </div>
     </div>

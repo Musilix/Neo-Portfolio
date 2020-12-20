@@ -12,6 +12,7 @@ import { ProjectsPageComponent } from './projects-page/projects-page.component';
 import { ExtrasPageComponent } from './extras-page/extras-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ProjectListComponent } from './project-list/project-list.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ProjectsPageComponent,
     ExtrasPageComponent,
     ContactPageComponent,
-    NavBarComponent
+    NavBarComponent,
+    ProjectListComponent
   ],
   imports: [
     BrowserModule,

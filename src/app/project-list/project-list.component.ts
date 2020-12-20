@@ -1,22 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../projects.service';
+
 @Component({
-  selector: 'app-projects-page',
-  templateUrl: './projects-page.component.html',
-  styleUrls: ['./projects-page.component.css']
+  selector: 'app-project-list',
+  templateUrl: './project-list.component.html',
+  styleUrls: ['./project-list.component.css']
 })
-export class ProjectsPageComponent implements OnInit {
+export class ProjectListComponent implements OnInit {
 
   constructor(private projectsService: ProjectsService) { }
 
   ngOnInit(): void {
   }
 
-  displayProj(projName){
-    this.projectsService.displayProj(projName);
+  closeCurrentProj(){
+    this.projectsService.closeCurrentProj();
   }
 
   getProjs(){
     return this.projectsService.getProjs();
   }
+
 }
