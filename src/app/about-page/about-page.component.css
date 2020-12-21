@@ -444,4 +444,12 @@ a:hover{
     #about-content-divider{
         margin: 60px 0px 85px 0px;
     }
+
+    #stats-data-bars{
+        width: auto;
+    }
+
+    .stats-bar{
+        border-radius: 15px;
+    }
 }
