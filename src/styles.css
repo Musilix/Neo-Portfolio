@@ -18,10 +18,12 @@ html, body{
 
     z-index: -2;
 
+    overflow-x: hidden;
     /* overflow: hidden; */
 }
 
 body{
+    position: relative;
     height:100%;
 }
 
