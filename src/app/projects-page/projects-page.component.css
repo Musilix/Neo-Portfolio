@@ -110,3 +110,7 @@
         transform: rotateZ(360deg);
     }
 }
+
+@media only screen and (max-width: 900px){
+
+}

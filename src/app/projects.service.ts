@@ -27,7 +27,8 @@ export class ProjectsService {
   };
 
   private currProj: HTMLElement;
-  
+  private htmlRef = document.getElementsByTagName("html")[0];
+
   private projects: Project[] = [
     {
       "index": "1",
@@ -141,17 +142,26 @@ export class ProjectsService {
   constructor() { }
 
   displayProj(projName){
+    // trying out a hacky way to allow scrolling on a page,
+    // but also hide overflow on the click of a project... and it magically worked... cool
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    this.htmlRef.style.overflow = "hidden";
+
     let projTemplate = document.getElementById(this.projTemplateMappings[projName]);
     this.currProj = projTemplate;
 
     if(projTemplate){
-      projTemplate.style.top = "0%";
+      projTemplate.style.bottom = "0%";
     }
   }
 
   closeCurrentProj(){
     if(this.currProj){
-      this.currProj.style.top = "100%";
+      this.htmlRef.style.overflow = "auto";
+      this.currProj.style.bottom = "100%";
     }
   }
 
