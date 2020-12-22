@@ -144,7 +144,7 @@ a:hover{
 }
 
 #intro-pic{
-    max-width: 265px;
+    max-width: 247px;
     max-height: 275px;
     position: relative;
 }
@@ -380,6 +380,11 @@ a:hover{
 }
 
 @media screen and (max-width: 750px){
+
+    #inner-content-wrap{
+        padding: 0px;
+    }
+
     #intro-pic{
         z-index: 1;
     }
@@ -412,6 +417,14 @@ a:hover{
 }
 
 @media only screen and (max-width: 400px) {
+    #intro-depth-wrap{
+        gap: 70px;
+    }
+
+    #intro-header-wrap{
+        margin: 0px;
+    }
+
     #intro h2{
         font-size: 2.25em;
     }
