@@ -385,29 +385,29 @@ a:hover{
     }
 
     #intro-pic::before{
-        content: '';
+        content: "";
         position: absolute;
         z-index: 0;
         background: url("../../assets/blobs/aboutblobs/blob1.svg");
         background-repeat: no-repeat;
-        width: 170%;
-        height: 170%;
-        left: -62.5%;
-        top: -40.5%;
-        transform: rotateZ(90deg);
+        width: 160%;
+        height: 160%;
+        left: -53.5%;
+        top: -28.5%;
+        transform: rotate(90deg);
     }
 
     #intro-pic::after{
-        content: '';
+        content: "";
         position: absolute;
         z-index: -1;
         background: url("../../assets/blobs/aboutblobs/blob2.svg");
         background-repeat: no-repeat;
         width: 145%;
         height: 155%;
-        left: 12.5%;
-        top: -7.5%;
-        transform: rotateZ(210deg);
+        left: -0.5%;
+        top: -11.5%;
+        transform: rotate(210deg);
     }
 }
 
