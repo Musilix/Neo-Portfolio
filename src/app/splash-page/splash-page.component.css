@@ -100,7 +100,7 @@
 .nav#right h2{
     font-family: Inter var,sans-serif;
     font-size: 5.2em;
-    font-weight: 800;
+    font-weight: 800 !important;
     line-height: 1.1;
     color: #747fe0;
 
