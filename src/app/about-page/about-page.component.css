@@ -70,7 +70,7 @@ a:hover{
     margin: 0;
     font-family: Inter var,sans-serif;;
     font-size: 4.2em;
-    font-weight: 800;
+    font-weight: 900;
     line-height: 1.5;
     color: #747fe0;
     /* font-weight: lighter; */
@@ -105,7 +105,7 @@ a:hover{
 .about-content-item#stats{
     font-size: 3.2em;
     line-height: 1.4;
-    font-weight: 800;
+    font-weight: 900 !important;
 
     margin:35px 0px;
 
@@ -123,7 +123,7 @@ a:hover{
 /* .about-content-item#stats h2{
     font-size: .4em;
     line-height: 1.4;
-    font-weight: 800;
+    font-weight: 900 !important;
 } */
 
 .about-content-item#stats ul{
@@ -198,7 +198,7 @@ a:hover{
 #time-wrap h2{
     font-size: 1.25em !important;
     line-height: 1.4;
-    font-weight: 800;
+    font-weight: 900 !important;
 
     margin: 0 !important;
     text-transform: uppercase;
@@ -304,7 +304,7 @@ a:hover{
     font-family: Maven Pro;
     font-size: .4em;
     line-height: 1.4;
-    font-weight: 800;
+    font-weight: 900 !important;
 
     margin: 50px 0px 0px 0px;
 }
