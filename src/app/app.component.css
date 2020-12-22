@@ -22,3 +22,9 @@
 
     /* background: #dbdddf; */
 }
+
+@media only screen and (max-width: 1050px) {
+    #inner-content-wrap{
+        width: 100%;
+    }
+}

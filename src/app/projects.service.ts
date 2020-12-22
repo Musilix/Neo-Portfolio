@@ -142,26 +142,29 @@ export class ProjectsService {
   constructor() { }
 
   displayProj(projName){
+    console.log(this.htmlRef);
     // trying out a hacky way to allow scrolling on a page,
     // but also hide overflow on the click of a project... and it magically worked... cool
     window.scrollTo({
       top: 0,
+      left:0,
       behavior: 'smooth'
     });
     this.htmlRef.style.overflow = "hidden";
 
     let projTemplate = document.getElementById(this.projTemplateMappings[projName]);
-    this.currProj = projTemplate;
 
     if(projTemplate){
       projTemplate.style.bottom = "0%";
+      this.currProj = projTemplate;
     }
   }
 
   closeCurrentProj(){
     if(this.currProj){
-      this.htmlRef.style.overflow = "auto";
       this.currProj.style.bottom = "100%";
+      setTimeout(()=> {this.htmlRef.style.overflow = "auto";}, 500);
+      // this.currProj = null;
     }
   }
 

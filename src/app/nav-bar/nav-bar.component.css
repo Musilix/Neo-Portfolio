@@ -92,9 +92,9 @@
 }
 
 @media screen and (max-width: 850px) {
-    :host{
+    /* :host{
         margin: 5% 0px;
-    }
+    } */
 
     #header-logo-wrap h1{
         display: none;
@@ -111,6 +111,6 @@
     }
 
     #header-nav-wrap ul li{
-        margin: 5px 0px;
+        margin: 5px 0px !important;
     }
 }
