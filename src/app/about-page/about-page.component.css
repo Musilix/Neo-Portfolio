@@ -109,16 +109,25 @@ a:hover{
     font-weight: 900 !important;
 
     margin:35px 0px;
+    padding: 0px 0px 35px 0px;
 
     display: flex;
     flex-direction: column;
 }
+
+/* .about-content-item#stats > *{
+    margin: 15px 0px;
+} */
 
 #about-stats-inner{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+#about-stats-inner > *{
+    margin: 10px 0px
 }
 
 /* .about-content-item#stats h2{
@@ -300,6 +309,10 @@ a:hover{
     /* width:25% !important; */
 }
 
+#best-day-msg-wrap{
+    margin: 25px 0px 0px 0px;
+}
+
 #best-day-msg-wrap h2{
     text-align: center;
     font-family: Maven Pro;
@@ -307,7 +320,7 @@ a:hover{
     line-height: 1.4;
     font-weight: 900 !important;
 
-    margin: 50px 0px 0px 0px;
+    margin: 0px;
 }
 
 #about-stats-header{
