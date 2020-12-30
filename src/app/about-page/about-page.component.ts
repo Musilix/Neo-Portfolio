@@ -9,6 +9,7 @@ import {
   transition,
   // ...
 } from '@angular/animations';
+import { ConsoleReporter } from 'jasmine';
 
 @Component({
   selector: 'app-about-page',
@@ -46,6 +47,8 @@ export class AboutPageComponent implements OnInit {
   private statsTemplate;
 
   private stats;
+  public iterAmt;
+
   public languagesUsed;
   public dailyAvgTime;
   public totalTime = "...";
@@ -59,7 +62,7 @@ export class AboutPageComponent implements OnInit {
   constructor(private statsService: CodingStatsService) { }
 
   normalize(val, topLangs) { 
-    let min = topLangs[this.topLangLength-1]["percent"];
+    let min = topLangs[this.iterAmt-1]["percent"];
     let max = topLangs[0]["percent"];
 
     return Math.round(((val - min) / (max - min)) * 100); 
@@ -144,8 +147,12 @@ export class AboutPageComponent implements OnInit {
       this.bestDayDate = this.stats["best_day"]["date"];
       this.bestDay = this.days[new Date(this.bestDayDate).getUTCDay()];
 
+      this.iterAmt = (this.languagesUsed.length >= this.topLangLength) ? this.topLangLength : this.languagesUsed.length;
       //get top 3 languages used this week
-      for(let i = 0; i < this.topLangLength; i++){
+      console.log("Decided iteration amt was: " + this.iterAmt);
+      // console.log(this.languagesUsed);
+
+      for(let i = 0; i < this.iterAmt; i++){
         let langStat : Stat = {
           lang: this.languagesUsed[i]["name"],
           hrs: this.languagesUsed[i]["hours"],
@@ -158,18 +165,19 @@ export class AboutPageComponent implements OnInit {
       //set style objects for each of the top 3 langs
       //currently, creating these objs and serving them to ngStyle to dynamically style sta bars, but it doesnt seem there is any binding on ngStyle
       //so fill statBarStyles, and call
-      let statStates = ["#8f9afc", "#747fe0 ", "#48519b "]
       for(let i = this.topLangs.length - 1; i >= 0; i--){
         this.statBarStyles.push({
           'width': `${this.normalize(this.topLangs[i]['percent'], this.topLangs)}%`,
           'background': this.getStatTint(i)
         });
+
+        console.log(this.topLangs[i]);
+        console.log(`${this.normalize(this.topLangs[i]['percent'], this.topLangs)}%`);
+        console.log();
       }
     });
   }
 
   ngAfterViewInit(): void{
-
-    // console.log(codingStats);
   }
 }

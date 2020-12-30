@@ -44,7 +44,7 @@
             <!-- must get the objs that filled the statBarStyles going backwards, as we pushed into stack sequentially intitially -->
             <div id="stats-data-bars" *ngIf = 'totalTime != "0 secs"'>
                 <ng-container *ngFor = "let lang of topLangs; let i = index;">
-                    <div #codingStats class="stats-bar" [ngStyle]="statBarStyles[topLangLength - 1 - i]" [@fadeIn]="{value: false, params: {index: i, statWidth: statBarStyles[topLangLength - 1 - i]['width'], statBackground: statBarStyles[topLangLength - 1 - i]['background']}}">
+                    <div #codingStats class="stats-bar" [ngStyle]="statBarStyles[iterAmt - 1 - i]" [@fadeIn]="{value: false, params: {index: i, statWidth: statBarStyles[iterAmt - 1 - i]['width'], statBackground: statBarStyles[iterAmt - 1 - i]['background']}}">
                         <p>{{topLangs[i]["lang"]}}</p>
                         <p>{{timeCheck(topLangs[i]["hrs"], topLangs[i]["mins"])}}</p>
                     </div>
