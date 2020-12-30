@@ -9,8 +9,6 @@ import {
   transition,
   // ...
 } from '@angular/animations';
-import { ConsoleReporter } from 'jasmine';
-
 @Component({
   selector: 'app-about-page',
   animations: [
