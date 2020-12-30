@@ -4,12 +4,20 @@
 
     <div id="projects-outter">
         <div id="projects-inner">
-            <ul>
+            <ul id="projects-content">
                 <ng-container *ngFor="let proj of getProjs()">
-                    <li>
+                    <li class="project-main">
                         <picture>
                             <img (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" src="{{proj.img}}">
                         </picture>
+                        <h3>{{proj.title}}</h3>
+                        <ul id="mini-tech-wrap">
+                            <ng-container *ngFor="let tech of proj.stack">
+                                <li>
+                                    <p>{{tech}}</p>
+                                </li>
+                            </ng-container>
+                        </ul>
                     </li>
                 </ng-container>
             </ul>

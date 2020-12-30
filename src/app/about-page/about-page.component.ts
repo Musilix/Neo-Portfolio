@@ -43,9 +43,12 @@ export class AboutPageComponent implements OnInit {
   public statBarStyles = [];
 
   private statsTemplate;
+  private codingIDEs = ["VS Code", "IntelliJ"]
 
   private stats;
   public iterAmt;
+
+  public editors;
 
   public languagesUsed;
   public dailyAvgTime;
@@ -140,15 +143,15 @@ export class AboutPageComponent implements OnInit {
 
       this.languagesUsed = this.stats["languages"];
       this.dailyAvgTime = this.stats["human_readable_daily_average"];
-      this.totalTime =  this.stats["human_readable_total"];
+      this.totalTime =  this.stats["human_readable_total_including_other_language"];
 
       this.bestDayDate = this.stats["best_day"]["date"];
       this.bestDay = this.days[new Date(this.bestDayDate).getUTCDay()];
 
+      this.editors = this.stats["editors"];
+
       this.iterAmt = (this.languagesUsed.length >= this.topLangLength) ? this.topLangLength : this.languagesUsed.length;
       //get top 3 languages used this week
-      console.log("Decided iteration amt was: " + this.iterAmt);
-      // console.log(this.languagesUsed);
 
       for(let i = 0; i < this.iterAmt; i++){
         let langStat : Stat = {
@@ -156,6 +159,19 @@ export class AboutPageComponent implements OnInit {
           hrs: this.languagesUsed[i]["hours"],
           mins: this.languagesUsed[i]["minutes"],
           percent: parseInt(this.languagesUsed[i]["percent"])
+        }
+
+        //check if we have an "other" category of languages
+        if(langStat.lang === "Other"){
+          //check if more than 1 editor was used
+          if(this.editors.length > 1){
+            //loop thru used editors and check to see if one of them WASNT a coding IDE. aka Blender/video editing software/etc
+            for(let i = 0; i < this.editors.length; i++){
+              if(!this.codingIDEs.includes(this.editors[i].name)){
+                langStat.lang = this.editors[i].name;
+              }
+            }
+          }
         }
         this.topLangs.push(langStat);
       }
@@ -168,10 +184,6 @@ export class AboutPageComponent implements OnInit {
           'width': `${this.normalize(this.topLangs[i]['percent'], this.topLangs)}%`,
           'background': this.getStatTint(i)
         });
-
-        console.log(this.topLangs[i]);
-        console.log(`${this.normalize(this.topLangs[i]['percent'], this.topLangs)}%`);
-        console.log();
       }
     });
   }
