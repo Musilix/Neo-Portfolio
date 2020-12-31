@@ -2,6 +2,8 @@
     width: 100%;
     height:100%;
 
+    z-index: 0;
+
     /* overflow: hidden; */
 }
 
@@ -22,8 +24,8 @@
 }
 
 #projects-inner img{
-    width:200px;
-    height:200px;
+    width:150px;
+    height:150px;
 }
 
 #projects-inner img:hover{
@@ -43,6 +45,8 @@
 
     min-width: 225px;
     max-width: 225px;
+
+    box-sizing:border-box;
 }
 
 #projects-content li h3{
@@ -156,6 +160,143 @@
     }
 }
 
-@media only screen and (max-width: 900px){
+#bg-blob-wrap{
+    position: fixed;
+    top:0;
+    left:0;
 
+    width: 100%;
+    height: 100%;
+
+    z-index: -1;
+}
+
+.bg-blob{
+    position: absolute;
+}
+
+#circle1-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    left: 58%;
+    top: 78%;
+}
+
+#blob1-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    left: -50%;
+    top: 25%;
+    transform: rotate(-15deg) scale(1.5)
+}
+
+#blob2-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    right: -60%;
+    top: 70%;
+
+    /* opacity: 0; */
+}
+
+#blob3-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    right: -55%;
+    top: -30%;
+    transform: rotate(235deg) scaleX(1.75);
+}
+
+#bg-blob-wrap #circle1{
+    position: relative;
+
+    width: 100%;
+    height:100%;
+    
+    transform: scale(.75);
+}
+
+#bg-blob-wrap #blob1{
+    position: relative;
+
+    width: 100%;
+    height:100%;
+    
+    transform: scale(1.75);
+    /* left: 50%;
+    top: 50%; */
+}
+
+#bg-blob-wrap #blob2{
+    position: relative;
+
+    width: 100%;
+    height:100%;
+    
+    transform: scale(1.75);
+    /* right: 50%;
+    top: 50%; */
+}
+
+#bg-blob-wrap #blob3{
+    position: relative;
+
+    width: 100%;
+    height:100%;
+    
+    transform: scale(1.75);
+    /* right: 50%;
+    top: 75%; */
+}
+
+@media only screen and (max-width: 400px){
+    #bg-blob-wrap #blob1, #bg-blob-wrap #blob2, #bg-blob-wrap #blob3{
+        position: relative;
+    
+        width: 100%;
+        height:100%;
+        
+        transform: scale(2.75);
+        /* right: 50%;
+        top: 75%; */
+    }
+
+    #blob1-wrap{
+        left: -75%;
+        top: 10%;
+
+        transform: rotate(0deg) scaleX(1);
+    }
+
+    #blob2-wrap{
+        right: -115%;
+        top: 0%;
+        transform: rotate(-85deg);
+    }
+
+    #blob3-wrap{
+        right: -105%;
+        top: -40%;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    #blob1-wrap{
+        left: -85%;
+        top: 25%;
+        transform: rotate(-15deg) scale(1.75);
+    }
+
+    #blob2-wrap{
+        right: -85%;
+        top: 60%;
+    }
 }
