@@ -38,8 +38,7 @@ export class ProjectsService {
       "stack": [
         "Python",
         "Flask",
-        "Angular",
-        "Angular Material"
+        "Angular"
       ],
       "links": [
         {
