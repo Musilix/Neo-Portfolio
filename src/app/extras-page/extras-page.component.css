@@ -1,3 +1,135 @@
 :host{
     width: 100%;
 }
+
+#extras-content-wrap{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.extra-section{
+    width: 100%;
+}
+
+#endeavours{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#endeavours-index-wrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#endeavours-index-wrap{
+    width: 400px;
+}
+
+#endeavours-index-wrap p{
+    font-family: JetBrains Mono,monospace;
+    color: #636979;  
+    font-weight: normal;
+    font-size: 23px;
+    padding: 5px;
+}
+
+#index-divider{
+    content: '';
+    border-top: 1.5px solid #636979;
+    margin-top: 0px;
+    width: 50%;
+}
+
+#endeavours-list-wrap{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#left-nav-button, #right-nav-button, .endeavours-preview-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#left-nav-button, #right-nav-button{
+    width: 10%;
+    transition: filter .25s ease-in-out;
+}
+
+#left-nav-button:hover, #right-nav-button:hover{
+    cursor: pointer;
+    filter: none;
+}
+
+.endeavours-preview-wrap{
+    width: 80%;
+}
+
+.endeavours-img-prev-wrap{
+
+}
+
+.endeavours-img-prev-wrap img{
+    width: 350px;
+    height: 350px;
+}
+
+.endeavours-desc-prev-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.endeavours-desc-prev-wrap h2{
+    font-size: 28px;
+    font-family: Inter var,sans-serif;;
+    color: #747fe0;    
+    font-weight: 800;
+}
+
+.endeavours-desc-prev-wrap p, .more-info-butt p{
+    font-family: JetBrains Mono,monospace;
+    color: #636979;  
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.more-info-butt p{
+    margin: 0;
+}
+
+#left-nav-button img, #right-nav-button img{
+    width: 55px;
+    height: 55px;
+
+    filter: invert(45%) sepia(80%) saturate(11%) hue-rotate(147deg) brightness(95%) contrast(100%);
+}
+
+.more-info-butt-wrap, .more-info-butt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.more-info-butt{
+    background-color: #D0E2FF;
+    border-radius: 20px;
+    padding: 15px;
+    /* color: #7d7f81; */
+    margin: 15px 0px;
+    /* font-size: 12px; */
+    /* font-family: JetBrains Mono,monospace; */
+    border: none;
+    box-shadow: 0 2px 8px 0 rgba(50,50,93,.1);}
+
+/* .more-info-butt p{
+    
+} */
