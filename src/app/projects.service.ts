@@ -141,7 +141,7 @@ export class ProjectsService {
   constructor() { }
 
   displayProj(projName){
-    console.log(this.htmlRef);
+    // console.log(this.htmlRef);
     // trying out a hacky way to allow scrolling on a page,
     // but also hide overflow on the click of a project... and it magically worked... cool
     window.scrollTo({
