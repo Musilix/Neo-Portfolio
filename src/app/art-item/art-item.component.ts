@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ArtService } from '../art.service';
 
 @Component({
   selector: 'app-art-item',
@@ -8,10 +9,14 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ArtItemComponent implements OnInit {
   @Input() artObj;
 
-  constructor() { }
+  constructor(private artService: ArtService) { }
 
   ngOnInit(): void {
     // console.log(this.artObj);
+  }
+
+  closeProj(){
+    this.artService.closeProj();
   }
 
 }

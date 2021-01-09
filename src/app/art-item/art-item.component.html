@@ -1,10 +1,14 @@
 <div class="art-bio-wrap" id="{{'art-bio-' + artObj.index}}">
     <div class="art-bio-detail-wrap">
-        <img src="{{artObj.img}}" id="{{'art' + artObj.index}}" class="art-bio-img">
+        <div class="art-img-exit-wrap">
+            <img src="{{artObj.img}}" id="{{'art' + artObj.index}}" class="art-bio-img">
+            <div class="art-exit-wrap" (click) = "closeProj()">
+                <img class="art-img-close" src="../../assets/close.png">
+            </div>
+        </div>
         <div class="bio-bottom-lip-wrap">
             <h2>{{artObj.title}}</h2>
             <p>{{artObj.description}}</p>
-            <p>{{artObj.medium}}</p>
         </div>
     </div>
 </div>

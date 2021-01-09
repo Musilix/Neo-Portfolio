@@ -9,7 +9,6 @@ import { ArtService } from '../art.service';
 export class ExtrasPageComponent implements OnInit {
   private tabMappings = {0: "endeavours", 1: "art", 2: "hobbies"};
   public activeTabIdx = 0;
-  // private activeTab = this.tabMappings[this.activeTabIdx];
 
   constructor(private artService: ArtService) { }
 
@@ -24,9 +23,11 @@ export class ExtrasPageComponent implements OnInit {
     scrollTo.scrollIntoView({behavior: "smooth", block: "end"});
   }
 
+  // TODO: move this from teh extras component into the svc that manages art...
+  // the art svc, that is!
   displayArt(idx){
-    let artBio = document.getElementById("art-bio-" + idx);
-    console.log(artBio);
+    this.artService.displayProj(idx);
+    // console.log(artBio);
   }
 
   getArt(){

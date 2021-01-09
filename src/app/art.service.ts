@@ -43,18 +43,35 @@ export class ArtService {
     }
 
   ];
+  // TODO: move to art svc
+  private currArt: HTMLElement = null;
 
   constructor() { }
 
   displayProj(idx){
-    let artName = "art" + idx;
-    let artTemplate = document.getElementById(artName);
-  
+    let artBioTemplate = document.getElementById("art-bio-" + idx);
+
     // if we find an existing art item with a name coinciding with the idx sent in,
     // then we should set its display on and tune the opacity so it fades in!
-    if(artTemplate){
-      artTemplate.style.display = "block";
-      artTemplate.style.opacity = "1";
+    if(artBioTemplate){
+      artBioTemplate.style.display = "flex";
+      setTimeout(() => {
+        artBioTemplate.style.opacity = "1";
+        this.currArt = artBioTemplate;
+      }, 100);
+    }
+  }
+
+  closeProj(){
+    if(this.currArt){
+      this.currArt.style.opacity = "0";
+      setTimeout(() => {
+        this.currArt.style.display = "none";
+        this.currArt = null;
+      }, 100);
+
+      // setTimeout(()=> {this.htmlRef.style.overflow = "auto";}, 500);
+      // this.currProj = null;
     }
   }
 
