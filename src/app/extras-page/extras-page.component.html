@@ -1,6 +1,6 @@
 <app-nav-bar context = "extras"></app-nav-bar>
 <div id="extras-content-wrap">
-    <section class="extra-section" id="endeavours-wrap">
+    <section class="extra-section" id="endeavours">
         <div id="endeavours-index-wrap">
             <p>1</p>
             <div id="index-divider"></div>
@@ -88,20 +88,20 @@
     </section> -->
     <!-- <section class="extra-section" id="art">
 
-    </section>
+    </section> -->
     <section class="extra-section" id="hobbies">
 
-    </section> -->
+    </section> 
 </div>
 
 <div id="extras-content-nav-wrap">
-    <div class="nav-ele" id="hobbies" (click)="scrollTo(2)" [ngClass] = "{'active': activeTabIdx == 2, 'inactive': activeTabIdx != 2}">
+    <div class="nav-ele" id="hobbies-nav" (click)="scrollTo(2)" [ngClass] = "{'active': activeTabIdx == 2, 'inactive': activeTabIdx != 2}">
         <p>Hobbies</p>
     </div>
-    <div class="nav-ele" id="art" (click)="scrollTo(1)" [ngClass] = "{'active': activeTabIdx == 1, 'inactive': activeTabIdx != 1}">
+    <div class="nav-ele" id="art-nav" (click)="scrollTo(1)" [ngClass] = "{'active': activeTabIdx == 1, 'inactive': activeTabIdx != 1}">
         <p>Art</p>
     </div>
-    <div class="nav-ele" id="endeavours" (click)="scrollTo(0)" [ngClass] = "{'active': activeTabIdx == 0, 'inactive': activeTabIdx != 0}">
+    <div class="nav-ele" id="endeavours-nav" (click)="scrollTo(0)" [ngClass] = "{'active': activeTabIdx == 0, 'inactive': activeTabIdx != 0}">
         <p>Endeavours</p>
     </div>
 </div>

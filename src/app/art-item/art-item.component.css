@@ -5,7 +5,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    
+
     justify-content: center;
     align-items: center;
 
@@ -98,7 +98,7 @@
     filter: invert(0);
 }
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 1400px){
     .art-bio-detail-wrap{
         width: auto;
         height: auto;
