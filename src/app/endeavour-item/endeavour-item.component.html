@@ -1,0 +1,40 @@
+<div id="end-1" class ="endeavours-preview-wrap">
+
+    <div class ="endeavours-img-prev-wrap">
+        <div class="left-nav-button" (click)="handleLeftNavClick()">
+            <img src="../../assets/nav-left.png">
+        </div>
+
+        <img class="end-img" src="{{endObj.image}}">
+
+        <div class="right-nav-button" (click)="handleRightNavClick()">
+            <img src="../../assets/nav-right.png">
+        </div>
+    </div>
+
+    <div class ="endeavours-desc-prev-wrap">
+        <h2>{{endObj.title}}</h2>
+        <p class ="endeavour-desc">
+            {{endObj.prevDesc}}
+        </p>
+    </div>
+
+    <div class ="more-info-butt-wrap" id="more-info-1" (click)="displayEndeavour(endObj.index)">
+        <div class ="more-info-butt">
+            <p>Read more</p>
+        </div>
+    </div>
+
+    <div class="readmore-fake-wrap" id="end-1-more">
+        <div class="readmore-wrap">
+            <div class="readmore-details-wrap">
+                <h2>{{endObj.title}}</h2>
+                <p>{{endObj.readMore}}</p>
+            </div>
+
+            <div class="end-exit-wrap" (click)="closeCurrEndeavour()">
+                <img src="../../assets/close.png">
+            </div>
+        </div>
+    </div>
+</div>

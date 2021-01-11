@@ -15,6 +15,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProjectListComponent } from './project-list/project-list.component';
 import { ArtListComponent } from './art-list/art-list.component';
 import { ArtItemComponent } from './art-item/art-item.component';
+import { EndeavourItemComponent } from './endeavour-item/endeavour-item.component';
+import { EndeavoursListComponent } from './endeavours-list/endeavours-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { ArtItemComponent } from './art-item/art-item.component';
     NavBarComponent,
     ProjectListComponent,
     ArtListComponent,
-    ArtItemComponent
+    ArtItemComponent,
+    EndeavourItemComponent,
+    EndeavoursListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+:host{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#endeavours-index-wrap{
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#endeavours-index-wrap p{
+    font-family: JetBrains Mono,monospace;
+    color: #636979;  
+    font-weight: normal;
+    font-size: 23px;
+    padding: 5px;
+}
+
+#index-divider{
+    content: '';
+    border-top: 1.5px solid #636979;
+    margin-top: 0px;
+    width: 50%;
+}
+
+#endeavours-list-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

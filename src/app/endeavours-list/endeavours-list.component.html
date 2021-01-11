@@ -1,0 +1,13 @@
+<div id="endeavours-list-wrap">
+    <!-- <p>{{getEndeavours()}}</p> -->
+    <ng-container *ngFor = "let endeavour of getEndeavours()">
+        <!-- <p>{{getEndeavours().length}}</p>
+        <p>hi</p> -->
+        <div id="endeavours-index-wrap">
+            <p>{{currIdx+1}}</p>
+            <div id="index-divider"></div>
+            <p>{{getEndeavours().length}}</p>
+        </div>
+        <app-endeavour-item [endObj] = "endeavour" (nav)="handleNavClick($event)"></app-endeavour-item>
+    </ng-container>
+</div>
