@@ -11,12 +11,14 @@ export class EndeavourItemComponent implements OnInit {
 
   @Input() endObj;
   @Input() endeavourLen: number;
-
+  @Input() displayEnd: boolean;
 
   private currEnd;
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   handleRightNavClick(){

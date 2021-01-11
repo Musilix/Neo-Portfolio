@@ -21,14 +21,14 @@ export class EndeavourService {
       "prevDesc": "I'm currently spending some of my free time developing a game! It's called Down the Crevice and incorporates features from all types of games I love.",
       "readMore": "I'm currently spending some of my free time developing a game! It's called Down the Crevice and incorporates features from all types of games I love. I'm currently spending some of my free time developing a game! It's called Down the Crevice and incorporates features from all types of games I love. I'm currently spending some of my free time developing a game! It's called Down the Crevice and incorporates features from all types of games I love."
     }
-    // ,
-    // {
-    //   "index": "1",
-    //   "image": "../../assets/proj3.gif",
-    //   "title": "Swappup",
-    //   "prevDesc": "Over the years, the idea of bartering and free trading has always interested me. I'm currently developing a centralized and well-rounded place for all your bartering/free-trade needs, while also giving a good sense of security!",
-    //   "readMore": "..."
-    // }
+    ,
+    {
+      "index": "1",
+      "image": "../../assets/proj3.gif",
+      "title": "Swappup",
+      "prevDesc": "Over the years, the idea of bartering and free trading has always interested me. I'm currently developing a centralized and well-rounded place for all your bartering/free-trade needs, while also giving a good sense of security!",
+      "readMore": "..."
+    }
   ];
 
   constructor() { }

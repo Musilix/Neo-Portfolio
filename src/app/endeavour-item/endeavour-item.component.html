@@ -1,4 +1,4 @@
-<div id="end-1" class ="endeavours-preview-wrap">
+<div id="end-1" class ="endeavours-preview-wrap" *ngIf="displayEnd">
 
     <div class ="endeavours-img-prev-wrap">
         <div class="left-nav-button" [ngClass] = "{'endeavour-nav-active': hasLeftEnd(), 'endeavour-nav-inactive': !hasLeftEnd()}" (click)="hasLeftEnd() ? handleLeftNavClick() : null">
