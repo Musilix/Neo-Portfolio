@@ -8,7 +8,10 @@ import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 export class EndeavourItemComponent implements OnInit {
 
   @Output() nav = new EventEmitter<number>();
+
   @Input() endObj;
+  @Input() endeavourLen: number;
+
 
   private currEnd;
   constructor() { }
@@ -17,13 +20,41 @@ export class EndeavourItemComponent implements OnInit {
   }
 
   handleRightNavClick(){
+    console.log("right click working");
+
     let currIdx = parseInt(this.endObj.index);
     this.nav.emit(++currIdx);
   }
 
   handleLeftNavClick(){
+    console.log("left click working");
+
     let currIdx = parseInt(this.endObj.index);
     this.nav.emit(--currIdx);
+  }
+
+  hasLeftEnd(){
+    if(this.endeavourLen > 0){
+      if(parseInt(this.endObj.index) - 1 >= 0){
+        return true;
+      }else{
+        return false;
+      }
+    }else{
+      return false;
+    }
+  }
+
+  hasRightEnd(){
+    if(this.endeavourLen > 0){
+      if(parseInt(this.endObj.index) + 1 <= this.endeavourLen - 1){
+        return true;
+      }else{
+        return false;
+      }
+    }else{
+      return false;
+    }
   }
 
   //possibly move this to endeavours svc

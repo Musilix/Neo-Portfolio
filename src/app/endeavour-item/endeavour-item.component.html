@@ -1,13 +1,13 @@
 <div id="end-1" class ="endeavours-preview-wrap">
 
     <div class ="endeavours-img-prev-wrap">
-        <div class="left-nav-button" (click)="handleLeftNavClick()">
+        <div class="left-nav-button" [ngClass] = "{'endeavour-nav-active': hasLeftEnd(), 'endeavour-nav-inactive': !hasLeftEnd()}" (click)="hasLeftEnd() ? handleLeftNavClick() : null">
             <img src="../../assets/nav-left.png">
         </div>
 
         <img class="end-img" src="{{endObj.image}}">
 
-        <div class="right-nav-button" (click)="handleRightNavClick()">
+        <div class="right-nav-button" [ngClass] = "{'endeavour-nav-active': hasRightEnd(), 'endeavour-nav-inactive': !hasRightEnd()}" (click)="hasRightEnd() ? handleRightNavClick() : null">
             <img src="../../assets/nav-right.png">
         </div>
     </div>

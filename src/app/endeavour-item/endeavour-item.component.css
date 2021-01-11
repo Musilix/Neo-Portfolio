@@ -18,8 +18,8 @@
 }
 
 .left-nav-button img:hover, .right-nav-button img:hover{
-    cursor: pointer;
-    filter: none;
+    /* cursor: pointer;
+    filter: none; */
 }
 
 .endeavours-preview-wrap{
@@ -76,9 +76,6 @@
 .left-nav-button img, .right-nav-button img{
     width: 55px;
     height: 55px;
-
-    filter: invert(45%) sepia(80%) saturate(11%) hue-rotate(147deg) brightness(95%) contrast(100%);
-    transition: filter .25s ease-in-out;
 }
 
 .more-info-butt-wrap, .more-info-butt{
@@ -201,6 +198,25 @@
     font-size: clamp(12px, .85vw, .85vw);
 
     text-align: center;
+}
+
+.endeavour-nav-active{
+    filter: none;
+    transition: filter .25s ease-in-out;
+    opacity: 1;
+}
+
+.endeavour-nav-inactive{
+    opacity: .25 !important;
+}
+
+.endeavour-nav-active:hover{
+    cursor: pointer !important;
+    filter: invert(45%) sepia(80%) saturate(11%) hue-rotate(147deg) brightness(95%) contrast(100%);
+}
+
+.endeavour-nav-inactive:hover{
+    cursor: not-allowed !important;
 }
 
 @media screen and (max-width: 800px){

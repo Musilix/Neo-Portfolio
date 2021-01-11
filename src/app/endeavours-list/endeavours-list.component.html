@@ -8,6 +8,6 @@
             <div id="index-divider"></div>
             <p>{{getEndeavours().length}}</p>
         </div>
-        <app-endeavour-item [endObj] = "endeavour" (nav)="handleNavClick($event)"></app-endeavour-item>
+        <app-endeavour-item [endeavourLen] = "getEndeavours().length" [endObj] = "endeavour" (nav)="handleNavClick($event)"></app-endeavour-item>
     </ng-container>
 </div>

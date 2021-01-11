@@ -10,7 +10,7 @@ import { EndeavourService } from '../endeavour.service';
 
 export class EndeavoursListComponent implements OnInit {
   public currIdx = 0;
-
+  
   constructor(private endeavourService: EndeavourService) { }
 
   ngOnInit(): void {
