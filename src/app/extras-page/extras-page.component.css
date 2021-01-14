@@ -147,3 +147,156 @@
         /* min-height: 100vh; */
     }
 }
+
+
+
+
+/* ---------------put this in hobbies component ------------------- */
+#hobbies{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center;  */
+
+    width: 100%;
+}
+
+#hobbies > * {
+    margin: 0px 50px;
+}
+
+#hobbies-left-wrap{
+    width: 60%;
+
+}
+
+#hobbies-right-wrap{
+    width: 40%;
+
+}
+
+#hobbies-left-wrap, #hobbies-right-wrap{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#hobbies-right-wrap{
+    height: 50%
+}
+
+#hobbies-right-centerer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#hobbies-left-inner h2, .hobby-details h3{
+    font-family: Inter var,sans-serif;;
+    color: #747fe0;    
+    /* text-align: center; */
+}
+
+#hobbies-left-inner p, .hobby-details p{
+    /* text-align: center; */
+    font-weight: normal;
+    font-size: clamp(12px, .85vw, .85vw);
+}
+
+#hobbies-left-inner h2{
+    font-size: clamp(3vw, 5vw, 6vw);
+    font-weight: 800;
+
+    line-height: 1.25;
+
+    margin: 0;
+}
+
+#hobbies-left-inner p{
+    font-weight: normal;
+    font-size: clamp(17px, 1vw, 1vw);
+    font-family: "Open Sans";
+}
+
+.hobby-details p{
+    font-family: JetBrains Mono,monospace;
+}
+
+.hobby-details h3{
+    font-size: clamp(.75vw, 2vw, 2vw);
+    font-weight: 800;
+}
+
+#hobbies-right-inner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    width: 100%;
+
+}
+
+#hobby1, #hobby2, #hobby3{
+    display: none;
+    opacity: 0;
+}
+
+.hobby-item {
+    width: 40%;
+
+    display: flex;
+    align-items: center;
+
+    background-color: black;
+
+    border-radius: 10px;
+    margin: 5%;
+
+    transition: filter .25s ease-in-out, transform .25s ease-in-out;
+}
+
+.hobby-item:hover{
+    cursor: pointer;
+
+    filter: grayscale(.5);
+
+    /* border: .5px solid rgba(50,50,93,.15); */
+}
+
+.hobby-item img{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 810px){
+    #hobbies{
+        flex-direction: column;
+    }
+
+    #hobbies > * {
+        margin: 0px;
+    }
+
+    #hobbies-left-wrap, #hobbies-right-wrap{
+        width: 100%;
+    }
+
+    #hobbies-left-wrap, #hobbies-right-wrap{
+        /* height: 50%; */
+    }
+
+    #hobbies-left-inner, #hobbies-right-inner{
+        box-sizing: border-box;
+        padding: 0px 75px;
+    }
+}
+/* 
+.hobby-details p{
+    font-weight: normal;
+    font-size: clamp(12px, .85vw, .85vw);
+} */

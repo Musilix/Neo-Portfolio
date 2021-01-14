@@ -104,11 +104,14 @@
 }
 
 
-#end-1-more{
+.view-active{
+    display: flex;
+    opacity: 1;
+}
+
+.view-inactive{
     display: none;
     opacity: 0;
-
-    transition: opacity .25s ease-in-out;
 }
 
 .readmore-fake-wrap{
@@ -125,6 +128,10 @@
     align-items: center;
 
     z-index: 3;
+
+    background-color: rgba(255,255,255,.8);
+
+    transition: opacity .25s ease-in-out, display .25s ease-in-out !important;
 }
 
 .readmore-wrap{
@@ -143,7 +150,7 @@
 
     border-radius: 10px;
 
-    box-shadow: 0 2px 8px 0 rgba(50,50,93,.1);
+    box-shadow: 0 2px 8px 0 rgba(50,50,93,.25);
     background: white;
 }
 

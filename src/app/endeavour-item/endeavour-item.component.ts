@@ -14,6 +14,7 @@ export class EndeavourItemComponent implements OnInit {
   @Input() displayEnd: boolean;
 
   private currEnd;
+  public canReadMore: boolean = false;
 
   constructor() { }
 
@@ -64,22 +65,27 @@ export class EndeavourItemComponent implements OnInit {
     let idx = parseInt(index);
     let item = document.getElementById("end-" + (idx+1) + "-more");
 
-    if(item){
-      item.style.display = "flex";
-      setTimeout(() => {
-        item.style.opacity = "1";
-        this.currEnd = item;
-      }, 100);
-    }
+    this.canReadMore = true;
+
+    // if(item){
+    //   item.style.display = "flex";
+    //   setTimeout(() => {
+    //     item.style.opacity = "1";
+    //     this.currEnd = item;
+    //   }, 100);
+    // }
   }
 
   closeCurrEndeavour(){
-    if(this.currEnd){
-      this.currEnd.style.opacity = "0";
-      setTimeout(() => {
-        this.currEnd.style.display = "none";
-        this.currEnd = null;
-      }, 100);
-    }
+
+    this.canReadMore = false;
+
+    // if(this.currEnd){
+    //   this.currEnd.style.opacity = "0";
+    //   setTimeout(() => {
+    //     this.currEnd.style.display = "none";
+    //     this.currEnd = null;
+    //   }, 100);
+    // }
   }
 }

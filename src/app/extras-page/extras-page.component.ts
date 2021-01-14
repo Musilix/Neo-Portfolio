@@ -45,8 +45,11 @@ export class ExtrasPageComponent implements OnInit {
 
           // logic to check if a tab/section is in the viewport, give or take 20px for the nav bar on top...
           // although, I know that nav bar is NOT 20px... so -\(._.)/-
-          if(Math.floor(currItem.top + 50) >= 0 && Math.floor(currItem.bottom - 50) <= (window.innerHeight || document.documentElement.clientHeight) ){
+          if(Math.floor(currItem.top) >= 0 && Math.floor(currItem.bottom) <= (window.innerHeight)){
             this.activeTabIdx = this.tabToIdxMappings[this.idxToTabMappings[i]];
+
+            //awful awful way to try and handle when sections have a height
+          //larger than the window inner height...
           }
         }
       }
@@ -93,5 +96,31 @@ export class ExtrasPageComponent implements OnInit {
 
   getArt(){
     return this.artService.getArt();
+  }
+
+  hideThatShit(element : HTMLElement){
+    element.style.transform = "scale(0)";
+
+    setTimeout(() => {
+      element.style.display = "none";
+    }, 10);
+  }
+
+  expandThatShit(element : HTMLElement){
+    element.style.transform = "scale(3)";
+  }
+
+  // move to hobby component
+  handleHobby(event){
+    let ele : HTMLElement = event.path[1]; // evidently, this is what holds the element that was clicked, in the case of these hobby elements
+    let hobbyElements = Array.from(document.getElementsByClassName("hobby-item"));
+
+    for(let i = 0; i < hobbyElements.length; i++){
+      if(hobbyElements[i] != ele){
+        this.hideThatShit(<HTMLElement> hobbyElements[i]);
+      }else{
+        this.expandThatShit(ele);
+      }
+    }
   }
 }

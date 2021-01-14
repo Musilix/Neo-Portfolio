@@ -25,7 +25,42 @@
     </section>
 
     <section class="extra-section" id="hobbies">
+        <div id="hobbies-left-wrap">
+            <div id="hobbies-left-inner">
+                <h2>
+                    Whats currently got my attention?
+                </h2>
+                <p>
+                    I’d like to take the time, if you’re interested, to share with you some hobbies I’m trying to take up. Maybe it’s something you can teach me about!                </p>
+            </div>
+        </div>
 
+        <!-- abstract this out to a component probably -->
+        <div id="hobbies-right-wrap">
+            <div id="hobbies-right-inner">
+                <div class="hobby-item" (click) = "handleHobby($event)">
+                    <img src="../../assets/proj5.gif">
+                    <div id="hobby1" class="hobby-details">
+                        <h3>Rollerblading</h3>
+                        <p>I took up rollerblading in the beginning of the pandemic, and it's been a hobby since!</p>
+                    </div>
+                </div>
+                <div class="hobby-item">
+                    <img src="../../assets/proj4.gif" (click) = "handleHobby($event)">
+                    <div id="hobby2" class="hobby-details">
+                        <h3>Rollerblading</h3>
+                        <p>I took up rollerblading in the beginning of the pandemic, and it's been a hobby since!</p>
+                    </div>
+                </div>
+                <div class="hobby-item">
+                    <img src="../../assets/proj3.gif" (click) = "handleHobby($event)">
+                    <div id="hobby3" class="hobby-details">
+                        <h3>Rollerblading</h3>
+                        <p>I took up rollerblading in the beginning of the pandemic, and it's been a hobby since!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section> 
 </div>
 
