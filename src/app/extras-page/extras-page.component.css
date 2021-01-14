@@ -255,7 +255,7 @@
     background-color: black;
 
     border-radius: 10px;
-    margin: 5%;
+    margin: 2.5%;
 
     transition: filter .25s ease-in-out, width .25s ease-in-out;
 }
@@ -278,8 +278,13 @@
         flex-direction: column;
     }
 
+    .hobby-item{
+        /* width: 10% !important; */
+    }
+
     #hobbies > * {
         margin: 0px;
+        height: auto;
     }
 
     #hobbies-left-wrap, #hobbies-right-wrap{
@@ -295,6 +300,13 @@
         padding: 0px 75px;
     }
 }
+
+@media screen and (max-width: 550px){
+    .hobby-item{
+        /* width: 25% !important; */
+    }
+}
+
 /* 
 .hobby-details p{
     font-weight: normal;

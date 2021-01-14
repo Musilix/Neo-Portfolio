@@ -2,13 +2,13 @@
 
     <div class ="endeavours-img-prev-wrap">
         <div class="left-nav-button">
-            <img [ngClass] = "{'endeavour-nav-active': hasLeftEnd(), 'endeavour-nav-inactive': !hasLeftEnd()}" (click)="hasLeftEnd() ? handleLeftNavClick() : null" src="../../assets/nav-left.png">
+            <img [ngClass] = "{'endeavour-nav-active': hasLeftEnd(), 'endeavour-nav-inactive': !hasLeftEnd()}" (click)="hasLeftEnd() ? handleLeftNavClick() : null" src="assets/nav-left.png">
         </div>
 
         <img class="end-img" src="{{endObj.image}}">
 
         <div class="right-nav-button">
-            <img [ngClass] = "{'endeavour-nav-active': hasRightEnd(), 'endeavour-nav-inactive': !hasRightEnd()}" (click)="hasRightEnd() ? handleRightNavClick() : null" src="../../assets/nav-right.png">
+            <img [ngClass] = "{'endeavour-nav-active': hasRightEnd(), 'endeavour-nav-inactive': !hasRightEnd()}" (click)="hasRightEnd() ? handleRightNavClick() : null" src="assets/nav-right.png">
         </div>
     </div>
 
@@ -34,7 +34,7 @@
                 </div>
     
                 <div class="end-exit-wrap" (click)="closeCurrEndeavour()">
-                    <img src="../../assets/close.png">
+                    <img src="assets/close.png">
                 </div>
             </div>
         </div>

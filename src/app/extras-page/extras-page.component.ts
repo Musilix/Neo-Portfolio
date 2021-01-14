@@ -99,13 +99,19 @@ export class ExtrasPageComponent implements OnInit {
   }
 
   hideThatShit(element : HTMLElement){
-    element.style.width = "10%";
+    element.style.width = "20%";
     element.style.order = "1";
   }
 
   expandThatShit(element : HTMLElement){
-    element.style.width = "100%";
+    element.style.width = "0%";
     element.style.order = "3";
+
+
+    setTimeout( () => {
+      element.style.width = "100%";
+
+    }, 500);
   }
 
   // move to hobby component
