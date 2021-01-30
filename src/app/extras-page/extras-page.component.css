@@ -18,7 +18,10 @@
 
 .extra-section{
     width: 100%;
+
+    /* hacky way to possibly resolve height issue in iOS */
     min-height: 90vh;
+    min-height: calc(var(--vh, 1vh) * 90);
 
     /* flex: 1 1 auto; */
     /* height: 100%; */
