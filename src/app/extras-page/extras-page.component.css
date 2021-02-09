@@ -8,8 +8,8 @@
 #extras-content-wrap{
     height:100%;
 
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
 
     /* flex: 1 1 auto; */
     /* align-items: center; */
@@ -18,7 +18,8 @@
 
 .extra-section{
     width: 100%;
-    min-height: 90vh;
+    min-height: 90%;
+    /* min-height: calc(var(--vh, 1vh) * 90); */
 
     /* flex: 1 1 auto; */
     /* height: 100%; */
@@ -138,7 +139,7 @@
     .extra-section{
         box-sizing: border-box;
         padding: 50px 0px;
-        min-height: auto;
+        /* min-height: auto; */
     }
 }
 
