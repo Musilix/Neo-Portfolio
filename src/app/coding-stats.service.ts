@@ -7,9 +7,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CodingStatsService {
-  private wakeUrl = "https://wakatime.com/api/v1/users/current/stats/"
-
+  private wakaUrl = "api/v1/users/current/stats/"
   private options: string[] = ["last_7_days"];
+  private apiKey = environment.WAKA_API_KEY;
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +18,8 @@ export class CodingStatsService {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
       'Access-Control-Allow-Headers': '*',
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'origin': '*'
     }
 
     const requestOptions = {                                                                                                                                                                                 
@@ -26,17 +27,15 @@ export class CodingStatsService {
     };
 
     let base = environment;
-    let urlPrefix = "";
-    if(base.production){
-      urlPrefix = "https://cors-anywhere.herokuapp.com/https://wakatime.com/";
-    }
+    let apiKey_rl = base.WAKA_API_KEY;
 
+    //THIS NEEDS TO BE CHANGED. CORS ANYHERE AINT THE MOVE NO MORE... OF course...
+    //currently making the url prefix for both prod and non prod to use cors anyhere proxy
+    let urlPrefix = "https://cors-anywhere.herokuapp.com/https://wakatime.com/";
+    
     //calling directly to the endpoint causes errors with CORS...
     //adding a proxy config and calling the endpoint with the domain works in local, but not prod
     //adding this heroku cors reroute to the api endpoint resolves prod issues
-    // console.log(`${urlPrefix}api/v1/users/current/stats/last_7_days?api_key=97230bf8-04d3-47c5-b170-105f22575cae`);
-    return this.http.get(`${urlPrefix}api/v1/users/current/stats/last_7_days?api_key=97230bf8-04d3-47c5-b170-105f22575cae`, requestOptions);
-
+    return this.http.get(`${urlPrefix}${this.wakaUrl}${this.options[0]}?${this.apiKey}`, requestOptions);
   }
-
 }
