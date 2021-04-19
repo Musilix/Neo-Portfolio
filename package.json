@@ -1,9 +1,14 @@
 {
   "name": "portfolio-website",
   "version": "0.0.0",
+  "engines": {
+    "npm": "7.x",
+    "node": "14.x"
+  },
   "scripts": {
     "ng": "ng",
-    "start": " ng serve --proxy-config proxy.config.json",
+    "heroku-postbuild": "ng build --prod --output-path dist --base-href https://kareem-shehab-portfolio.herokuapp.com/",
+    "start": "node index.js",
     "build": "ng build --prod --output-path dist --base-href https://kareem-shehab-portfolio.herokuapp.com/",
     "justbuildforgit": "ng build --prod --output-path docs --base-href https://musilix.github.io/Neo-Portfolio/",
     "test": "ng test",
@@ -22,9 +27,12 @@
     "@angular/router": "~10.0.2",
     "bootstrap": "^4.5.0",
     "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7",
     "rxjs": "~6.5.5",
     "three": "^0.118.3",
     "tslib": "^2.0.0",
+    "typescript": "~3.9.6",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
