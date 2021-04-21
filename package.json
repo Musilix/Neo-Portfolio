@@ -7,7 +7,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild": "ng build --prod --output-path docs --base-href https://kareemshehab.com/",
+    "heroku-postbuild": "ng build --prod --output-path docs --base-href https://kareem-shehab-portfolio.herokuapp.com/",
     "start": "node index.js",
     "build": "ng build --prod --output-path docs --base-href https://kareem-shehab-portfolio.herokuapp.com/",
     "justbuildforgit": "ng build --prod --output-path docs --base-href https://musilix.github.io/Neo-Portfolio/",
