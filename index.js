@@ -3,19 +3,25 @@ const app = express();
 
 const path = require("path");
 
-const cors = require("cors");
-
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/docs'));
-app.use(cors());
+app.use(requireHTTPS);
 
 app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname + "/docs/index.html"));
 });
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname + "/docs/index.html"));
-  });
+  res.sendFile(path.join(__dirname + "/docs/index.html"));
+});
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 5000);
+
+function requireHTTPS(req, res, next) {
+  // The 'x-forwarded-proto' check is for Heroku
+  if (!req.secure && req.get('x-forwarded-proto') !== 'https') {
+      return res.redirect('https://' + req.get('host') + req.url);
+  }
+  next();
+}
