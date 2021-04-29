@@ -12,7 +12,7 @@ app.use(cors({
 }));
 
 app.get("/", function (req, res) {
-  res.send("hey");
+  res.setHeader("Access-Control-Allow-Origin", "https://www.kareemshehab.com");
   res.sendFile(path.join(__dirname + "/docs/index.html"));
 });
 
