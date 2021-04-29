@@ -6,14 +6,6 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class CodingStatsService {
-  private wakaUrl = "api/v1/users/current/stats/"
-  private options: string[] = ["last_7_days"];
-  private apiKey = process.env.WAKA_API_KEY;
-
-  //THIS NEEDS TO BE CHANGED. CORS ANYHERE AINT THE MOVE NO MORE... OF course...
-  //currently making the url prefix for both prod and non prod to use cors anyhere proxy
-  private urlPrefix = "https://cors-anywhere.herokuapp.com/https://wakatime.com/";
-
   constructor(private http: HttpClient) { }
 
   getMyStats(): Observable<Object>{
