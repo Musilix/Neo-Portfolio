@@ -29,6 +29,8 @@ export class CodingStatsService {
     //calling directly to the endpoint causes errors with CORS...
     //adding a proxy config and calling the endpoint with the domain works in local, but not prod
     //adding this heroku cors reroute to the api endpoint resolves prod issues
-    return this.http.get(`${this.urlPrefix}${this.wakaUrl}${this.options[0]}?${this.apiKey}`, requestOptions);
+    let waka_data = this.http.get("/stats", requestOptions);
+    console.log(waka_data);
+    return waka_data;
   }
 }
