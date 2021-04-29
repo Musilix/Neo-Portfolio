@@ -12,8 +12,13 @@ app.use(cors({
 }));
 
 app.get("/", function (req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "https://www.kareemshehab.com");
-  res.sendFile(path.join(__dirname + "/docs/index.html"));
+  const options = {
+    headers: {
+      "Access-Control-Allow-Origin": "https://www.kareemshehab.com"
+    }
+  }
+  // res.setHeader("Access-Control-Allow-Origin", "https://www.kareemshehab.com");
+  res.sendFile(path.join(__dirname + "/docs/index.html"), options);
 });
 
 app.get("/stats", (req, res) => {
