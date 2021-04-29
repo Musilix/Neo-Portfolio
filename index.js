@@ -17,8 +17,14 @@ app.get("/", function (req, res) {
       "Access-Control-Allow-Origin": "https://www.kareemshehab.com"
     }
   }
+  
+  res.header("Access-Control-Allow-Origin", '*');
+  res.header("Access-Control-Allow-Credentials", true);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
+
   // res.setHeader("Access-Control-Allow-Origin", "https://www.kareemshehab.com");
-  res.sendFile(path.join(__dirname + "/docs/index.html"), options);
+  res.sendFile(path.join(__dirname + "/docs/index.html"));
 });
 
 app.get("/stats", (req, res) => {
