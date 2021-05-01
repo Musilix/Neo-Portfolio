@@ -38,7 +38,7 @@ app.get('*', (req, res) => {
 });
 
 app.get("/hey", (req, res) => {
-  res.send("hey");
+  res.send(JSON.stringify(req));
 });
 
 
