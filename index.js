@@ -20,9 +20,17 @@ routes.forEach(route => {
 app.get("/stats", async(req, res) => {
     const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?apikey=" + process.env.WAKA_API_KEY;
     const waka_res = await fetch(waka_url)
-    const waka_data = waka_res;
+    const waka_data = JSON.parse(waka_res);
 
     res.send(waka_data);
+});
+
+app.get("/stats2", async(req, res) => {
+  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?apikey=" + process.env.WAKA_API_KEY;
+  const waka_res = await fetch(waka_url)
+  const waka_data = waka_res.json();
+
+  res.send(waka_data);
 });
 
 app.get("/ping", (req, res) => {
