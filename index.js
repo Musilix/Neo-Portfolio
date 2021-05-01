@@ -29,9 +29,13 @@ app.engine('html', (_, options, callback) => {
 });
 
 app.set('view engine', 'html');
-app.set('views', 'src')
+app.set('views', 'src');
 
 app.get('*.*', express.static(path.join(__dirname, '..', 'docs')));
+
+app.get('*', (req, res) => {
+  res.render('index', { req });
+});
 
 app.get("/hey", (req, res) => {
   res.send("hey");
