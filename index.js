@@ -63,7 +63,7 @@ async function call_waka(){
     }
   })
   .then((res) => {
-    if(!response.ok){
+    if(!res.ok){
       catchError(response);
     } 
   })
