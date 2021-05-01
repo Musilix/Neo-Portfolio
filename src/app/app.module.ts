@@ -34,7 +34,7 @@ import { EndeavoursListComponent } from './endeavours-list/endeavours-list.compo
     EndeavoursListComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'neo-portfolio'}),
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,

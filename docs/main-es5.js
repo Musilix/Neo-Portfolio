@@ -828,7 +828,9 @@
 
       AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"], _splash_page_splash_page_component__WEBPACK_IMPORTED_MODULE_7__["SplashPageComponent"], _about_page_about_page_component__WEBPACK_IMPORTED_MODULE_8__["AboutPageComponent"], _projects_page_projects_page_component__WEBPACK_IMPORTED_MODULE_9__["ProjectsPageComponent"], _extras_page_extras_page_component__WEBPACK_IMPORTED_MODULE_10__["ExtrasPageComponent"], _contact_page_contact_page_component__WEBPACK_IMPORTED_MODULE_11__["ContactPageComponent"], _nav_bar_nav_bar_component__WEBPACK_IMPORTED_MODULE_12__["NavBarComponent"], _project_list_project_list_component__WEBPACK_IMPORTED_MODULE_13__["ProjectListComponent"], _art_list_art_list_component__WEBPACK_IMPORTED_MODULE_14__["ArtListComponent"], _art_item_art_item_component__WEBPACK_IMPORTED_MODULE_15__["ArtItemComponent"], _endeavour_item_endeavour_item_component__WEBPACK_IMPORTED_MODULE_16__["EndeavourItemComponent"], _endeavours_list_endeavours_list_component__WEBPACK_IMPORTED_MODULE_17__["EndeavoursListComponent"]],
-        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientJsonpModule"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"].withServerTransition({
+          appId: 'neo-portfolio'
+        }), _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientJsonpModule"]],
         providers: [],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
       })], AppModule);
@@ -2519,7 +2521,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! C:\Users\n1516682\Desktop\Neo-Portfolio\src\main.ts */
+      /*! C:\Users\ChimoBoi\Desktop\portfolio-website\src\main.ts */
       "./src/main.ts");
       /***/
     }

@@ -535,7 +535,7 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _endeavours_list_endeavours_list_component__WEBPACK_IMPORTED_MODULE_17__["EndeavoursListComponent"]
         ],
         imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"].withServerTransition({ appId: 'neo-portfolio' }),
             _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClientModule"],
@@ -1663,7 +1663,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\n1516682\Desktop\Neo-Portfolio\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\ChimoBoi\Desktop\portfolio-website\src\main.ts */"./src/main.ts");
 
 
 /***/ })
