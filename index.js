@@ -5,13 +5,6 @@ const path = require("path");
 const cors = require("cors");
 const fetchy = require('node-fetch');
 
-// const handler = (req, res) => {
-//   res.header("Access-Control-Allow-Origin", '*');
-
-//   res.send(path.join(__dirname, "/docs/index.html"));
-// };
-
-
 app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
@@ -24,12 +17,9 @@ routes.forEach(route => {
   });
 });
 
-app.get("/stats", (req, res) => {
-  //I am so sorry for this...
-  (async () => {
+app.get("/stats", async(req, res) => {
     let waka_data = await call_waka();
     res.send(waka_data);
-  })();
 });
 
 //troubleshooting
@@ -53,15 +43,9 @@ app.listen(process.env.PORT || 4200, ()=> {
 });
 
 async function call_waka(){
-  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?";
+  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?apikey=" + process.env.WAKA_API_KEY;
 
-  const res = await fetchy(waka_url, {
-    method: 'GET',
-    mode: 'no-cors',
-    headers: {
-      Authorization: process.env.WAKA_API_KEY,
-    }
-  })
+  const res = await fetchy(waka_url)
   .then((res) => {
     if(!res.ok){
       console.log(res);
@@ -69,7 +53,6 @@ async function call_waka(){
   })
   .catch((err) => {console.log(err)});
 
-  const waka_data = await res.json();//assuming data is json
-
+  const waka_data = await res.json();
   return waka_data;
 }
