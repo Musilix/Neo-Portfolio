@@ -38,20 +38,20 @@ app.get('*', (req, res) => {
   res.render('index', { req });
 });
 
+app.get("/stats", (req, res) => {
+  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?" + process.env.WAKA_API_KEY;
+  const waka_data = await fetch(waka_url);
+
+  return waka_data;
+});
+
+//troubleshooting
 app.get("/hey", (req, res) => {
   res.send(JSON.stringify(req));
 });
 
-
-app.get("/stats", (req, res) => {
-  const waka = "https://wakatime.com/api/v1/users/current/stats/last_7_days?" + process.env.WAKA_API_KEY;
-  const waka_data = fetch(waka).then((datum) => {
-    return datum;
-  }).catch((err) => {
-    console.log("wuh woh... waka error");
-  });
-
-  return waka_data;
+app.get("/hi", (req, res) => {
+  res.send(req);
 });
 
 // Start the app by listening on the default Heroku port
