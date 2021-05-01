@@ -8,12 +8,13 @@ const fetch = require('node-fetch');
 app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
-app.get('*.*', express.static(path.join(__dirname, '..', 'docs')));
+// app.get('*.*', express.static(path.join(__dirname, '..', 'docs')));
 
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 routes.forEach(route => {
   app.get(route, (req, res) => {
-    res.render('index', { req });
+    res.sendFile("index.html")
+    // res.render('index', { req });
   });
 });
 
