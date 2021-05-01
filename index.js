@@ -3,7 +3,7 @@ const app = express();
 
 const path = require("path");
 const cors = require("cors");
-const fetchy = require('node-fetch');
+const fetch = require('node-fetch');
 
 app.use(cors());
 app.use(express.static(__dirname + '/docs'));
@@ -18,18 +18,11 @@ routes.forEach(route => {
 });
 
 app.get("/stats", async(req, res) => {
-    let waka_data = await call_waka();
+    const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?apikey=" + process.env.WAKA_API_KEY;
+    const waka_res = await fetch(waka_url)
+    const waka_data = waka_res;
+
     res.send(waka_data);
-});
-
-//troubleshooting
-app.get("/hey", (req, res) => {
-  res.send(JSON.stringify(req));
-});
-
-app.get("/hi", (req, res) => {
-  res.send("hi");
-  // res.send(req);
 });
 
 app.get("/ping", (req, res) => {
@@ -41,18 +34,3 @@ app.get("/ping", (req, res) => {
 app.listen(process.env.PORT || 4200, ()=> {
   console.log("app started bruh");
 });
-
-async function call_waka(){
-  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?apikey=" + process.env.WAKA_API_KEY;
-
-  const res = await fetchy(waka_url)
-  .then((res) => {
-    if(!res.ok){
-      console.log(res);
-    } 
-  })
-  .catch((err) => {console.log(err)});
-
-  const waka_data = await res.json();
-  return waka_data;
-}
