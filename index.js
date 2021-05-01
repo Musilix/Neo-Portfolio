@@ -40,6 +40,12 @@ app.get("/hey", (req, res) => {
 });
 
 app.get("/hi", (req, res) => {
+  res.send("hi");
+  // res.send(req);
+});
+
+app.get("/ping", (req, res) => {
+  res.send(process.env.WAKA_API_KEY);
   // res.send(req);
 });
 
