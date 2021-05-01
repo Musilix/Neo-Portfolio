@@ -6,6 +6,7 @@ const app = express();
 const path = require("path");
 const cors = require("cors");
 const fs = require("fs");
+const renderModuleFactory = require('@angular/platform-server').renderModuleFactory
 
 // const handler = (req, res) => {
 //   res.header("Access-Control-Allow-Origin", '*');
