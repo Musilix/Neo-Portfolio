@@ -64,7 +64,7 @@ async function call_waka(){
   })
   .then((res) => {
     if(!res.ok){
-      catchError(response);
+      console.log(res);
     } 
   })
   .catch((err) => {console.log(err)});
