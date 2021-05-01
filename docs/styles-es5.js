@@ -464,7 +464,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! C:\Users\ChimoBoi\Desktop\portfolio-website\src\styles.css */
+      /*! C:\Users\n1516682\Desktop\Neo-Portfolio\src\styles.css */
       "./src/styles.css");
       /***/
     }

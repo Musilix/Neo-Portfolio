@@ -5,21 +5,38 @@ const app = express();
 
 const path = require("path");
 const cors = require("cors");
+const fs = require("fs");
 
-const handler = (req, res) => {
-  res.header("Access-Control-Allow-Origin", '*');
+// const handler = (req, res) => {
+//   res.header("Access-Control-Allow-Origin", '*');
 
-  res.sendFile(path.join(__dirname, "/docs/index.html"));
-};
-const routes = ["/", "/about", "/projects", "/contact", "/extras"];
+//   res.send(path.join(__dirname, "/docs/index.html"));
+// };
+// const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 
-routes.forEach(route => app.get(route, handler));
+// routes.forEach(route => app.get(route, handler));
 
-// Serve only the static files form the dist directory
+app.use(cors());
 app.use(express.static(__dirname + '/docs'));
-app.use(cors({
-  origin: 'https://www.kareemshehab.com'
-}));
+
+const template = fs.readFileSync(path.join(__dirname, 'docs', 'index.html')).toString();
+
+app.engine('html', (_, options, callback) => {
+  const opts = { document: template, url: options.req.url };
+
+  renderModuleFactory(AppServerModuleNgFactory, opts)
+    .then(html => callback(null, html));
+});
+
+app.set('view engine', 'html');
+app.set('views', 'src')
+
+app.get('*.*', express.static(path.join(__dirname, '..', 'docs')));
+
+app.get("/hey", (req, res) => {
+  res.send("hey");
+});
+
 
 app.get("/stats", (req, res) => {
   const waka = "https://wakatime.com/api/v1/users/current/stats/last_7_days?" + process.env.WAKA_API_KEY;

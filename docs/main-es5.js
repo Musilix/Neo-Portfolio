@@ -2519,7 +2519,7 @@
     /***/
     function _(module, exports, __webpack_require__) {
       module.exports = __webpack_require__(
-      /*! C:\Users\ChimoBoi\Desktop\portfolio-website\src\main.ts */
+      /*! C:\Users\n1516682\Desktop\Neo-Portfolio\src\main.ts */
       "./src/main.ts");
       /***/
     }
