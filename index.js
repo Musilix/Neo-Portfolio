@@ -3,9 +3,7 @@ const app = express();
 
 const path = require("path");
 const cors = require("cors");
-const fs = require("fs");
-const renderModuleFactory = require('@angular/platform-server').renderModuleFactory;
-const fetch = require('node-fetch');
+const fetchy = require('node-fetch');
 
 // const handler = (req, res) => {
 //   res.header("Access-Control-Allow-Origin", '*');
@@ -55,8 +53,17 @@ app.listen(process.env.PORT || 4200, ()=> {
 });
 
 async function call_waka(){
-  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?" + process.env.WAKA_API_KEY;
-  const res = await fetch(waka_url);
+  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?";
+
+  const res = await fetchy(waka_url, {
+    method: 'GET',
+    mode: 'no-cors',
+    headers: {
+      Authorization: process.env.WAKA_API_KEY,
+    }
+  }).catch((err) => {console.log(err)});
+
   const waka_data = await res.json();//assuming data is json
+
   console.log(waka_data)
 }
