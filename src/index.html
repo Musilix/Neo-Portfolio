@@ -9,6 +9,8 @@
         history.replaceState(null, null, redirect);
       }else{
         sessionStorage.redirect = location.href;
+        redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
         history.replaceState(null, null, redirect);
       }
     })();
