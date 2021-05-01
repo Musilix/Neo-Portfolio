@@ -768,12 +768,6 @@ __webpack_require__.r(__webpack_exports__);
 let CodingStatsService = class CodingStatsService {
     constructor(http) {
         this.http = http;
-        this.wakaUrl = "api/v1/users/current/stats/";
-        this.options = ["last_7_days"];
-        this.apiKey = process.env.WAKA_API_KEY;
-        //THIS NEEDS TO BE CHANGED. CORS ANYHERE AINT THE MOVE NO MORE... OF course...
-        //currently making the url prefix for both prod and non prod to use cors anyhere proxy
-        this.urlPrefix = "https://cors-anywhere.herokuapp.com/https://wakatime.com/";
     }
     getMyStats() {
         const requestOptions = {
@@ -787,7 +781,9 @@ let CodingStatsService = class CodingStatsService {
         //calling directly to the endpoint causes errors with CORS...
         //adding a proxy config and calling the endpoint with the domain works in local, but not prod
         //adding this heroku cors reroute to the api endpoint resolves prod issues
-        return this.http.get(`${this.urlPrefix}${this.wakaUrl}${this.options[0]}?${this.apiKey}`, requestOptions);
+        let waka_data = this.http.get("/stats", requestOptions);
+        console.log(waka_data);
+        return waka_data;
     }
 };
 CodingStatsService.ctorParameters = () => [
