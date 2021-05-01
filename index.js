@@ -18,7 +18,7 @@ routes.forEach(route => {
 });
 
 app.get("/stats", async(req, res) => {
-    const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?apikey=" + process.env.WAKA_API_KEY;
+    const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=" + process.env.WAKA_API_KEY;
     const waka_res = await fetch(waka_url)
     const waka_data = JSON.parse(waka_res);
 
@@ -26,7 +26,7 @@ app.get("/stats", async(req, res) => {
 });
 
 app.get("/stats2", async(req, res) => {
-  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?apikey=" + process.env.WAKA_API_KEY;
+  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=" + process.env.WAKA_API_KEY;
   const waka_res = await fetch(waka_url)
   const waka_data = await waka_res.json();
 
@@ -34,7 +34,7 @@ app.get("/stats2", async(req, res) => {
 });
 
 app.get("/stats3", async(req, res) => {
-  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?apikey=" + process.env.WAKA_API_KEY;
+  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=" + process.env.WAKA_API_KEY;
   const waka_res = await fetch(waka_url)
   const waka_data = waka_res;
 
@@ -42,7 +42,7 @@ app.get("/stats3", async(req, res) => {
 });
 
 app.get("/ping", (req, res) => {
-  res.send("https://wakatime.com/api/v1/users/current/stats/last_7_days?apikey=" + process.env.WAKA_API_KEY);
+  res.send("https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=" + process.env.WAKA_API_KEY);
   // res.send(req);
 });
 
