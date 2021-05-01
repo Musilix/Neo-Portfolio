@@ -13,7 +13,7 @@ app.use(express.static(__dirname + '/docs'));
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 routes.forEach(route => {
   app.get(route, (req, res) => {
-    res.sendFile("index.html")
+    res.sendFile(path.join(__dirname + "/docs/index.html"))
     // res.render('index', { req });
   });
 });
