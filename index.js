@@ -61,9 +61,15 @@ async function call_waka(){
     headers: {
       Authorization: process.env.WAKA_API_KEY,
     }
-  }).catch((err) => {console.log(err)});
+  })
+  .then((res) => {
+    if(!response.ok){
+      catchError(response);
+    } 
+  })
+  .catch((err) => {console.log(err)});
 
   const waka_data = await res.json();//assuming data is json
 
-  console.log(waka_data)
+  return waka_data;
 }
