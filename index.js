@@ -12,6 +12,7 @@ const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 routes.forEach(route => {
   app.get(route, (req, res) => {
     if(req.headers["x-forwarded-proto"] !== "https"){
+      console.log("not https!");
       res.redirect('https://' + req.hostname + req.url);
     }
     res.sendFile(path.join(__dirname + "/docs/index.html"))
