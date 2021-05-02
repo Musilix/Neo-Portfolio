@@ -5,11 +5,19 @@ const path = require("path");
 const cors = require("cors");
 const fetch = require('node-fetch');
 
-const herokuSSL = require("heroku-ssl-redirect");
-
 app.use(cors());
-app.use(herokuSSL());
+// app.use((req, res, next) => {
+//   if(req.protocol !== "https"){
+//     res.redirect('https://' + req.get('host') + req.originalUrl)
+//   }else{
+//     next();
+//   }
+// });
 app.use(express.static(__dirname + '/docs'));
+
+app.get("/prot", () => {
+  res.send(req.protocol);
+});
 
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 routes.forEach(route => {
