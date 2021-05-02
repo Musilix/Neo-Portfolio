@@ -8,14 +8,16 @@ const fetch = require('node-fetch');
 app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
+app.use((req, res, next) => {
+  if(req.socket.encrypted === undefined){
+    return next();
+  }
+  res.redirect('https://' + req.hostname + req.url);
+});
+
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 routes.forEach(route => {
   app.get(route, (req, res) => {
-    console.log(req.headers["x-forwarded-proto"] );
-    if(req.headers["x-forwarded-proto"] !== "https"){
-      console.log("not https!");
-      res.redirect('https://' + req.hostname + req.url);
-    }
     res.sendFile(path.join(__dirname + "/docs/index.html"))
   });
 });
