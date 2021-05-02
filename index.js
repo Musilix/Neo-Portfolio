@@ -22,6 +22,10 @@ routes.forEach(route => {
   });
 });
 
+app.get("/test-conn", (req,res)=>{
+  res.send(req.secure);
+});
+
 app.get("/stats", async(req, res) => {
   const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=" + process.env.WAKA_API_KEY;
   const waka_res = await fetch(waka_url)
