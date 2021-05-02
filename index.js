@@ -11,6 +11,7 @@ app.use(express.static(__dirname + '/docs'));
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 routes.forEach(route => {
   app.get(route, (req, res) => {
+    console.log(req.headers["x-forwarded-proto"] );
     if(req.headers["x-forwarded-proto"] !== "https"){
       console.log("not https!");
       res.redirect('https://' + req.hostname + req.url);
