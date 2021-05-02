@@ -9,6 +9,7 @@ app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
 app.get("/*", (req, res, next) => {
+  console.log("this handler was indeed hit");
   if(req.headers["x-forwarded-proto"] === "https"){
     return next();
   }
