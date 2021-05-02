@@ -8,12 +8,11 @@ const fetch = require('node-fetch');
 app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
-app.get("/*", (req, res, next) => {
+app.use((req, res, next) => {
   console.log("this handler was indeed hit");
   if(req.headers["x-forwarded-proto"] === "https"){
     return next();
   }
-  res.send('https://' + req.hostname+req.url);
   res.redirect('https://' + req.hostname+req.url);
 });
 
