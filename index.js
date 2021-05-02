@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
 app.use((req, res, next) => {
-  if(req.socket.encrypted === undefined){
+  if(req.secure){
     return next();
   }
   res.redirect('https://' + req.hostname + req.url);
