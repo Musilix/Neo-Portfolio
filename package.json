@@ -7,7 +7,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild": "ng build --prod --output-path docs --base-href https://kareem-shehab-portfolio.herokuapp.com/",
+    "heroku-postbuild": "ng build --prod --output-path docs --base-href https://www.kareemshehab.com/",
     "start": "node index.js",
     "build": "ng build --prod --output-path docs --base-href https://www.kareemshehab.com/",
     "build-local": "ng build --output-path docs --base-href https://localhost:4200/ && ngc",
