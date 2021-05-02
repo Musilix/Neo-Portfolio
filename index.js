@@ -8,12 +8,12 @@ const fetch = require('node-fetch');
 app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
-app.use((req, res, next) => {
-  if(req.secure){
-    return next();
-  }
-  res.redirect('https://' + req.hostname + req.url);
-});
+// app.use((req, res, next) => {
+//   if(req.secure){
+//     return next();
+//   }
+//   res.redirect('https://' + req.hostname + req.url);
+// });
 
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 routes.forEach(route => {
