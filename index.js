@@ -13,14 +13,19 @@ app.use(cors());
 // app.get("/prot", (req, res) => {
 //   res.send(req.protocol);
 // });
+const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 
 app.use((req, res, next) => {
   console.log("Protocol: " + req.protocol);
   console.log("Host: " + req.get('host') );
   console.log("orig url: " + req.originalUrl);
 
-  if(!req.secure){
-    res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
+  if(routes.indexOf(req.path) >= 0){
+    if(!req.secure){
+      res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
+    }else{
+      next();
+    }
   }else{
     next();
   }
@@ -37,7 +42,6 @@ app.use((req, res, next) => {
 //   res.sendFile(path.join(__dirname + "/docs/index.html"))
 // });
 
-const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 routes.forEach(route => {
   app.get(route, (req, res) => {
     res.sendFile(path.join(__dirname + "/docs/index.html"))
