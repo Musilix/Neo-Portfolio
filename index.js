@@ -14,24 +14,30 @@ app.use(cors());
 //   res.send(req.protocol);
 // });
 
-app.use((req, res, next) => {
-  console.log("Proto: " + req.protocol);
-  console.log("host: " + req.get('host') );
-  console.log("orig url: " + req.originalUrl);
+// app.use((req, res, next) => {
+//   console.log("Proto: " + req.protocol);
+//   console.log("host: " + req.get('host') );
+//   console.log("orig url: " + req.originalUrl);
 
-  if(!req.secure){
-    res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
-  }else{
-    next();
-  }
-});
+//   if(!req.secure){
+//     res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
+//   }else{
+//     next();
+//   }
+// });
 
-app.get("/", (req, res) =>{
-  console.log("<<<<<<<<<<<<<<<<<<<<<<< ROOT HIT >>>>>>>>>>>>>>>>>>>>>>>>")
-});
+// app.get("/", (req, res) =>{
+//   console.log("<<<<<<<<<<<<<<<<<<<<<<< ROOT HIT >>>>>>>>>>>>>>>>>>>>>>>>")
+// });
 
 app.all("*", (req, res, next) => {
-    res.sendFile(path.join(__dirname + "/docs/index.html"))
+  console.log(`https://${req.get('host')}${req.originalUrl}`);
+  console.log("Using https? : " + req.secure);
+  if(!req.secure){
+    res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
+  }
+  
+  res.sendFile(path.join(__dirname + "/docs/index.html"))
 });
 
 // const routes = ["/", "/about", "/projects", "/contact", "/extras"];
