@@ -6,13 +6,19 @@ const cors = require("cors");
 const fetch = require('node-fetch');
 
 app.enable('trust proxy');
+app.disable('strict routing');
 app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
 app.use((req, res, next) => {
+  console.log(req.protocol);
   if(req.protocol !== "https"){
+    console.log("if");
+    console.log(req.get('host'));
+    console.log(req.originalUrl);
     res.redirect('https://' + req.get('host') + req.originalUrl)
   }else{
+    console.log("else");
     next();
   }
 });
