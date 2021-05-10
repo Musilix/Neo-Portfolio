@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 //   console.log("<<<<<<<<<<<<<<<<<<<<<<< ROOT HIT >>>>>>>>>>>>>>>>>>>>>>>>")
 // });
 
-app.all("*", (req, res, next) => {
+app.all("/*", (req, res, next) => {
   console.log("True endpoint handler");
   console.log("Using https? : " + req.secure);
 
