@@ -6,8 +6,9 @@ const cors = require("cors");
 const fetch = require('node-fetch');
 
 app.enable('trust proxy');
+app.disable('strict routing');
 app.use(cors());
-app.use(express.static(__dirname + '/docs'));
+// app.use(express.static(__dirname + '/docs'));
 
 // app.get("/prot", (req, res) => {
 //   res.send(req.protocol);
@@ -18,11 +19,15 @@ app.use((req, res, next) => {
   console.log("host: " + req.get('host') );
   console.log("orig url: " + req.originalUrl);
 
-  if(req.protocol !== "https"){
-    res.redirect('https://' + req.get('host') + req.originalUrl)
+  if(!req.secure){
+    res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
   }else{
     next();
   }
+});
+
+app.get("/", (req, res) =>{
+  console.log("<<<<<<<<<<<<<<<<<<<<<<< ROOT HIT >>>>>>>>>>>>>>>>>>>>>>>>")
 });
 
 app.all("*", (req, res, next) => {
