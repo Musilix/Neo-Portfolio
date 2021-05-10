@@ -105,7 +105,8 @@ dist
 
 
 # compiled output
-# /dist
+/docs
+/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run

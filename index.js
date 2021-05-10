@@ -5,6 +5,7 @@ const path = require("path");
 const cors = require("cors");
 const fetch = require('node-fetch');
 
+app.enable('trust proxy');
 app.use(cors());
 // app.use((req, res, next) => {
 //   if(req.protocol !== "https"){
