@@ -15,7 +15,7 @@ app.use(cors());
 // });
 app.use(express.static(__dirname + '/docs'));
 
-app.get("/prot", () => {
+app.get("/prot", (req, res) => {
   res.send(req.protocol);
 });
 
