@@ -30,19 +30,19 @@ app.use((req, res, next) => {
 //   console.log("<<<<<<<<<<<<<<<<<<<<<<< ROOT HIT >>>>>>>>>>>>>>>>>>>>>>>>")
 // });
 
-app.all("/*", (req, res, next) => {
-  console.log("True endpoint handler");
-  console.log("Using https? : " + req.secure);
+// app.all("/*", (req, res, next) => {
+//   console.log("True endpoint handler");
+//   console.log("Using https? : " + req.secure);
 
-  res.sendFile(path.join(__dirname + "/docs/index.html"))
-});
-
-// const routes = ["/", "/about", "/projects", "/contact", "/extras"];
-// routes.forEach(route => {
-//   app.get(route, (req, res) => {
-//     res.sendFile(path.join(__dirname + "/docs/index.html"))
-//   });
+//   res.sendFile(path.join(__dirname + "/docs/index.html"))
 // });
+
+const routes = ["/", "/about", "/projects", "/contact", "/extras"];
+routes.forEach(route => {
+  app.get(route, (req, res) => {
+    res.sendFile(path.join(__dirname + "/docs/index.html"))
+  });
+});
 
 app.get("/stats", async(req, res) => {
   const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=" + process.env.WAKA_API_KEY;
