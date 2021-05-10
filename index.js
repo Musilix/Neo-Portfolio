@@ -7,25 +7,34 @@ const fetch = require('node-fetch');
 
 app.enable('trust proxy');
 app.use(cors());
-// app.use((req, res, next) => {
-//   if(req.protocol !== "https"){
-//     res.redirect('https://' + req.get('host') + req.originalUrl)
-//   }else{
-//     next();
-//   }
-// });
 app.use(express.static(__dirname + '/docs'));
 
-app.get("/prot", (req, res) => {
-  res.send(req.protocol);
+// app.get("/prot", (req, res) => {
+//   res.send(req.protocol);
+// });
+
+app.use((req, res, next) => {
+  console.log("Proto: " + req.protocol);
+  console.log("host: " + req.get('host') );
+  console.log("orig url: " + req.originalUrl);
+
+  if(req.protocol !== "https"){
+    res.redirect('https://' + req.get('host') + req.originalUrl)
+  }else{
+    next();
+  }
 });
 
-const routes = ["/", "/about", "/projects", "/contact", "/extras"];
-routes.forEach(route => {
-  app.get(route, (req, res) => {
+app.all("*", (req, res, next) => {
     res.sendFile(path.join(__dirname + "/docs/index.html"))
-  });
 });
+
+// const routes = ["/", "/about", "/projects", "/contact", "/extras"];
+// routes.forEach(route => {
+//   app.get(route, (req, res) => {
+//     res.sendFile(path.join(__dirname + "/docs/index.html"))
+//   });
+// });
 
 app.get("/stats", async(req, res) => {
   const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=" + process.env.WAKA_API_KEY;
