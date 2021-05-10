@@ -8,7 +8,7 @@ const fetch = require('node-fetch');
 app.enable('trust proxy');
 app.disable('strict routing');
 app.use(cors());
-// app.use(express.static(__dirname + '/docs'));
+app.use(express.static(__dirname + '/docs'));
 
 // app.get("/prot", (req, res) => {
 //   res.send(req.protocol);
@@ -20,12 +20,8 @@ app.use((req, res, next) => {
   console.log("Host: " + req.get('host') );
   console.log("orig url: " + req.originalUrl);
 
-  if(routes.indexOf(req.path) >= 0){
-    if(!req.secure){
-      res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
-    }else{
-      next();
-    }
+  if(!req.secure){
+    res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
   }else{
     next();
   }
