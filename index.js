@@ -7,17 +7,14 @@ const fetch = require('node-fetch');
 
 app.enable('trust proxy');
 app.use(cors());
-// app.use((req, res, next) => {
-//   if(req.protocol !== "https"){
-//     res.redirect('https://' + req.get('host') + req.originalUrl)
-//   }else{
-//     next();
-//   }
-// });
 app.use(express.static(__dirname + '/docs'));
 
-app.get("/prot", (req, res) => {
-  res.send(req.protocol);
+app.use((req, res, next) => {
+  if(req.protocol !== "https"){
+    res.redirect('https://' + req.get('host') + req.originalUrl)
+  }else{
+    next();
+  }
 });
 
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
