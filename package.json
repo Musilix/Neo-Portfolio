@@ -7,7 +7,7 @@
   },
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild": "ng build --prod --output-path docs --base-href #",
+    "heroku-postbuild": "ng build --prod --output-path docs --base-href /",
     "start": "node index.js",
     "build": "ng build --prod --output-path docs --base-href /",
     "build-local": "ng build --output-path docs --base-href https://localhost:4200/",
