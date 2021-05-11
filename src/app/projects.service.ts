@@ -65,10 +65,6 @@ export class ProjectsService {
         {
           "name": "github",
           "link": "https://github.com/Musilix/BBTransit"
-        },
-        {
-          "name": "external",
-          "link": "www.youtube.com"
         }
       ]
     },
@@ -86,10 +82,6 @@ export class ProjectsService {
         {
           "name": "github",
           "link": "https://github.com/Musilix/QueueTube"
-        },
-        {
-          "name": "external",
-          "link": "www.youtube.com"
         }
       ]
     },
@@ -126,14 +118,6 @@ export class ProjectsService {
         "Node"
       ],
       "links": [
-        {
-          "name": "github",
-          "link": "https://github.com/Musilix/On-The-Cuff"
-        },
-        {
-          "name": "external",
-          "link": "www.youtube.com"
-        }
       ]
     }
   ];

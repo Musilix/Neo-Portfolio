@@ -30,13 +30,14 @@
                             </li>
                         </ng-container>
                     </ul>
-                    <ul class="links-wrap">
-                        <li>
+                    <span id="{{project.links.length}}"></span>
+                    <ul class="links-wrap" *ngIf="project.links">
+                        <li *ngIf = "project.links[0].link">
                             <a href="{{project.links[0].link}}">
                                 <img src="assets/contact-imgs/git.png">
                             </a>
                         </li>
-                        <li>
+                        <li *ngIf = "project.links[1].link">
                             <a href="{{project.links[1].link}}">
                                 <img src="assets/external.png">
                             </a>

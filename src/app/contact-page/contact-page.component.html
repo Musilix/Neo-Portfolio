@@ -15,10 +15,6 @@
     </div>
     <div id="right-contact-wrap">
         <div id="right-contact-content">
-            <!-- <div class="contact-section">
-                <h1>Send me an email!</h1>
-                <a href=""><p>kshehab1@outlook.com</p></a>    
-            </div> -->
             <div class="contact-section">
                 <h1>Connect</h1>
                 <section id="nav-links">
@@ -48,12 +44,12 @@
             </div>
             <div class="contact-section">
                 <h1>Message me directly!</h1>
-                <form id="message-wrap">
-                    <input type="text" id="email" name="email" placeholder="Your Email">
-                    <input type="text" id="topic" name="topic" placeholder="Topic">
-                    <textarea id="message" name="message" form="message-wrap">Whatever you'd like to say</textarea>
+                <form id="message-wrap" [formGroup]="emailForm" (ngSubmit) = "onEmail()">
+                    <input type="text" id="email" name="email" formControlName="email" placeholder="Your email" required>
+                    <input type="text" id="topic" name="topic" formControlName="topic" placeholder="Topic" required>
+                    <textarea id="message" name="message" formControlName="message" form="message-wrap" placeholder="Whatever you'd like to say"required>Whatever you'd like to say</textarea>
                     <!-- <input type="text" id="message" name="message" placeholder="Whatever you'd like to say"> -->
-                    <input type="button" id="submit" value="send">
+                    <input type="submit" id="submit" value="send" [disabled]="!emailForm.valid">
                 </form>
             </div>
         </div>
