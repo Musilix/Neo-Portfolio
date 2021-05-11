@@ -5,7 +5,6 @@ const path = require("path");
 const cors = require("cors");
 const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser')
 
 app.enable('trust proxy');
 app.disable('strict routing');
@@ -38,8 +37,8 @@ app.get("/stats", async(req, res) => {
   res.send(waka_data);
 });
 
-app.post("/sendmail", bodyParser.json(), async(req, res) => {
-  console.log(req);
+app.post("/sendmail", async(req, res) => {
+  console.log(req.body);
   const transporter = nodemailer.createTransport({
     service: 'outlook',
     auth: {
@@ -59,10 +58,10 @@ app.post("/sendmail", bodyParser.json(), async(req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      req.send(error);
+      res.send(error);
     } else {
       console.log('Email sent: ' + info.response);
-      req.send('Email sent: ' + info.response);
+      res.send('Email sent: ' + info.response);
     }
   });
 });
