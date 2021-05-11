@@ -20,7 +20,7 @@
 }
 
 .art-bio-detail-wrap{
-    width: 50vw;
+    /* width: 50vw; */
     height: 90vh;
     min-width: 40vw;
     display: flex;

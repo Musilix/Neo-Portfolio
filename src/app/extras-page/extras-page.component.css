@@ -76,7 +76,7 @@
 
     list-style: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -102,6 +102,8 @@
     height: 222px;
 
     border-radius: 10px;
+
+    object-fit: none;
 }
 
 .bottom-lip-wrap{
@@ -131,7 +133,7 @@
 
 @media screen and (max-width: 1050px){
     #extras-content-nav-wrap{
-        left: -125px;
+        /* left: -125px; */
     }
 }
 
