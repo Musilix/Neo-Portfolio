@@ -3,39 +3,53 @@ const app = express();
 
 const path = require("path");
 const cors = require("cors");
+const fetch = require('node-fetch');
 
-// Serve only the static files form the dist directory
+app.enable('trust proxy');
+app.disable('strict routing');
+app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
-app.use(cors({
-  origin: 'https://www.kareemshehab.com'
-}));
+// app.get("/prot", (req, res) => {
+//   res.send(req.protocol);
+// });
+const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 
-app.get("/", function (req, res) {
-  const options = {
-    headers: {
-      "Access-Control-Allow-Origin": "https://www.kareemshehab.com"
-    }
+app.use((req, res, next) => {
+  console.log("Protocol: " + req.protocol);
+  console.log("Host: " + req.get('host') );
+  console.log("orig url: " + req.originalUrl);
+
+  if(!req.secure){
+    res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
+  }else{
+    next();
   }
-  
-  res.header("Access-Control-Allow-Origin", '*');
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header("Access-Control-Allow-Headers", 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json');
-
-  // res.setHeader("Access-Control-Allow-Origin", "https://www.kareemshehab.com");
-  res.sendFile(path.join(__dirname + "/docs/index.html"));
 });
 
-app.get("/stats", (req, res) => {
-  const waka = "https://wakatime.com/api/v1/users/current/stats/last_7_days?" + process.env.WAKA_API_KEY;
-  const waka_data = fetch(waka).then((datum) => {
-    return datum;
-  }).catch((err) => {
-    console.log("wuh woh... waka error");
-  });
+// app.get("/", (req, res) =>{
+//   console.log("<<<<<<<<<<<<<<<<<<<<<<< ROOT HIT >>>>>>>>>>>>>>>>>>>>>>>>")
+// });
 
-  return waka_data;
+// app.all("/*", (req, res, next) => {
+//   console.log("True endpoint handler");
+//   console.log("Using https? : " + req.secure);
+
+//   res.sendFile(path.join(__dirname + "/docs/index.html"))
+// });
+
+routes.forEach(route => {
+  app.get(route, (req, res) => {
+    res.sendFile(path.join(__dirname + "/docs/index.html"))
+  });
+});
+
+app.get("/stats", async(req, res) => {
+  const waka_url = "https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=" + process.env.WAKA_API_KEY;
+  const waka_res = await fetch(waka_url)
+  const waka_data = await waka_res.json();
+
+  res.send(waka_data);
 });
 
 // Start the app by listening on the default Heroku port
