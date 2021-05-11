@@ -40,7 +40,7 @@ app.get("/stats", async(req, res) => {
 app.post("/sendmail", async(req, res) => {
   console.log(req.body);
   const transporter = nodemailer.createTransport({
-    service: 'outlook',
+    service: 'Gmail',
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASS
@@ -48,7 +48,7 @@ app.post("/sendmail", async(req, res) => {
   });
 
   const mailOptions = {
-    from: process.env.EMAIL_USER,
+    from: process.env.EMAIL_USER_RUNT,
     to: process.env.EMAIL_USER,
     secure: true,
     subject: req.body.topic,
