@@ -133,7 +133,7 @@
 
 @media screen and (max-width: 1050px){
     #extras-content-nav-wrap{
-        /* left: -125px; */
+        left: -125px; /*hide nav on small screens */
     }
 }
 
