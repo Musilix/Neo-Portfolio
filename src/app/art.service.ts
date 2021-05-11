@@ -58,7 +58,7 @@ export class ArtService {
     {
       "index": "6",
       "title": "Bitmoji Me",
-      "img": "assets/art/textures.jpg",
+      "img": "assets/art/me.jpg",
       "medium": "Blender",
       "description": "A 3D render of my bitmoji, since I couldn't export it from my phone.\nMade in Blender\n01/2021"
     },

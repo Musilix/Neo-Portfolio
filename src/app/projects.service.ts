@@ -42,12 +42,12 @@ export class ProjectsService {
       ],
       "links": [
         {
-          "name": "github",
+          "name": "git",
           "link": "https://github.com/Musilix/Mymyc"
         },
         {
           "name": "external",
-          "link": "www.youtube.com"
+          "link": "https://www.youtube.com"
         }
       ]
     },
@@ -63,7 +63,7 @@ export class ProjectsService {
       ],
       "links": [
         {
-          "name": "github",
+          "name": "git",
           "link": "https://github.com/Musilix/BBTransit"
         }
       ]
@@ -80,7 +80,7 @@ export class ProjectsService {
       ],
       "links": [
         {
-          "name": "github",
+          "name": "git",
           "link": "https://github.com/Musilix/QueueTube"
         }
       ]
@@ -97,12 +97,12 @@ export class ProjectsService {
       ],
       "links": [
         {
-          "name": "github",
+          "name": "git",
           "link": "https://github.com/Musilix/On-The-Cuff"
         },
         {
           "name": "external",
-          "link": "www.youtube.com"
+          "link": "https://www.youtube.com"
         }
       ]
     },
@@ -117,8 +117,7 @@ export class ProjectsService {
         "Mongo",
         "Node"
       ],
-      "links": [
-      ]
+      "links": []
     }
   ];
 

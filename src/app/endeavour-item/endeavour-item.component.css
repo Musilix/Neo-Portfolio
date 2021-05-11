@@ -251,7 +251,8 @@
     }
     
     .endeavours-img-prev-wrap .end-img{
+        margin: 10px 0px;
         width: 100%;
-        height: auto;
+        /* height: auto; */
     }
 }
