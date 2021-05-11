@@ -42,7 +42,7 @@ app.post("/sendmail", async(req, res) => {
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: process.env.EMAIL_USER,
+      user: process.env.EMAIL_USER_RUNT,
       pass: process.env.EMAIL_PASS
     }
   });
