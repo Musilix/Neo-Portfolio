@@ -58,11 +58,13 @@ app.post("/sendmail", async(req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      res.send(error);
+      res.sendStatus(500);
     } else {
       console.log('Email sent: ' + info.response);
-      res.send('Email sent: ' + info.response);
+      res.sendStatus(200);
     }
+
+    return res.end();
   });
 });
 

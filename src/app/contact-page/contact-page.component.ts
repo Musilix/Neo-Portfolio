@@ -24,9 +24,13 @@ export class ContactPageComponent implements OnInit {
     let emailData = this.emailForm.value;
     let emailResponse = this.siteEmailService.sendEmail(emailData).subscribe((res) => {
       console.log(res);
+
+      //TODO
+      if(res === "200"){
+        //clear form
+
+        //show either error div or success div for 3 secs then hide again
+      }
     });
-
-    // console.log(emailResponse);
   }
-
 }
