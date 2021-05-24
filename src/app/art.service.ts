@@ -16,7 +16,7 @@ export class ArtService {
     {
       "index": "0",
       "title": "The Golden Idol",
-      "img": "assets/proj5.gif",
+      "img": "assets/projects/proj5.gif",
       "medium": "Blender",
       "description": "Inspired by Spelunky, the game\nMade in Blender\n04/2020"
     },
