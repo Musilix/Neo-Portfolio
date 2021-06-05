@@ -77,6 +77,8 @@
     width: 85%;
     height: 85%;
     position: relative;
+
+    justify-content: center;
 }
 
 .art-exit-wrap{
@@ -100,6 +102,14 @@
 }
 
 @media screen and (max-width: 1400px){
+    .art-bio-detail-wrap{
+        /* width: auto;
+        height: auto;
+        min-width: auto; */
+    }
+}
+
+@media screen and (max-width: 800px){
     .art-bio-detail-wrap{
         width: auto;
         height: auto;

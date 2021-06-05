@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
 import { ArtService } from '../art.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ArtService } from '../art.service';
 export class ArtItemComponent implements OnInit {
   @Input() artObj;
 
-  constructor(private artService: ArtService) { }
+  constructor(private artService: ArtService, private eRef: ElementRef) { }
 
   ngOnInit(): void {
     // console.log(this.artObj);
@@ -19,4 +19,11 @@ export class ArtItemComponent implements OnInit {
     this.artService.closeProj();
   }
 
+  //jank... but easy... way to close art item if clicked outside...
+  @HostListener('click', ['$event'])
+  clickOutside(e) {
+    if(e.target.className === "art-bio-detail-wrap"){
+      this.closeProj();
+    }
+  }
 }

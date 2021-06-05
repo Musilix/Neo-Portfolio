@@ -23,7 +23,7 @@ export class EndeavourService {
     },
     {
       "index": "1",
-      "image": "assets/endeavours/mic.png",
+      "image": "assets/endeavours/mic_run.gif",
       "title": "The Ceramic Man",
       "prevDesc": "I'm currently spending some of my free time developing a game! It's called The Ceramic Man and incorporates features from all types of games I love.",
       "readMore": "I'm very into rogue-like, physics based, procedurally generated games, so I sought to make my own game that encompassed all those things!\n\nI've been working on my game for a few months and you may even find some assets I've created for it around my site! I have no ETA in mind, but hope to one day release it for free for everyone to play!\n The game follows a hermit, Mic, who happens to be completely ceramic. He is a brittle man compared to the gritty and hardened world around him, but one day, he's pushed to his breaking point. Follow Mic on his journey to use whatever the environment gives him to wreak havoc on those who've wronged him!"
