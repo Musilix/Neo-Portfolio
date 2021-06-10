@@ -46,7 +46,7 @@ export class ArtService {
       "title": "Rhombeechi",
       "img": "assets/art/rhombeechi_bust.jpg",
       "medium": "Blender",
-      "description": "An more rhombus-like fellow who is just as angry as a Gleechi\nMade in Blender\n09/2020"
+      "description": "A more rhombus-like fellow who is just as angry as a Gleechi\nMade in Blender\n09/2020"
     },
     {
       "index": "5",
@@ -62,8 +62,15 @@ export class ArtService {
       "medium": "Blender",
       "description": "A 3D render of my bitmoji, since I couldn't export it from my phone.\nMade in Blender\n01/2021"
     },
-
+    {
+      "index": "7",
+      "title": "Voided",
+      "img": "assets/art/voided.jpg",
+      "medium": "Blender",
+      "description": "A Gleechi chilling in the void. \nMade in Blender\n06/2020"
+    }
   ];
+  
   // TODO: move to art svc
   private currArt: HTMLElement = null;
 

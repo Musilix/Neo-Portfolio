@@ -23,15 +23,11 @@ export class EndeavourItemComponent implements OnInit {
   }
 
   handleRightNavClick(){
-    console.log("right click working");
-
     let currIdx = parseInt(this.endObj.index);
     this.nav.emit(++currIdx);
   }
 
   handleLeftNavClick(){
-    console.log("left click working");
-
     let currIdx = parseInt(this.endObj.index);
     this.nav.emit(--currIdx);
   }
