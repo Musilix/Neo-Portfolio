@@ -130,12 +130,14 @@
     text-align: center;
     width: 50% !important;
     transition: background-color .2s ease-in-out, color .2s ease-in-out;
+    -webkit-appearance: none;
 }
 
 #submit:hover{
     cursor: pointer;
     background-color: #747fe0 !important;
     color: #D0E2FF !important;
+    -webkit-appearance: none;
 }
 
 #contact-content-wrap{
