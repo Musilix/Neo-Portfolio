@@ -61,7 +61,7 @@ app.post("/sendmail", async(req, res) => {
   };
 
   let sendStatus;
-  transporter.sendMail(mailOptions, (error, info) => {
+  await transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
       sendStatus = false;
