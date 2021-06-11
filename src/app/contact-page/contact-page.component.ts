@@ -34,7 +34,7 @@ export class ContactPageComponent implements OnInit {
       .sendEmail(emailData)
       .subscribe((res) => {
         // console.log("Resonse: ");
-        // console.log(res);
+        console.log(res);
 
         //TODO
         if (res) {
