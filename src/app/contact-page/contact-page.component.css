@@ -293,11 +293,15 @@
 
 #success-msg, #fail-msg {
     text-align: center;
-    padding: 15px 10px;
     margin: 0;
     border-radius: 15px;
     font-weight: bold;
     font-family: monospace;
+}
+
+#success-msg p, #fail-msg p {
+    margin: 0;
+    padding: 15px 10px;
 }
 
 #success-msg{

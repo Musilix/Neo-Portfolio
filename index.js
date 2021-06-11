@@ -42,6 +42,7 @@ app.get("/stats", async(req, res) => {
 });
 
 app.post("/sendmail", async(req, res) => {
+  console.log("HERE YEEEEEE HERE YEEEEEEEEEEEEEEEEEEEE.... LOOK AT THIS:" + process.env.EMAIL_USER_RUNT);
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
