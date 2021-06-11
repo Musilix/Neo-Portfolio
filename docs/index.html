@@ -5,21 +5,31 @@
     (function(){
       var redirect = sessionStorage.redirect;
       delete sessionStorage.redirect;
+
       if (redirect && redirect != location.href) {
+        history.replaceState(null, null, redirect);
+      }else{
+        sessionStorage.redirect = location.href;
+        redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
         history.replaceState(null, null, redirect);
       }
     })();
   </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" content="assets/tab-logo.svg">
-  <title>Kareem Shehab 2</title>
-  <base href="https://localhost:4200/">
+  <meta property="og:title" content="Kareem Shehab" />
+  <meta property="og:image" content="assets/site_prev.png" />
+
+  <title>Kareem Shehab</title>
+
+  <base href="/">
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=JetBrains+Mono&family=Maven+Pro&family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="assets/tab-logo.svg">
-</head>
+<link rel="stylesheet" href="styles.5201d73d19572728acb4.css"></head>
 <body>
   <app-root></app-root>
-<script src="runtime-es2015.js" type="module"></script><script src="runtime-es5.js" nomodule defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills-es2015.js" type="module"></script><script src="styles-es2015.js" type="module"></script><script src="styles-es5.js" nomodule defer></script><script src="vendor-es2015.js" type="module"></script><script src="vendor-es5.js" nomodule defer></script><script src="main-es2015.js" type="module"></script><script src="main-es5.js" nomodule defer></script></body>
+<script src="runtime-es2015.409e6590615fb48d139f.js" type="module"></script><script src="runtime-es5.409e6590615fb48d139f.js" nomodule defer></script><script src="polyfills-es5.2dcde1efe3c1bf4aaa25.js" nomodule defer></script><script src="polyfills-es2015.a0fa45e0fa52702b64f0.js" type="module"></script><script src="main-es2015.55aa3545db807a5ec0f5.js" type="module"></script><script src="main-es5.55aa3545db807a5ec0f5.js" nomodule defer></script></body>
 </html>

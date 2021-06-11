@@ -30,18 +30,16 @@
                             </li>
                         </ng-container>
                     </ul>
-                    <ul class="links-wrap">
-                        <li>
-                            <a href="{{project.links[0].link}}">
-                                <img src="assets/contact-imgs/git.png">
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{project.links[1].link}}">
-                                <img src="assets/external.png">
-                            </a>
-                        </li>
-                    </ul>
+                    <ng-container *ngIf="project.links">
+                        <ul class="links-wrap">
+                            <!-- <li></li> -->
+                            <li *ngFor="let link of project.links">
+                                <a href="{{link.link}}">
+                                    <img src="{{'assets/contact-imgs/' + link.name + '.png'}}">
+                                </a>
+                            </li>
+                        </ul>
+                    </ng-container>
                 </div>
             </div>
         </div>

@@ -4,39 +4,28 @@ const app = express();
 const path = require("path");
 const cors = require("cors");
 const fetch = require('node-fetch');
+const nodemailer = require('nodemailer');
+const enforce = require('express-sslify');
 
+//REMOVE?
 app.enable('trust proxy');
 app.disable('strict routing');
+
+app.use(express.json());
 app.use(cors());
+app.use(enforce.HTTPS());
 app.use(express.static(__dirname + '/docs'));
 
-// app.get("/prot", (req, res) => {
-//   res.send(req.protocol);
-// });
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 
 app.use((req, res, next) => {
-  console.log("Protocol: " + req.protocol);
-  console.log("Host: " + req.get('host') );
-  console.log("orig url: " + req.originalUrl);
-
+  console.log(req.secure);
   if(!req.secure){
     res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
   }else{
     next();
   }
 });
-
-// app.get("/", (req, res) =>{
-//   console.log("<<<<<<<<<<<<<<<<<<<<<<< ROOT HIT >>>>>>>>>>>>>>>>>>>>>>>>")
-// });
-
-// app.all("/*", (req, res, next) => {
-//   console.log("True endpoint handler");
-//   console.log("Using https? : " + req.secure);
-
-//   res.sendFile(path.join(__dirname + "/docs/index.html"))
-// });
 
 routes.forEach(route => {
   app.get(route, (req, res) => {
@@ -50,6 +39,40 @@ app.get("/stats", async(req, res) => {
   const waka_data = await waka_res.json();
 
   res.send(waka_data);
+});
+
+app.post("/sendmail", async(req, res) => {
+  console.log("Sending Email: ");
+  console.log(req.body);
+  const transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: process.env.EMAIL_USER_RUNT,
+      pass: process.env.EMAIL_PASS
+    }
+  });
+
+  const mailOptions = {
+    from: process.env.EMAIL_USER_RUNT,
+    to: process.env.EMAIL_USER,
+    secure: true,
+    subject: req.body.topic,
+    text: `Email from ${req.body.emailAddress}: \n ${req.body.message}`
+  };
+
+  let sendStatus;
+  await transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.log(error);
+      sendStatus = false;
+    } else {
+      console.log('Email sent: ' + info.response);
+      sendStatus = true;
+    }
+  });
+
+  console.log(`status ${sendStatus}`);
+  res.send(sendStatus);
 });
 
 // Start the app by listening on the default Heroku port

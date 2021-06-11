@@ -117,6 +117,8 @@
 .readmore-fake-wrap{
     height: 100vh;
     width: 100vw;
+
+    margin:0px !important;
     
 
     position: fixed;
@@ -228,8 +230,8 @@
 
 @media screen and (max-width: 800px){
     .endeavours-img-prev-wrap .end-img {
-        width: 300px;
-        height: 300px;
+        /* width: 300px;
+        height: 300px; */
     }
 }
 
@@ -251,7 +253,9 @@
     }
     
     .endeavours-img-prev-wrap .end-img{
+        margin: 10px 0px;
         width: 100%;
-        height: auto;
+        object-fit: contain;
+        /* height: auto; */
     }
 }

@@ -17,6 +17,7 @@ import { ArtListComponent } from './art-list/art-list.component';
 import { ArtItemComponent } from './art-item/art-item.component';
 import { EndeavourItemComponent } from './endeavour-item/endeavour-item.component';
 import { EndeavoursListComponent } from './endeavours-list/endeavours-list.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { EndeavoursListComponent } from './endeavours-list/endeavours-list.compo
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    HttpClientJsonpModule
+    HttpClientJsonpModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
