@@ -30,20 +30,13 @@ export class ContactPageComponent implements OnInit {
 
   onEmail() {
     let emailData = this.emailForm.value;
-    let emailResponse = this.siteEmailService
+    this.siteEmailService
       .sendEmail(emailData)
-      .subscribe((res) => {
-        // console.log("Resonse: ");
+      .subscribe((res: boolean) => {
+        console.log("Resonse in component: ");
         console.log(res);
 
-        //TODO
-        if (res) {
-          //clear form
-          //show either error div or success div for 3 secs then hide again
-          this.messageSent = true;
-        }else{
-          this.messageSent = false;
-        }
+        this.messageSent = res;
       });
   }
 }

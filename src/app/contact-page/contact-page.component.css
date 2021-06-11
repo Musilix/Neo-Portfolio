@@ -291,6 +291,24 @@
     fill: #2196F3;
 }
 
+#success-msg, #error-msg {
+    text-align: center;
+    padding: 15px 10px;
+    border-radius: 15px;
+}
+
+#success-msg{
+    background: rgba(46, 204, 113,.25);
+    border: #27ae60 1px solid;
+    color: #27ae60;
+}
+
+#fail-msg {
+    background: rgba(231, 76, 60, .25);
+    border: #c0392b 1px solid;
+    color: #c0392b;
+}
+
 @media screen and (max-width: 1250px){
     #nav-links ul{
     }

@@ -23,8 +23,6 @@ export class SiteEmailService {
       message: data.message
     }
     
-    let emailResponse = this.http.post("/sendmail", emailDetails, requestOptions);
-
-    return emailResponse;
+    return this.http.post("/sendmail", emailDetails, requestOptions);
   }
 }
