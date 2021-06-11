@@ -1,36 +1,49 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, ReactiveFormsModule, FormsModule, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { SiteEmailService } from '../site-email.service';
+import { Component, OnInit } from "@angular/core";
+import {
+  FormBuilder,
+  ReactiveFormsModule,
+  FormsModule,
+  FormGroup,
+  FormControl,
+  Validators,
+} from "@angular/forms";
+import { Observable } from "rxjs";
+import { SiteEmailService } from "../site-email.service";
 
 @Component({
-  selector: 'app-contact-page',
-  templateUrl: './contact-page.component.html',
-  styleUrls: ['./contact-page.component.css']
+  selector: "app-contact-page",
+  templateUrl: "./contact-page.component.html",
+  styleUrls: ["./contact-page.component.css"],
 })
 export class ContactPageComponent implements OnInit {
-  emailForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    topic: new FormControl('', Validators.required),
-    message: new FormControl('', Validators.required)
-}); 
+  emailForm: FormGroup = new FormGroup({
+    email: new FormControl("", Validators.required),
+    topic: new FormControl("", Validators.required),
+    message: new FormControl("", Validators.required),
+  });
 
-  constructor(private siteEmailService: SiteEmailService) { }
+  messageSent: boolean;
 
-  ngOnInit(): void {
-  }
+  constructor(private siteEmailService: SiteEmailService) {}
 
-  onEmail(){
+  ngOnInit(): void {}
+
+  onEmail() {
     let emailData = this.emailForm.value;
-    let emailResponse = this.siteEmailService.sendEmail(emailData).subscribe((res) => {
-      console.log(res);
+    let emailResponse = this.siteEmailService
+      .sendEmail(emailData)
+      .subscribe((res) => {
+        // console.log("Resonse: ");
+        // console.log(res);
 
-      //TODO
-      if(res === "200"){
-        //clear form
-
-        //show either error div or success div for 3 secs then hide again
-      }
-    });
+        //TODO
+        if (res) {
+          //clear form
+          //show either error div or success div for 3 secs then hide again
+          this.messageSent = true;
+        }else{
+          this.messageSent = false;
+        }
+      });
   }
 }

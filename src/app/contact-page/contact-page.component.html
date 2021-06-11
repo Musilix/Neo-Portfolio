@@ -51,6 +51,14 @@
                     <!-- <input type="text" id="message" name="message" placeholder="Whatever you'd like to say"> -->
                     <input type="submit" id="submit" value="send" [disabled]="!emailForm.valid">
                 </form>
+                
+                <div id = "success-msg" *ngIf="messageSent">
+                    <p>Nice! I got your email. I'll respond soon!</p>
+                </div>
+
+                <div id = "fail-msg" *ngIf="!messageSent">
+                    <p>Aw man, something went wrong for some reason. :( Try directly emailing me.</p>
+                </div>
             </div>
         </div>
     </div>
