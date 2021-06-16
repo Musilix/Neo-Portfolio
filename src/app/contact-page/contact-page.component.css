@@ -320,12 +320,6 @@
     color: #c0392b;
 }
 
-#msg-result-wrap{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 @media screen and (max-width: 1250px){
     #nav-links ul{
     }
@@ -340,6 +334,16 @@
 @media screen and (max-width: 950px){
     :host{
         overflow: inherit;
+    }
+
+    #msg-result-wrap{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #success-msg, #fail-msg {
+        width: 100%;
     }
 
     #contact-content-wrap{
