@@ -116,7 +116,7 @@ export class ProjectsService {
         },
         {
           "name": "external",
-          "link": "https://www.pipplio.com"
+          "link": "www.pipplio.com"
         }
       ]
     }
