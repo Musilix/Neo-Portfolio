@@ -42,7 +42,8 @@ app.get("/stats", async(req, res) => {
 });
 
 app.post("/sendmail", async(req, res) => {
-  console.log("HERE YEEEEEE HERE YEEEEEEEEEEEEEEEEEEEE.... LOOK AT THIS:" + process.env.EMAIL_USER_RUNT);
+  console.log("Sending Email: ");
+  console.log(req.body);
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -59,17 +60,19 @@ app.post("/sendmail", async(req, res) => {
     text: `Email from ${req.body.emailAddress}: \n ${req.body.message}`
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
+  let sendStatus;
+  await transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
-      res.send(false);
-      res.end();
+      sendStatus = false;
     } else {
-      console.log("node end success, mail sent");
-      res.send(true);
-      res.end();
+      console.log('Email sent: ' + info.response);
+      sendStatus = true;
     }
   });
+
+  console.log(`status ${sendStatus}`);
+  res.send(sendStatus);
 });
 
 // Start the app by listening on the default Heroku port

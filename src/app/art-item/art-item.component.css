@@ -31,8 +31,8 @@
 .art-bio-detail-wrap img{
     background: black;
     border-radius: 10px;
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 100%;
 
     border-radius: 10px;
 }
@@ -41,7 +41,7 @@
     text-align: center;
     border-radius: 0px 00px 10px 10px;
     padding: 5px;
-    width: 55%;
+    width: 70%;
 
     background-color: white;
     box-shadow: 0 2px 8px 0 rgba(50,50,93,.25);
@@ -60,8 +60,6 @@
     line-height: 1;
     font-weight: 800;
     font-size: clamp(24px, 2.5vw, 2.5vw);
-
-    transition: font-size .25s ease-in-out;
 }
 
 .bio-bottom-lip-wrap p{
@@ -77,42 +75,30 @@
 .art-img-exit-wrap{
     display: flex;
     width: 85%;
-    /* height: 85%; */
-    overflow: hidden;
+    height: 85%;
     position: relative;
+
     justify-content: center;
-    align-items: center;
-    border: 1px solid rgba(0,0,0,0.25);
-    border-radius: 10px;
 }
 
 .art-exit-wrap{
     position: absolute;
     top: 10px;
     right: 10px;
-    background: white;
-    border-radius: 99999px;
-    padding: 5px;
-    display: flex;
-    transition: background .25s ease-in-out;
 }
 
 .art-img-close{
     width: 25px !important;
     height: 25px !important;
     background: rgba(0,0,0,0) !important;
-    /* filter: invert(1); */
+    filter: invert(1);
+
     transition: filter .25s ease-in-out;
 }
 
-.art-exit-wrap:hover{
-    background: black;
+.art-img-close:hover{
     cursor: pointer;
-}
-
-.art-exit-wrap:hover > .art-img-close{
-    cursor: pointer;
-    filter: invert(1);
+    filter: invert(0);
 }
 
 @media screen and (max-width: 1400px){
@@ -128,21 +114,5 @@
         width: auto;
         height: auto;
         min-width: auto;
-    }
-
-    .bio-bottom-lip-wrap[_ngcontent-neo-portfolio-c54] {
-        width: 75%;
-    }
-}
-
-@media screen and (max-width: 840px){
-    .art-img-exit-wrap{
-        align-items: stretch;
-    }
-}
-
-@media screen and (max-width: 350px){
-    .bio-bottom-lip-wrap h2{
-        font-size: 6vw;
     }
 }

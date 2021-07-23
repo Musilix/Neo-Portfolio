@@ -130,14 +130,12 @@
     text-align: center;
     width: 50% !important;
     transition: background-color .2s ease-in-out, color .2s ease-in-out;
-    -webkit-appearance: none;
 }
 
 #submit:hover{
     cursor: pointer;
     background-color: #747fe0 !important;
     color: #D0E2FF !important;
-    -webkit-appearance: none;
 }
 
 #contact-content-wrap{
@@ -293,33 +291,6 @@
     fill: #2196F3;
 }
 
-#success-msg, #fail-msg {
-    text-align: center;
-    margin: 0;
-    border-radius: 15px;
-    font-weight: bold;
-    font-family: monospace;
-
-    width: 80%;
-}
-
-#success-msg p, #fail-msg p {
-    margin: 0;
-    padding: 15px 10px;
-}
-
-#success-msg{
-    background: rgba(46, 204, 113,.25);
-    border: #27ae60 1px solid;
-    color: #27ae60;
-}
-
-#fail-msg {
-    background: rgba(231, 76, 60, .25);
-    border: #c0392b 1px solid;
-    color: #c0392b;
-}
-
 @media screen and (max-width: 1250px){
     #nav-links ul{
     }
@@ -334,16 +305,6 @@
 @media screen and (max-width: 950px){
     :host{
         overflow: inherit;
-    }
-
-    #msg-result-wrap{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #success-msg, #fail-msg {
-        width: 100%;
     }
 
     #contact-content-wrap{

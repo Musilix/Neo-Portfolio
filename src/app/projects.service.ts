@@ -44,6 +44,10 @@ export class ProjectsService {
         {
           "name": "git",
           "link": "https://github.com/Musilix/Mymyc"
+        },
+        {
+          "name": "external",
+          "link": "https://www.youtube.com"
         }
       ]
     },
@@ -95,6 +99,10 @@ export class ProjectsService {
         {
           "name": "git",
           "link": "https://github.com/Musilix/On-The-Cuff"
+        },
+        {
+          "name": "external",
+          "link": "https://www.youtube.com"
         }
       ]
     },
@@ -113,10 +121,6 @@ export class ProjectsService {
         {
           "name": "git",
           "link": "https://github.com/Musilix/Pipplio"
-        },
-        {
-          "name": "external",
-          "link": "www.pipplio.com"
         }
       ]
     }
