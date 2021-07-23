@@ -131,28 +131,22 @@
 
     z-index: 3;
 
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255,255,255,.9);
 
-    transition: opacity .25s ease-in-out, display .25s ease-in-out !important;
+    transition: opacity .25s ease-in-out, display .25s ease-in-out, background-color .25s ease-in-out !important;
 }
 
 .readmore-wrap{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     position: relative;
     z-index: 3;
-
-    width: 75vw;
-    height: 75vh;
-
+    width: 50vw;
     max-height: 700px;
     max-width: 800px;
-
     border-radius: 10px;
-
-    box-shadow: 0 2px 8px 0 rgba(50,50,93,.25);
+    box-shadow: 0 2px 8px 0 rgb(50 50 93 / 25%);
     background: white;
 }
 
@@ -176,21 +170,18 @@
 
 .readmore-details-wrap{
     box-sizing: border-box;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-start;
     height: 100%;
     width: 100%;
-
     padding: 50px;
 }
 
 .readmore-details-wrap h2{
     text-align: center;
-    font-size: clamp(1vw, 2.5vw, 2.5vw);
+    font-size: clamp(2vw, 3vw, 3vw);
 
     font-family: Inter var,sans-serif;;
     color: #747fe0;    
@@ -201,12 +192,12 @@
 
 
 .readmore-details-wrap p{
-    text-align: center;
-    font-family: JetBrains Mono,monospace;
+    font-family: "Open Sans";
     font-weight: normal;
-    font-size: clamp(12px, .85vw, .85vw);
-
-    text-align: center;
+    font-size: clamp(13px, .85vw, .85vw);
+    line-height: 1.85;
+    opacity: .75 !important;
+    white-space: pre-line;
 }
 
 .endeavour-nav-active{
@@ -233,6 +224,10 @@
         /* width: 300px;
         height: 300px; */
     }
+
+    .readmore-details-wrap h2{
+        font-size: 6vw;
+    }
 }
 
 @media screen and (max-width: 750px){
@@ -257,5 +252,21 @@
         width: 100%;
         object-fit: contain;
         /* height: auto; */
+    }
+
+    .readmore-wrap{
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .readmore-details-wrap h2{
+        font-size: 9vw;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .readmore-details-wrap h2{
+        font-size: 5vw;
     }
 }
