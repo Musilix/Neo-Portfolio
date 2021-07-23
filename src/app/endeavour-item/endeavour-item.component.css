@@ -188,6 +188,8 @@
     font-weight: 800;
 
     margin: 0;
+
+    transition: font-size .25s ease-in-out;
 }
 
 
