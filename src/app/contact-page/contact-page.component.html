@@ -52,12 +52,14 @@
                     <input type="submit" id="submit" value="send" [disabled]="!emailForm.valid">
                 </form>
                 
-                <div id = "success-msg" *ngIf="messageSent === true">
-                    <p>Nice! I got your email. I'll respond soon!</p>
-                </div>
-
-                <div id = "fail-msg" *ngIf="messageSent === false">
-                    <p>Aw man, something went wrong for some reason. :( Try directly emailing me.</p>
+                <div id="msg-result-wrap" *ngIf="messageSent !== null">
+                    <div id = "success-msg" *ngIf="messageSent === true">
+                        <p>Nice! I got your email. I'll respond soon!</p>
+                    </div>
+    
+                    <div id = "fail-msg" *ngIf="messageSent === false">
+                        <p>Aw man, something went wrong for some reason. :( Try directly emailing me.</p>
+                    </div>
                 </div>
             </div>
         </div>
