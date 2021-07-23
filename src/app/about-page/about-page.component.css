@@ -22,14 +22,7 @@
     border-radius: 0px !important;
     display: inline-block !important;
     padding:0 !important;
-    
-    font-weight: bold;
-    color: #1569f5 !important;
-    transition: color .2s ease-in-out;
-}
 
-#resumeLink:hover{
-    color: #1f51a7 !important;
 }
 
 a{
@@ -353,12 +346,6 @@ a:hover{
     margin: 85px 0px;
 }
 
-@media only screen and (max-width: 1093px) {
-    #self-title{
-        display: inline !important;
-    }
-}
-
 @media only screen and (max-width: 1050px) {
     .stats-bar{
         border-radius: 15px;
@@ -440,12 +427,6 @@ a:hover{
         left: -0.5%;
         top: -11.5%;
         transform: rotate(210deg);
-    }
-}
-
-@media screen and (max-width: 665px){
-    #self-title{
-        display: inline !important;
     }
 }
 
