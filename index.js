@@ -42,7 +42,6 @@ app.get("/stats", async(req, res) => {
 });
 
 app.post("/sendmail", async(req, res) => {
-  console.log("HERE YEEEEEE HERE YEEEEEEEEEEEEEEEEEEEE.... LOOK AT THIS:" + process.env.EMAIL_USER_RUNT);
   const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -74,5 +73,5 @@ app.post("/sendmail", async(req, res) => {
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 4200, ()=> {
-  console.log("app started bruh");
+  console.log(`app started on ${process.env.PORT || 4200}, bruh`);
 });
