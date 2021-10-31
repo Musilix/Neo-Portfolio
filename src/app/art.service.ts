@@ -23,7 +23,7 @@ export class ArtService {
     {
       "index": "1",
       "title": "Gleechi",
-      "img": "assets/art/gleechi_bust.jpg",
+      "img": "assets/art/gleechi_bust.png",
       "medium": "Blender",
       "description": "The bust of a round fellow who is somehow always angry.\nMade in Blender\n09/2020"
     },
@@ -44,7 +44,7 @@ export class ArtService {
     {
       "index": "4",
       "title": "Rhombeechi",
-      "img": "assets/art/rhombeechi_bust.jpg",
+      "img": "assets/art/rhombeechi_bust.png",
       "medium": "Blender",
       "description": "A more rhombus-like fellow who is just as angry as a Gleechi\nMade in Blender\n09/2020"
     },
@@ -60,7 +60,7 @@ export class ArtService {
       "title": "Bitmoji Me",
       "img": "assets/art/me.jpg",
       "medium": "Blender",
-      "description": "A 3D render of my bitmoji, since I couldn't export it from my phone.\nMade in Blender\n01/2021"
+      "description": "A 3D render of my bitmoji I made, since I couldn't export it from my phone.\nMade in Blender\n01/2021"
     },
     {
       "index": "7",
@@ -68,7 +68,28 @@ export class ArtService {
       "img": "assets/art/voided.jpg",
       "medium": "Blender",
       "description": "A Gleechi chilling in the void. \nMade in Blender\n06/2020"
-    }
+    },
+    {
+      "index": "8",
+      "title": "Siblings (by Law!)",
+      "img": "assets/art/siblings.png",
+      "medium": "Blender",
+      "description": "Two little textured fellahs just chillin' on some dirt \nMade in Blender\n10/2021"
+    },
+    {
+      "index": "9",
+      "title": "Unexpected Guest",
+      "img": "assets/art/knockknock.png",
+      "medium": "Blender",
+      "description": "A strange creature is knocking. It locked itself out of it's car; will you let them in? \nMade in Blender\n07/2021"
+    },
+    {
+      "index": "10",
+      "title": "Rico, the Giant!",
+      "img": "assets/art/rico.png",
+      "medium": "Blender",
+      "description": "A piece I made for a funny Youtuber, @Rico The Giant \nMade in Blender\n06/2021"
+    },
   ];
   
   // TODO: move to art svc
