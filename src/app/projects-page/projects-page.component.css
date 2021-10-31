@@ -23,12 +23,12 @@
     margin: 30px;
 }
 
-#projects-inner img{
+#projects-inner video{
     width:150px;
     height:150px;
 }
 
-#projects-inner img:hover{
+#projects-inner video:hover{
     cursor: pointer;
 }
 
