@@ -8,7 +8,10 @@
                 <ng-container *ngFor="let proj of getProjs()">
                     <li class="project-main">
                         <picture>
-                            <img (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" src="{{proj.img}}">
+                            <video (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" muted playsinline autoplay loop style="pointer-events: none;">
+                                <source src="{{proj.img}}" type="video/webm">
+                            </video>
+                            <!-- <img (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" src="{{proj.img}}"> -->
                         </picture>
                         <h3>{{proj.title}}</h3>
                         <ul id="mini-tech-wrap">

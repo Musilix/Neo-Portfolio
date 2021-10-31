@@ -70,9 +70,8 @@ export class ProjectsService {
       "description": "A Google Chrome extension which serves to improve users' experiences on YouTube by providing a means to queue up various videos they are interested, all at once! Circa: before Youtube added this functionality itself.",
       "img": "assets/projects/proj3.gif",
       "stack": [
-        "Angular",
-        "Express",
-        "Node"
+        "HTML/CSS",
+        "JavaScript"
       ],
       "links": [
         {
@@ -85,11 +84,11 @@ export class ProjectsService {
       "index": "4",
       "title": "On the Cuff",
       "description": "A web app which aims to centralize crowd sourced info on food competitions, events with free food, and simply everything food. ",
-      "img": "assets/projects/proj4.gif",
+      "img": "assets/projects/proj4.webm",
       "stack": [
-        "Angular",
-        "Express",
-        "Node"
+        "PHP",
+        "JavaScript",
+        "HTML/CSS"
       ],
       "links": [
         {
