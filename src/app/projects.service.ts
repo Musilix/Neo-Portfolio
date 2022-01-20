@@ -72,7 +72,7 @@ export class ProjectsService {
       "index": "3",
       "title": "Queuetube",
       "description": "A Google Chrome extension which serves to improve users' experiences on YouTube by providing a means to queue up various videos they are interested, all at once! Circa: before Youtube added this functionality itself.",
-      "miniImg": "assets/projects/mymyc-rot.webm",
+      "miniImg": "assets/projects/qtube-rot.webm",
       "bioImg": "assets/projects/qtube-bio.png",
       "stack": [
         "Angular",
@@ -86,27 +86,28 @@ export class ProjectsService {
         }
       ]
     },
-    // {
-    //   "index": "4",
-    //   "title": "On the Cuff",
-    //   "description": "A web app which aims to centralize crowd sourced info on food competitions, events with free food, and simply everything food. ",
-    //   "img": "assets/projects/proj4.gif",
-    //   "stack": [
-    //     "Angular",
-    //     "Express",
-    //     "Node"
-    //   ],
-    //   "links": [
-    //     {
-    //       "name": "git",
-    //       "link": "https://github.com/Musilix/On-The-Cuff"
-    //     },
-    //     {
-    //       "name": "external",
-    //       "link": "https://www.youtube.com"
-    //     }
-    //   ]
-    // },
+    {
+      "index": "4",
+      "title": "On the Cuff",
+      "description": "A web app which aims to centralize crowd sourced info on food competitions, events with free food, and simply everything food. ",
+      "miniImg": "assets/projects/onthecuff-rot.webm",
+      "bioImg": "assets/projects/onthecuff-bio.png",
+      "stack": [
+        "Angular",
+        "Express",
+        "Node"
+      ],
+      "links": [
+        {
+          "name": "git",
+          "link": "https://github.com/Musilix/On-The-Cuff"
+        },
+        {
+          "name": "external",
+          "link": "https://www.youtube.com"
+        }
+      ]
+    },
     // {
     //   "index": "5",
     //   "title": "Pipplio",
@@ -142,7 +143,8 @@ export class ProjectsService {
     let projTemplate = document.getElementById(`proj${projName}-wrap`);
 
     if(projTemplate){
-      projTemplate.style.bottom = "0%";
+      projTemplate.style.display = "block";
+      setTimeout(() => projTemplate.style.bottom = "0%", 50);
       this.currProj = projTemplate;
     }
   }
@@ -150,7 +152,10 @@ export class ProjectsService {
   closeCurrentProj(){
     if(this.currProj){
       this.currProj.style.bottom = "100%";
-      setTimeout(()=> {this.htmlRef.style.overflow = "auto";}, 500);
+      setTimeout(()=> {
+        this.htmlRef.style.overflow = "auto";
+        this.currProj.style.display = "none";
+      }, 500);
       // this.currProj = null;
     }
   }
