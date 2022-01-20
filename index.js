@@ -13,19 +13,19 @@ app.disable('strict routing');
 
 app.use(express.json());
 app.use(cors());
-app.use(enforce.HTTPS());
+// app.use(enforce.HTTPS());
 app.use(express.static(__dirname + '/docs'));
 
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 
-app.use((req, res, next) => {
-  console.log(req.secure);
-  if(!req.secure){
-    res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
-  }else{
-    next();
-  }
-});
+// app.use((req, res, next) => {
+//   console.log(req.secure);
+//   if(!req.secure){
+//     res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
+//   }else{
+//     next();
+//   }
+// });
 
 routes.forEach(route => {
   app.get(route, (req, res) => {

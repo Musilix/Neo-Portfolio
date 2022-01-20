@@ -9,7 +9,8 @@ interface Project{
   index: string;
   title: string;
   description: string;
-  img: string;
+  miniImg: string;
+  bioImg: string;
   stack: string[];
   links: Link[];
 }
@@ -34,7 +35,8 @@ export class ProjectsService {
       "index": "1",
       "title": "Mymyc",
       "description": "Mymyc is a reusable test data management solution, providing a pleasing UX for those who need to generate synthetic test data for varying business scenarios.",
-      "img": "assets/projects/proj1.gif",
+      "miniImg": "assets/projects/mymyc-rot.webm",
+      "bioImg": "assets/projects/mymyc-bio.png",
       "stack": [
         "Python",
         "Flask",
@@ -44,10 +46,6 @@ export class ProjectsService {
         {
           "name": "git",
           "link": "https://github.com/Musilix/Mymyc"
-        },
-        {
-          "name": "external",
-          "link": "https://www.youtube.com"
         }
       ]
     },
@@ -55,7 +53,8 @@ export class ProjectsService {
       "index": "2",
       "title": "BBTransit",
       "description": "BBTransit is a web based transport alert app that aims to simplify the daily life of a commuter by offering access to simple yet meaningful info such as bus arrival times, destinations, locations, and their adherence to the schedule; all in real time.",
-      "img": "assets/projects/proj2.gif",
+      "miniImg": "assets/projects/bbtransit-rot.webm",
+      "bioImg": "assets/projects/bbtransit-bio.png",
       "stack": [
         "PHP",
         "JavaScript",
@@ -67,12 +66,14 @@ export class ProjectsService {
           "link": "https://github.com/Musilix/BBTransit"
         }
       ]
-    },
+    }
+    ,
     {
       "index": "3",
       "title": "Queuetube",
       "description": "A Google Chrome extension which serves to improve users' experiences on YouTube by providing a means to queue up various videos they are interested, all at once! Circa: before Youtube added this functionality itself.",
-      "img": "assets/projects/proj3.gif",
+      "miniImg": "assets/projects/mymyc-rot.webm",
+      "bioImg": "assets/projects/qtube-bio.png",
       "stack": [
         "Angular",
         "Express",
@@ -85,51 +86,50 @@ export class ProjectsService {
         }
       ]
     },
-    {
-      "index": "4",
-      "title": "On the Cuff",
-      "description": "A web app which aims to centralize crowd sourced info on food competitions, events with free food, and simply everything food. ",
-      "img": "assets/projects/proj4.gif",
-      "stack": [
-        "Angular",
-        "Express",
-        "Node"
-      ],
-      "links": [
-        {
-          "name": "git",
-          "link": "https://github.com/Musilix/On-The-Cuff"
-        },
-        {
-          "name": "external",
-          "link": "https://www.youtube.com"
-        }
-      ]
-    },
-    {
-      "index": "5",
-      "title": "Pipplio",
-      "description": "A straightforward networking app for people who want to get into the startup scene, but don't have anyone to join them, yet.",
-      "img": "assets/projects/pipplio_mini.svg",
-      "stack": [
-        "React",
-        "Express",
-        "Mongo",
-        "Node"
-      ],
-      "links": [
-        {
-          "name": "git",
-          "link": "https://github.com/Musilix/Pipplio"
-        }
-      ]
-    }
+    // {
+    //   "index": "4",
+    //   "title": "On the Cuff",
+    //   "description": "A web app which aims to centralize crowd sourced info on food competitions, events with free food, and simply everything food. ",
+    //   "img": "assets/projects/proj4.gif",
+    //   "stack": [
+    //     "Angular",
+    //     "Express",
+    //     "Node"
+    //   ],
+    //   "links": [
+    //     {
+    //       "name": "git",
+    //       "link": "https://github.com/Musilix/On-The-Cuff"
+    //     },
+    //     {
+    //       "name": "external",
+    //       "link": "https://www.youtube.com"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "index": "5",
+    //   "title": "Pipplio",
+    //   "description": "A straightforward networking app for people who want to get into the startup scene, but don't have anyone to join them, yet.",
+    //   "img": "assets/projects/pipplio_mini.svg",
+    //   "stack": [
+    //     "React",
+    //     "Express",
+    //     "Mongo",
+    //     "Node"
+    //   ],
+    //   "links": [
+    //     {
+    //       "name": "git",
+    //       "link": "https://github.com/Musilix/Pipplio"
+    //     }
+    //   ]
+    // }
   ];
 
   constructor() { }
 
   displayProj(projName){
-    // console.log(this.htmlRef);
     // trying out a hacky way to allow scrolling on a page,
     // but also hide overflow on the click of a project... and it magically worked... cool
     window.scrollTo({
@@ -139,7 +139,7 @@ export class ProjectsService {
     });
     this.htmlRef.style.overflow = "hidden";
 
-    let projTemplate = document.getElementById(this.projTemplateMappings[projName]);
+    let projTemplate = document.getElementById(`proj${projName}-wrap`);
 
     if(projTemplate){
       projTemplate.style.bottom = "0%";

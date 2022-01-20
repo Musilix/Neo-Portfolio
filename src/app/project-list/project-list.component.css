@@ -103,15 +103,14 @@
     box-shadow: 0 2px 8px 0 rgba(50,50,93,.1);
 }
 
-.proj-left img{
+ .proj-left img{
     width: 85%;
-    /* height: 85%; */
 
     transform: rotateZ(-15deg);
 
     min-width: 250px;
     min-height: 250px;
-}
+} 
 
 .tech-stack-wrap{
     list-style-type: none;

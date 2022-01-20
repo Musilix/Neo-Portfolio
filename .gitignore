@@ -105,6 +105,7 @@ dist
 
 
 # compiled output
+docs
 /docs
 /dist
 /tmp

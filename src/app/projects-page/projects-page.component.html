@@ -7,9 +7,13 @@
             <ul id="projects-content">
                 <ng-container *ngFor="let proj of getProjs()">
                     <li class="project-main">
-                        <picture>
-                            <img (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" src="{{proj.img}}">
-                        </picture>
+                        <!-- <picture>
+                                <img (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" src="{{proj.img}}">
+                            </picture> -->
+                        <video (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" muted autoplay playsinline loop oncanplay="this.play()" onloadedmetadata="this.muted = true">
+                            <source src="{{proj.miniImg}}" type="video/webm">
+                            <!-- <source src="my-animation.mp4" type="video/mp4"> -->
+                        </video>
                         <h3>{{proj.title}}</h3>
                         <ul id="mini-tech-wrap">
                             <ng-container *ngFor="let tech of proj.stack">

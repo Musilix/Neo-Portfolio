@@ -23,12 +23,12 @@
     margin: 30px;
 }
 
-#projects-inner img{
+#projects-inner video{
     width:150px;
     height:150px;
 }
 
-#projects-inner img:hover{
+#projects-inner video:hover{
     cursor: pointer;
 }
 
@@ -37,14 +37,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: end;
 
     padding: 10px;
     border-radius: 10px;
 
     box-shadow: 0 2px 8px 0 rgba(50,50,93,.15);
 
-    min-width: 225px;
-    max-width: 225px;
+    /* min-width: 225px;
+    max-width: 225px; */
+
+    min-width: 215px;
+    min-height: 245px;
 
     box-sizing:border-box;
 }
@@ -55,6 +59,8 @@
     font-weight: 800;
 
     margin: 0px;
+
+    z-index: 1;
 }
 
 #mini-tech-wrap{
@@ -76,10 +82,12 @@
     font-weight: 100;
     font-size: 12px;
     margin: 0px;
+
+    z-index: 1;
 }
 
 
-#proj1{
+video{
     animation: twist1 4s linear infinite;
 }
 

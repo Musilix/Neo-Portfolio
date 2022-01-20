@@ -33,9 +33,6 @@ export class ContactPageComponent implements OnInit {
     let emailResponse = this.siteEmailService
       .sendEmail(emailData)
       .subscribe((res) => {
-        // console.log("Resonse: ");
-        console.log(res);
-
         //TODO
         if (res) {
           //clear form
