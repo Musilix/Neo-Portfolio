@@ -96,7 +96,7 @@
 }
 
 .art-detail-wrap img{
-    background: grey;
+    background: linear-gradient(to top, #adbac7, #edf0f3);
     border-radius: 10px;
     width: 192px;
     height: 222px;
