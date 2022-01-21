@@ -1,7 +1,7 @@
 <ng-container *ngFor="let project of getProjs()">
     <div id="{{'proj' + project.index + '-wrap'}}" class="proj-wrap">
         <div id="close-project-wrap" (click) = 'closeCurrentProj()'>
-            <img src="assets/close.png">
+            <img src="assets/close.webp">
         </div>
     
         <picture>
@@ -35,7 +35,7 @@
                             <!-- <li></li> -->
                             <li *ngFor="let link of project.links">
                                 <a href="{{link.link}}">
-                                    <img src="{{'assets/contact-imgs/' + link.name + '.png'}}">
+                                    <img src="{{'assets/contact-imgs/' + link.name + '.webp'}}">
                                 </a>
                             </li>
                         </ul>

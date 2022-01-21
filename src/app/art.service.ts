@@ -16,56 +16,56 @@ export class ArtService {
     {
       "index": "0",
       "title": "The Golden Idol",
-      "img": "assets/art/golden_idol_front.png",
+      "img": "assets/art/golden_idol_front.webp",
       "medium": "Blender",
       "description": "Inspired by Spelunky, the game\nMade in Blender\n04/2020"
     },
     {
       "index": "1",
       "title": "Gleechi",
-      "img": "assets/art/gleechi_bust.jpg",
+      "img": "assets/art/gleechi_bust.webp",
       "medium": "Blender",
       "description": "The bust of a round fellow who is somehow always angry.\nMade in Blender\n09/2020"
     },
     {
       "index": "2",
       "title": "Cheese Moon",
-      "img": "assets/art/cheese_moon.jpg",
+      "img": "assets/art/cheese_moon.webp",
       "medium": "Blender",
       "description": "Mic, The Cermamic Man, gazing at the cheese moon.\nMade in Blender\n04/2021"
     },
     {
       "index": "3",
       "title": "A Funny Frog",
-      "img": "assets/art/funny_frog.jpg",
+      "img": "assets/art/funny_frog.webp",
       "medium": "Blender and Photoshop",
       "description": "Inspired by one of my favorite childhood books, I Spy\nMade in Blender, Post Processing in PS\n02/2021"
     },
     {
       "index": "4",
       "title": "Rhombeechi",
-      "img": "assets/art/rhombeechi_bust.jpg",
+      "img": "assets/art/rhombeechi_bust.webp",
       "medium": "Blender",
       "description": "A more rhombus-like fellow who is just as angry as a Gleechi\nMade in Blender\n09/2020"
     },
     {
       "index": "5",
       "title": "Textures",
-      "img": "assets/art/textures.jpg",
+      "img": "assets/art/textures.webp",
       "medium": "Blender",
       "description": "A range of furry, smooth, and blocky textures\nMade in Blender\n03/2021"
     },
     {
       "index": "6",
       "title": "Bitmoji Me",
-      "img": "assets/art/me.jpg",
+      "img": "assets/art/me.webp",
       "medium": "Blender",
       "description": "A 3D render of my bitmoji, since I couldn't export it from my phone.\nMade in Blender\n01/2021"
     },
     {
       "index": "7",
       "title": "Voided",
-      "img": "assets/art/voided.jpg",
+      "img": "assets/art/voided.webp",
       "medium": "Blender",
       "description": "A Gleechi chilling in the void. \nMade in Blender\n06/2020"
     }

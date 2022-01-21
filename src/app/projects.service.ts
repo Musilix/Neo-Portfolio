@@ -10,6 +10,7 @@ interface Project{
   title: string;
   description: string;
   miniImg: string;
+  miniImgBackUp?: string;
   bioImg: string;
   stack: string[];
   links: Link[];
@@ -19,13 +20,6 @@ interface Project{
   providedIn: 'root'
 })
 export class ProjectsService {
-  private projTemplateMappings = {
-    "1": "proj1-wrap",
-    "2": "proj2-wrap",
-    "3": "proj3-wrap",
-    "4": "proj4-wrap",
-    "5": "proj5-wrap"
-  };
 
   private currProj: HTMLElement;
   private htmlRef = document.getElementsByTagName("html")[0];
@@ -36,7 +30,7 @@ export class ProjectsService {
       "title": "Mymyc",
       "description": "Mymyc is a reusable test data management solution, providing a pleasing UX for those who need to generate synthetic test data for varying business scenarios.",
       "miniImg": "assets/projects/mymyc-rot.webm",
-      "bioImg": "assets/projects/mymyc-bio.png",
+      "bioImg": "assets/projects/mymyc-bio.webp",
       "stack": [
         "Python",
         "Flask",
@@ -54,7 +48,8 @@ export class ProjectsService {
       "title": "BBTransit",
       "description": "BBTransit is a web based transport alert app that aims to simplify the daily life of a commuter by offering access to simple yet meaningful info such as bus arrival times, destinations, locations, and their adherence to the schedule; all in real time.",
       "miniImg": "assets/projects/bbtransit-rot.webm",
-      "bioImg": "assets/projects/bbtransit-bio.png",
+      "miniImgBackUp": "assets/projects/bbtransit-rot.webm",
+      "bioImg": "assets/projects/bbtransit-bio.webp",
       "stack": [
         "PHP",
         "JavaScript",
@@ -73,7 +68,7 @@ export class ProjectsService {
       "title": "Queuetube",
       "description": "A Google Chrome extension which serves to improve users' experiences on YouTube by providing a means to queue up various videos they are interested, all at once! Circa: before Youtube added this functionality itself.",
       "miniImg": "assets/projects/qtube-rot.webm",
-      "bioImg": "assets/projects/qtube-bio.png",
+      "bioImg": "assets/projects/qtube-bio.webp",
       "stack": [
         "Angular",
         "Express",
@@ -91,7 +86,7 @@ export class ProjectsService {
       "title": "On the Cuff",
       "description": "A web app which aims to centralize crowd sourced info on food competitions, events with free food, and simply everything food. ",
       "miniImg": "assets/projects/onthecuff-rot.webm",
-      "bioImg": "assets/projects/onthecuff-bio.png",
+      "bioImg": "assets/projects/onthecuff-bio.webp",
       "stack": [
         "Angular",
         "Express",
