@@ -36,16 +36,19 @@
     height: 100%;
 
     border-radius: 10px;
+
+    transition: width 1s;
 }
 
 .bio-bottom-lip-wrap{
     text-align: center;
     border-radius: 0px 00px 10px 10px;
-    padding: 5px;
+    padding: 5px 15px;
 
     background-color: white;
     box-shadow: 0 2px 8px 0 rgba(50,50,93,.25);
 
+    max-width: fit-content;
 }
 
 .bio-bottom-lip-wrap > *{
@@ -85,6 +88,24 @@
     position: absolute;
     top: 10px;
     right: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    border-radius: 999px;
+
+    transition: filter .25s ease-in-out;
+}
+
+.art-exit-wrap:hover{
+    cursor: pointer;
+    filter: invert(1);
+}
+
+.art-exit-wrap:hover > .art-img-close{
+    cursor: pointer;
+    filter: invert(1);
 }
 
 .art-img-close{

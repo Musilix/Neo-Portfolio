@@ -11,9 +11,7 @@ export class ArtItemComponent implements OnInit {
 
   constructor(private artService: ArtService, private eRef: ElementRef) { }
 
-  ngOnInit(): void {
-    // console.log(this.artObj);
-  }
+  ngOnInit(): void {}
 
   closeProj(){
     this.artService.closeProj();
@@ -22,7 +20,9 @@ export class ArtItemComponent implements OnInit {
   //jank... but easy... way to close art item if clicked outside...
   @HostListener('click', ['$event'])
   clickOutside(e) {
-    if(e.target.className === "art-bio-detail-wrap"){
+    console.log(e.target.className);
+    let clickableAreas = ["art-bio-img", "art-img-exit-wrap", "art-bio-detail-wrap", "bio-bottom-lip-wrap", "art-bio-header", "art-bio-desc"]
+    if(!clickableAreas.includes(e.target.className)){
       this.closeProj();
     }
   }

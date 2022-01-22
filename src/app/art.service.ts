@@ -68,6 +68,34 @@ export class ArtService {
       "img": "assets/art/voided.webp",
       "medium": "Blender",
       "description": "A Gleechi chilling in the void. \nMade in Blender\n06/2020"
+    },
+    {
+      "index": "8",
+      "title": "Rico, the Giant",
+      "img": "assets/art/rico.webp",
+      "medium": "Blender",
+      "description": "A piece I made for a funny Youtuber, @Rico The Giant \nMade in Blender\n06/2021"
+    },
+    {
+      "index": "9",
+      "title": "Unexpected Guest",
+      "img": "assets/art/knockknock.webp",
+      "medium": "Blender",
+      "description": "A strange creature is knocking.\nIt locked itself out of it's car; will you let them in? \nMade in Blender\n07/2021"
+    },
+    {
+      "index": "10",
+      "title": "Siblings (by law!)",
+      "img": "assets/art/siblings.webp",
+      "medium": "Blender",
+      "description": "Two little textured fellahs just chillin' on some dirt \nMade in Blender\n10/2021"
+    },
+    {
+      "index": "11",
+      "title": "Flowey",
+      "img": "assets/art/flowey.webp",
+      "medium": "Blender",
+      "description": "A scary little creature from the garden. \nMade in Blender\n04/2021"
     }
   ];
   
@@ -97,9 +125,6 @@ export class ArtService {
         this.currArt.style.display = "none";
         this.currArt = null;
       }, 100);
-
-      // setTimeout(()=> {this.htmlRef.style.overflow = "auto";}, 500);
-      // this.currProj = null;
     }
   }
 

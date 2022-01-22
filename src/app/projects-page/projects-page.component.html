@@ -7,12 +7,9 @@
             <ul id="projects-content">
                 <ng-container *ngFor="let proj of getProjs()">
                     <li class="project-main">
-                        <!-- <picture>
-                                <img (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" src="{{proj.img}}">
-                            </picture> -->
                         <video (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" muted autoplay playsinline loop oncanplay="this.play()" onloadedmetadata="this.muted = true">
-                            <!-- <source src="{{proj.miniImg}}" type="video/webm"> -->
-                            <source src="{{proj.miniImgBackUp}}" type="video/mp4" codecs="avc1">
+                            <source src="{{proj.miniImg}}" type="video/webm">
+                            <!-- <source src="{{proj.miniImgBackUp}}" type="video/mp4" codecs="avc1"> -->
                         </video>
                         <h3>{{proj.title}}</h3>
                         <ul id="mini-tech-wrap">
@@ -32,11 +29,6 @@
 <div id="bg-blob-wrap">
     <picture id="blob1-wrap">
         <img id="blob1" class="bg-blob" src="assets/blobs/subblobs/blob15.svg">
-        <!-- <picture id="circle1-wrap">
-            <svg height="100" width="100">
-                <circle cx="50" cy="50" r="40" stroke="#F1C21B" stroke-width="6" fill="none" />
-            </svg> 
-        </picture> -->
     </picture>
     <picture id="blob2-wrap">
         <img id="blob2" class="bg-blob" src="assets/blobs/aboutblobs/blob1.svg">

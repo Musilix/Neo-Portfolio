@@ -70,9 +70,8 @@ export class ProjectsService {
       "miniImg": "assets/projects/qtube-rot.webm",
       "bioImg": "assets/projects/qtube-bio.webp",
       "stack": [
-        "Angular",
-        "Express",
-        "Node"
+        "HTML/CSS",
+        "JavaScript"
       ],
       "links": [
         {
@@ -88,9 +87,9 @@ export class ProjectsService {
       "miniImg": "assets/projects/onthecuff-rot.webm",
       "bioImg": "assets/projects/onthecuff-bio.webp",
       "stack": [
-        "Angular",
-        "Express",
-        "Node"
+        "PHP",
+        "JavaScript",
+        "HTML/CSS"
       ],
       "links": [
         {
