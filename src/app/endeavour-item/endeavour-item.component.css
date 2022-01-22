@@ -189,7 +189,7 @@
 .readmore-details-wrap h2{
     text-align: left;
     /* font-size: clamp(2vw, 3vw, 3vw); */
-    font-size: 6vw;
+    font-size: 85px;
 
     font-family: Inter var,sans-serif;;
     color: #747fe0;    
@@ -203,7 +203,7 @@
 
 .readmore-details-wrap p{
     font-weight: normal;
-    font-size: clamp(13px, .85vw, .85vw);
+    font-size: 18px;
     line-height: 1.85;
     opacity: .75 !important;
     white-space: pre-line;
@@ -244,7 +244,11 @@
 
 @media screen and (max-width: 1200px){
     .readmore-details-wrap h2{
-        font-size: 8vwvw;
+        font-size: 65px;
+    }
+    
+    .readmore-details-wrap p{
+        font-size: 14px;
     }
 }
 
@@ -277,5 +281,8 @@
         width: 100%;
         object-fit: contain;
         /* height: auto; */
+    }
+    .readmore-details-wrap h2{
+        font-size: 45px;
     }
 }

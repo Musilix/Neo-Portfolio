@@ -19,6 +19,9 @@
 .extra-section{
     width: 100%;
     min-height: 90%;
+
+    display: flex;
+    align-items: center;
     /* min-height: calc(var(--vh, 1vh) * 90); */
 
     /* flex: 1 1 auto; */
@@ -29,6 +32,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+
+    margin-top: -68px; /*hard code to take into account nav height*/
 }
 
 #extras-content-nav-wrap{
