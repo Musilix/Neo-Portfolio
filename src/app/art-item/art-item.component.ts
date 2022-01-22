@@ -20,7 +20,6 @@ export class ArtItemComponent implements OnInit {
   //jank... but easy... way to close art item if clicked outside...
   @HostListener('click', ['$event'])
   clickOutside(e) {
-    console.log(e.target.className);
     let clickableAreas = ["art-bio-img", "art-img-exit-wrap", "art-bio-detail-wrap", "bio-bottom-lip-wrap", "art-bio-header", "art-bio-desc"]
     if(!clickableAreas.includes(e.target.className)){
       this.closeProj();

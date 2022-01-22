@@ -19,7 +19,7 @@ export class EndeavourService {
       "image": "assets/endeavours/pipplio.webp",
       "title": "Pipplio",
       "prevDesc": "I'm currently developing a straightforward networking app for people who want to get into the startup scene, but don't have anyone to join them, yet.",
-      "readMore": "Over the years, the idea of building a startup or SaaS app has intrigued me greatly. The only problem is, everyone tells you that your only chance for true success is if you have someone working alongside you. Sadly, I don't have many techy, business-y, marketing type friends. I don't have many friends to begin with! And I know I am not alone in this situation; so I want to provide a simple means to finding people around you with similar aspirations in a similar situation, to hopefully kickstart you startup."
+      "readMore": "Over the years, the idea of building a startup or SaaS app has intrigued me greatly. The only problem is, everyone tells you that your only chance for true success is if you have someone working alongside you. \n\n Sadly, I don't have many techy, business-y, marketing type friends. I don't have many friends to begin with! And I know I am not alone in this situation; so I want to provide a simple means to finding people around you with similar aspirations in a similar situation, to hopefully kickstart you startup."
     },
     {
       "index": "1",

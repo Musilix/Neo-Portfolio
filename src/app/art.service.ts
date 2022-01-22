@@ -88,7 +88,7 @@ export class ArtService {
       "title": "Siblings (by law!)",
       "img": "assets/art/siblings.webp",
       "medium": "Blender",
-      "description": "Two little textured fellahs just chillin' on some dirt \nMade in Blender\n10/2021"
+      "description": "Two little textured bros just chillin' on some dirt \nMade in Blender\n10/2021"
     },
     {
       "index": "11",
