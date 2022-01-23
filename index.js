@@ -56,8 +56,9 @@ app.post("/sendmail", async(req, res) => {
     console.log('Email sent: ' + info.response);
     let sendStatus = true;
     res.send(sendStatus);
+    break;
   }catch(e){
-    console.error(`Something went dreadfully wrong: ${error}`);
+    console.error(`Something went dreadfully wrong: ${e}`);
     let sendStatus = false;
     res.send(sendStatus);
   }

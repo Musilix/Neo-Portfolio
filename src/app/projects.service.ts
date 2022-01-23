@@ -95,10 +95,6 @@ export class ProjectsService {
         {
           "name": "git",
           "link": "https://github.com/Musilix/On-The-Cuff"
-        },
-        {
-          "name": "external",
-          "link": "https://www.youtube.com"
         }
       ]
     },
