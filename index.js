@@ -18,15 +18,6 @@ app.use(express.static(__dirname + '/docs'));
 
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 
-// app.use((req, res, next) => {
-//   console.log(req.secure);
-//   if(!req.secure){
-//     res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
-//   }else{
-//     next();
-//   }
-// });
-
 routes.forEach(route => {
   app.get(route, (req, res) => {
     res.sendFile(path.join(__dirname + "/docs/index.html"))
@@ -60,22 +51,19 @@ app.post("/sendmail", async(req, res) => {
     text: `Email from ${req.body.emailAddress}: \n ${req.body.message}`
   };
 
-  let sendStatus;
-  await transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.log(error);
-      sendStatus = false;
-    } else {
-      console.log('Email sent: ' + info.response);
-      sendStatus = true;
-    }
-  });
-
-  console.log(`status ${sendStatus}`);
-  res.send(sendStatus);
+  try {
+    let info = await transporter.sendMail(mailOptions);
+    console.log('Email sent: ' + info.response);
+    let sendStatus = true;
+    res.send(sendStatus);
+  }catch(e){
+    console.error(`Something went dreadfully wrong: ${error}`);
+    let sendStatus = false;
+    res.send(sendStatus);
+  }
 });
 
 // Start the app by listening on the default Heroku port
 app.listen(process.env.PORT || 4200, ()=> {
-  console.log("app started bruh");
+  console.log(`app started on ${process.env.PORT || 4200}, bruh`);
 });

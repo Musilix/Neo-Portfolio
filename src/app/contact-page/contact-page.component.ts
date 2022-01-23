@@ -30,17 +30,10 @@ export class ContactPageComponent implements OnInit {
 
   onEmail() {
     let emailData = this.emailForm.value;
-    let emailResponse = this.siteEmailService
+    this.siteEmailService
       .sendEmail(emailData)
-      .subscribe((res) => {
-        //TODO
-        if (res) {
-          //clear form
-          //show either error div or success div for 3 secs then hide again
-          this.messageSent = true;
-        }else{
-          this.messageSent = false;
-        }
+      .subscribe((res: boolean) => {
+        this.messageSent = res === undefined ? false : res;
       });
   }
 }

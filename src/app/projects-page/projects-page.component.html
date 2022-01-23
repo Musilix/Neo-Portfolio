@@ -9,7 +9,7 @@
                     <li class="project-main">
                         <video (click)="displayProj(proj.index)" id="{{'proj' + proj.index}}" muted autoplay playsinline loop oncanplay="this.play()" onloadedmetadata="this.muted = true">
                             <source src="{{proj.miniImg}}" type="video/webm">
-                            <!-- <source src="{{proj.miniImgBackUp}}" type="video/mp4" codecs="avc1"> -->
+                            <source src="{{proj.miniImgBackUp}}" type='video/mp4; codecs="hvc1"'>
                         </video>
                         <h3>{{proj.title}}</h3>
                         <ul id="mini-tech-wrap">

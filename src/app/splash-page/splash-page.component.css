@@ -62,8 +62,8 @@
     transform: rotateX(-170deg);
 }
 
-#follower{
-    width:100%;
+#follower-wrap{
+    width:110%;
     /* height: 90%; */
 }
 

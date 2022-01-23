@@ -48,7 +48,7 @@ export class ProjectsService {
       "title": "BBTransit",
       "description": "BBTransit is a web based transport alert app that aims to simplify the daily life of a commuter by offering access to simple yet meaningful info such as bus arrival times, destinations, locations, and their adherence to the schedule; all in real time.",
       "miniImg": "assets/projects/bbtransit-rot.webm",
-      "miniImgBackUp": "assets/projects/bbtransit-rot.webm",
+      "miniImgBackUp": "assets/projects/bbtransit-rot.mp4",
       "bioImg": "assets/projects/bbtransit-bio.webp",
       "stack": [
         "PHP",
