@@ -6,6 +6,8 @@ const cors = require("cors");
 const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
 const enforce = require('express-sslify');
+const dotenv = require('dotenv');
+dotenv.config()
 
 //REMOVE?
 app.enable('trust proxy');
@@ -17,6 +19,15 @@ app.use(cors());
 app.use(express.static(__dirname + '/docs'));
 
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
+
+// app.use((req, res, next) => {
+//   console.log(req.secure);
+//   if(!req.secure){
+//     res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
+//   }else{
+//     next();
+//   }
+// });
 
 routes.forEach(route => {
   app.get(route, (req, res) => {
@@ -56,9 +67,8 @@ app.post("/sendmail", async(req, res) => {
     console.log('Email sent: ' + info.response);
     let sendStatus = true;
     res.send(sendStatus);
-    break;
   }catch(e){
-    console.error(`Something went dreadfully wrong: ${e}`);
+    console.error(`Something went dreadfully wrong: ${error}`);
     let sendStatus = false;
     res.send(sendStatus);
   }
