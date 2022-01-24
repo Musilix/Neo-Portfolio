@@ -60,8 +60,7 @@ export class AboutPageComponent implements OnInit {
   public topLangs : Stat[] = [];
   public topLangLength = 4;
 
-  // TODO: maybe make private
-  public pendingStatsInterval = setInterval(() => {this.waitForStats()}, 250);
+  private pendingStatsInterval = setInterval(() => {this.waitForStats()}, 250);
   
   constructor(private statsService: CodingStatsService) { }
 
