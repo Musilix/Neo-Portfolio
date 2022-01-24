@@ -29,11 +29,15 @@ export class ContactPageComponent implements OnInit {
   ngOnInit(): void {}
 
   onEmail() {
-    let emailData = this.emailForm.value;
-    this.siteEmailService
-      .sendEmail(emailData)
-      .subscribe((res: boolean) => {
+    // add class to form that
+    let button: HTMLElement = document.getElementById("submit");
+    console.log(this.emailForm.valid);
+
+    if (this.emailForm.valid) {
+      let emailData = this.emailForm.value;
+      this.siteEmailService.sendEmail(emailData).subscribe((res: boolean) => {
         this.messageSent = res === undefined ? false : res;
       });
+    }
   }
 }

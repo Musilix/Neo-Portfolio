@@ -49,7 +49,7 @@
                     <input type="text" id="topic" name="topic" formControlName="topic" placeholder="Topic" required>
                     <textarea id="message" name="message" formControlName="message" form="message-wrap" placeholder="Whatever you'd like to say"required>Whatever you'd like to say</textarea>
                     <!-- <input type="text" id="message" name="message" placeholder="Whatever you'd like to say"> -->
-                    <input type="submit" id="submit" value="send" [disabled]="!emailForm.valid">
+                    <input [ngClass] = "this.emailForm.valid ? 'form-valid' : 'form-invalid'" type="submit" id="submit" value="send" [disabled]="!this.emailForm.valid">
                 </form>
                 
                 <div id="msg-result-wrap" *ngIf="messageSent !== null">

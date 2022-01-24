@@ -52,14 +52,17 @@ export class AboutPageComponent implements OnInit {
 
   public languagesUsed;
   public dailyAvgTime;
-  public totalTime = "...";
+  public totalTime = ".";
 
   public bestDayDate;
-  public bestDay = "...";
+  public bestDay = ".";
 
   public topLangs : Stat[] = [];
   public topLangLength = 4;
 
+  // TODO: maybe make private
+  public pendingStatsInterval = setInterval(() => {this.waitForStats()}, 250);
+  
   constructor(private statsService: CodingStatsService) { }
 
   normalize(val, topLangs) { 
@@ -137,8 +140,19 @@ export class AboutPageComponent implements OnInit {
     return `rgb(${newBase[0]}, ${newBase[1]}, ${newBase[2]})`;
   }
 
+  waitForStats(){
+    if(this.totalTime.length < 3){
+      this.totalTime += ".";
+      this.bestDay += ".";
+    }else{
+      this.totalTime = ".";
+      this.bestDay = ".";
+    }
+  }
+
   ngOnInit(): void {
     this.statsService.getMyStats().subscribe((data) => {
+      clearInterval(this.pendingStatsInterval);
       this.stats = data["data"];
 
       this.languagesUsed = this.stats["languages"];
