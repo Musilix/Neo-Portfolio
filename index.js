@@ -5,9 +5,6 @@ const path = require("path");
 const cors = require("cors");
 const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
-const enforce = require('express-sslify');
-const dotenv = require('dotenv');
-dotenv.config()
 
 //REMOVE?
 app.enable('trust proxy');
@@ -68,7 +65,7 @@ app.post("/sendmail", async(req, res) => {
     let sendStatus = true;
     res.send(sendStatus);
   }catch(e){
-    console.error(`Something went dreadfully wrong: ${error}`);
+    console.error(`Something went dreadfully wrong: ${e}`);
     let sendStatus = false;
     res.send(sendStatus);
   }
