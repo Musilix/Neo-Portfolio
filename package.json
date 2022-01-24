@@ -7,10 +7,10 @@
   },
   "scripts": {
     "ng": "ng",
-    "heroku-postbuild": "ng build --prod --output-path docs --base-href /",
+    "heroku-postbuild": "ng build --configuration production --output-path docs --base-href /",
     "start": "node index.js",
     "watch": "npm run build-local && node index.js",
-    "build": "ng build --prod --output-path docs --base-href /",
+    "build": "ng build --configuration production --output-path docs --base-href /",
     "build-local": "ng build --output-path docs --base-href http://localhost:4200/",
     "build-git": "ng build --output-path docs --base-href https://musilix.github.io/Neo-Portfolio/",
     "test": "ng test",
