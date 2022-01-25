@@ -39,6 +39,7 @@
     align-items: center;
     justify-content: end;
     -webkit-box-pack: end; 
+    -webkit-justify-content: flex-end;
 
     padding: 10px;
     border-radius: 10px;
