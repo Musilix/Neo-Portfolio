@@ -38,6 +38,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: end;
+    -webkit-box-pack: end; 
 
     padding: 10px;
     border-radius: 10px;
