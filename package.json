@@ -61,6 +61,7 @@
   "browserslist": [
     "defaults",
     "> .5%",
+    "Firefox ESR",
     "last 2 versions",
     "not dead"
   ]
