@@ -181,7 +181,7 @@ export class AboutPageComponent implements OnInit {
             //loop thru used editors and check to see if one of them WASNT a coding IDE. aka Blender/video editing software/etc
             for(let i = 0; i < this.editors.length; i++){
               if(!this.codingIDEs.includes(this.editors[i].name)){
-                langStat.lang = this.editors[i].name;
+                langStat.lang = `${this.editors[i].name} (VFX)`;
               }
             }
           }

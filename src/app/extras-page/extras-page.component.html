@@ -1,4 +1,4 @@
-<app-nav-bar context = "extras"></app-nav-bar>
+<app-nav-bar context="extras"></app-nav-bar>
 <div id="extras-content-wrap">
 
     <section class="extra-section" id="endeavours">
@@ -9,8 +9,9 @@
         <app-art-list></app-art-list>
         <div id="art-list-wrap">
             <ul id="art-wrap">
-                <ng-container *ngFor="let art of getArt()">
-                    <li class="art-item" id="{{'art' + art.index}}" (click)="displayArt(art.index)">
+                <ng-container *ngFor="let art of getArt();
+                                     let eleIndex = index; ">
+                    <li class="art-item" id="{{'art' + eleIndex}}" (click)="displayArt(eleIndex)">
                         <div class="art-detail-wrap">
                             <img src="{{art.img}}" class="art-img">
                             <div class="bottom-lip-wrap">
@@ -21,6 +22,14 @@
                     </li>
                 </ng-container>
             </ul>
+
+            <div id="insta-external">
+                <div id="insta-wrap">
+                    <a href="https://www.instagram.com/keem.korn/">
+                        <img src="assets/contact-imgs/insta.webp">
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -70,10 +79,12 @@
     <!-- <div class="nav-ele" id="hobbies-nav" (click)="scrollTo(2)" [ngClass] = "{'active': activeTabIdx == 2, 'inactive': activeTabIdx != 2}">
         <p>Hobbies</p>
     </div> -->
-    <div class="nav-ele" id="art-nav" (click)="scrollTo(1)" [ngClass] = "{'active': activeTabIdx == 1, 'inactive': activeTabIdx != 1}">
+    <div class="nav-ele" id="art-nav" (click)="scrollTo(1)"
+        [ngClass]="{'active': activeTabIdx == 1, 'inactive': activeTabIdx != 1}">
         <p>Art</p>
     </div>
-    <div class="nav-ele" id="endeavours-nav" (click)="scrollTo(0)" [ngClass] = "{'active': activeTabIdx == 0, 'inactive': activeTabIdx != 0}">
+    <div class="nav-ele" id="endeavours-nav" (click)="scrollTo(0)"
+        [ngClass]="{'active': activeTabIdx == 0, 'inactive': activeTabIdx != 0}">
         <p>Endeavours</p>
     </div>
 </div>
