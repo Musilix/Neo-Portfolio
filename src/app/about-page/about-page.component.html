@@ -30,14 +30,14 @@
                 </h2>
                 <ng-template #elseBlock>
                     <span class = "minified">
-                        "Nothing!"
+                        Nothing!
                     </span>
                 </ng-template>
 
                 <p *ngIf = 'totalTime != "0 secs"; else elseMsgBlock'>spent over the last 7 days, coding at the speed of light!</p>
                 <ng-template #elseMsgBlock>
                     <p>
-                        "I've done nothing over the past week! Must be on vacay...!""
+                        I've done nothing over the past week! Must be on vacay...!
                     </p>
                 </ng-template>
             </div>
