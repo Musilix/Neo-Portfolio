@@ -14,11 +14,32 @@
 
     width: 100%;
     height: 100%;
+
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#contact-content-wrap{
+    /* overflow: hidden;
+
+    position: fixed;
+    left: 0;
+    top: 0; */
+}
+
+
+#contact-content-wrap section{
+    z-index:2;
 }
 
 .contact-section{
     width: 100%;
     margin: 12.5px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #right-contact-content{
@@ -96,19 +117,6 @@
     min-height: 200px;
 }
 
-#contact-content-wrap{
-    overflow: hidden;
-
-    position: fixed;
-    left: 0;
-    top: 0;
-}
-
-
-#contact-content-wrap section{
-    z-index:2;
-}
-
 #contact-content, #nav-links{
     width: 80%;
     max-width: 700px;
@@ -156,6 +164,7 @@
 
     display: flex;
     flex-direction: row;
+    justify-content: center;
     /* justify-content: space-evenly; */
 
     padding: 0px;
@@ -284,6 +293,7 @@
     /* width: 65%; */
     width: 50%;
     justify-content: center;
+    align-items: center;
 }
 
 #message-wrap input:focus, #message-wrap textarea:focus{
@@ -320,6 +330,12 @@
     color: #D0E2FF !important;
 } */
 
+#msg-result-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #message-wrap .form-invalid, input:disabled {
     opacity: .3;
     border: .5px solid gray;
@@ -348,19 +364,19 @@
 }
 
 .button--loading::after {
-content: "";
-position: absolute;
-width: 16px;
-height: 16px;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-margin: auto;
-border: 4px solid transparent;
-border-top-color: #ffffff;
-border-radius: 50%;
-animation: button-loading-spinner 1s ease infinite;
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
 }  
 
 @media screen and (max-width: 1250px){
@@ -421,9 +437,9 @@ animation: button-loading-spinner 1s ease infinite;
     }
 
     .contact-section{
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; */
     }
 
     .contact-section ul{
