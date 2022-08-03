@@ -200,16 +200,11 @@ export class AboutPageComponent implements OnInit {
     this.statsService.getMyStats().subscribe((data) => {
       clearInterval(this.pendingStatsInterval);
       this.stats = data["data"];
-      console.log(this.stats);
-      console.log(data);
+  
       if(this.stats.status !== "pending_update"){
-        console.log("handling good data");
-
         this.handleStats();
       }else{
-        console.log("handling bad data");
-
-        this.totalTime = null
+        this.totalTime = "0 secs"
       }
       
     });
