@@ -8,6 +8,7 @@ import { ArtService } from '../art.service';
 })
 export class ArtItemComponent implements OnInit {
   @Input() artObj;
+  @Input() artIdx;
 
   constructor(private artService: ArtService, private eRef: ElementRef) { }
 

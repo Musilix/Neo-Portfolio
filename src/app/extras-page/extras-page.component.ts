@@ -91,6 +91,7 @@ export class ExtrasPageComponent implements OnInit {
   // TODO: move this from teh extras component into the svc that manages art...
   // the art svc, that is!
   displayArt(idx){
+    console.log(`Trying to show ${idx}`);
     this.artService.displayProj(idx);
   }
 

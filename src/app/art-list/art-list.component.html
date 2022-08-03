@@ -1,3 +1,4 @@
-<ng-container *ngFor="let art of getArt()">
-    <app-art-item class="art" [artObj]="art"></app-art-item>
+<ng-container *ngFor="let art of getArt();
+                     let eleIndex = index;">
+    <app-art-item class="art" [artObj]="art" [artIdx]="eleIndex"></app-art-item>
 </ng-container>
