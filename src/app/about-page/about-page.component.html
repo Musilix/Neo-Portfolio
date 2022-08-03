@@ -24,22 +24,20 @@
         <div id="about-stats-inner">
             <div id="time-wrap">
                 <h2>
-                    <span *ngIf = 'totalTime !== "0 secs" || totalTime !== null; else elseBlock'>
+                    <span *ngIf = 'totalTime !== "0 secs"; else elseBlock'>
                         {{totalTime}}
                     </span>
                 </h2>
                 <ng-template #elseBlock>
                     <span class = "minified">
-                        {{totalTime}}
-                        {{totalTime === null ? 'Data Currently Unavailable' : 'Nothing!'}}
+                        "Nothing!"
                     </span>
                 </ng-template>
 
-                <p *ngIf = 'totalTime != "0 secs" || totalTime !== null; else elseMsgBlock'>spent over the last 7 days, coding at the speed of light!</p>
+                <p *ngIf = 'totalTime != "0 secs"; else elseMsgBlock'>spent over the last 7 days, coding at the speed of light!</p>
                 <ng-template #elseMsgBlock>
                     <p>
-                        {{totalTime}}
-                        {{totalTime === null ? 'An error must have occured when retrieving my stats :(' : 'I've done nothing over the past week! Must be on vacay...!'}}
+                        "I've done nothing over the past week! Must be on vacay...!""
                     </p>
                 </ng-template>
             </div>
