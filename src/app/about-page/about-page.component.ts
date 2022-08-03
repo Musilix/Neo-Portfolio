@@ -149,55 +149,64 @@ export class AboutPageComponent implements OnInit {
     }
   }
 
+  handleStats(){
+    this.languagesUsed = this.stats["languages"];
+    this.dailyAvgTime = this.stats["human_readable_daily_average"];
+    this.totalTime =  this.stats["human_readable_total_including_other_language"];
+
+    this.bestDayDate = this.stats["best_day"]["date"];
+    this.bestDay = this.days[new Date(this.bestDayDate).getUTCDay()];
+
+    this.editors = this.stats["editors"];
+
+    this.iterAmt = (this.languagesUsed.length >= this.topLangLength) ? this.topLangLength : this.languagesUsed.length;
+    //get top 3 languages used this week
+
+    for(let i = 0; i < this.iterAmt; i++){
+      let langStat : Stat = {
+        lang: this.languagesUsed[i]["name"],
+        hrs: this.languagesUsed[i]["hours"],
+        mins: this.languagesUsed[i]["minutes"],
+        percent: parseInt(this.languagesUsed[i]["percent"])
+      }
+
+      //check if we have an "other" category of languages
+      if(langStat.lang === "Other"){
+        //check if more than 1 editor was used
+        if(this.editors.length > 1){
+          //loop thru used editors and check to see if one of them WASNT a coding IDE. aka Blender/video editing software/etc
+          for(let i = 0; i < this.editors.length; i++){
+            if(!this.codingIDEs.includes(this.editors[i].name)){
+              langStat.lang = `${this.editors[i].name} (VFX)`;
+            }
+          }
+        }
+      }
+      this.topLangs.push(langStat);
+    }
+
+    //set style objects for each of the top 3 langs
+    //currently, creating these objs and serving them to ngStyle to dynamically style sta bars, but it doesnt seem there is any binding on ngStyle
+    //so fill statBarStyles, and call
+    for(let i = this.topLangs.length - 1; i >= 0; i--){
+      this.statBarStyles.push({
+        'width': `${this.normalize(this.topLangs[i]['percent'], this.topLangs)}%`,
+        'background': this.getStatTint(i)
+      });
+    }
+  }
+
   ngOnInit(): void {
     this.statsService.getMyStats().subscribe((data) => {
       clearInterval(this.pendingStatsInterval);
       this.stats = data["data"];
 
-      this.languagesUsed = this.stats["languages"];
-      this.dailyAvgTime = this.stats["human_readable_daily_average"];
-      this.totalTime =  this.stats["human_readable_total_including_other_language"];
-
-      this.bestDayDate = this.stats["best_day"]["date"];
-      this.bestDay = this.days[new Date(this.bestDayDate).getUTCDay()];
-
-      this.editors = this.stats["editors"];
-
-      this.iterAmt = (this.languagesUsed.length >= this.topLangLength) ? this.topLangLength : this.languagesUsed.length;
-      //get top 3 languages used this week
-
-      for(let i = 0; i < this.iterAmt; i++){
-        let langStat : Stat = {
-          lang: this.languagesUsed[i]["name"],
-          hrs: this.languagesUsed[i]["hours"],
-          mins: this.languagesUsed[i]["minutes"],
-          percent: parseInt(this.languagesUsed[i]["percent"])
-        }
-
-        //check if we have an "other" category of languages
-        if(langStat.lang === "Other"){
-          //check if more than 1 editor was used
-          if(this.editors.length > 1){
-            //loop thru used editors and check to see if one of them WASNT a coding IDE. aka Blender/video editing software/etc
-            for(let i = 0; i < this.editors.length; i++){
-              if(!this.codingIDEs.includes(this.editors[i].name)){
-                langStat.lang = `${this.editors[i].name} (VFX)`;
-              }
-            }
-          }
-        }
-        this.topLangs.push(langStat);
+      if(this.stats.status !== "pending_update"){
+        this.handleStats();
+      }else{
+        this.totalTime = null
       }
-
-      //set style objects for each of the top 3 langs
-      //currently, creating these objs and serving them to ngStyle to dynamically style sta bars, but it doesnt seem there is any binding on ngStyle
-      //so fill statBarStyles, and call
-      for(let i = this.topLangs.length - 1; i >= 0; i--){
-        this.statBarStyles.push({
-          'width': `${this.normalize(this.topLangs[i]['percent'], this.topLangs)}%`,
-          'background': this.getStatTint(i)
-        });
-      }
+      
     });
   }
 
