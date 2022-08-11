@@ -6,6 +6,8 @@ const cors = require("cors");
 const fetch = require('node-fetch');
 const nodemailer = require('nodemailer');
 
+const ENV_DIR = process.env.NODE_ENV === "production" ? "/docs" : "/src"
+
 //REMOVE?
 app.enable('trust proxy');
 app.disable('strict routing');
@@ -28,7 +30,7 @@ const routes = ["/", "/about", "/projects", "/contact", "/extras"];
 
 routes.forEach(route => {
   app.get(route, (req, res) => {
-    res.sendFile(path.join(__dirname + "/docs/index.html"))
+    res.sendFile(path.join(__dirname, `docs/index.html`));
   });
 });
 
