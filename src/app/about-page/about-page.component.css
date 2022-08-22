@@ -319,14 +319,6 @@
     /* width: 75% !important; */
 }
 
-.stats-bar#low-stat {
-    /* background-color: #48519b !important; */
-    /* width:25% !important; */
-}
-
-
-#outbound-waka-link-wrap {}
-
 #outbound-waka-wrap>* {
     padding: 5px;
 }
@@ -476,7 +468,7 @@
         flex-direction: column;
     }
 
-    #about-content-items #stats {
+    .about-content-item#stats {
         align-items: center;
     }
 }
