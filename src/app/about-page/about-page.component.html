@@ -1,16 +1,25 @@
-<app-nav-bar context = "about"></app-nav-bar>
+<app-nav-bar context="about"></app-nav-bar>
 <div id="about-content">
     <div class="about-content-item" id="intro">
         <div id="intro-header-wrap" class="intro-content">
             <h2>Hey, I'm Kareem.</h2>
-            <h2>A <span id="self-title" style="background-color: #e07479;border-radius: 25px;padding: 0px 15px;display: inline-block;color: white;">full stack developer</span> with a full stack of skills!</h2>
+            <h2>A <span id="self-title"
+                    style="background-color: #e07479;border-radius: 25px;padding: 0px 15px;display: inline-block;color: white;">full
+                    stack developer</span> with a full stack of skills!</h2>
         </div>
         <div id="intro-depth-wrap" class="intro-content">
             <div id="intro-text">
-                <p>I'm a frontend (and sometimes backend) developer that's been programming since 2015. I've found myself in a range of settings; from teaching, to 3d modeling and programming for games, all the way to building full stack web applications. No matter what the situation is, I live for the product building process. To me, software development is like a puzzle game; the fun of it all is finding creative solutions to real problems people are dealing with on the daily.</p>
-                <p>To be a bit more formal, you should take a look at my <a id="resumeLink" href="assets/resume.pdf">resume</a></p>
-                <p>I love the intricacies that come with programming and hope that, with the social competence I've built over my time as a tutor, teaching assistant, and instructor, I can go on to share the fun of it all with those around me.</p>
-                <p>I also like making art, so maybe take a peek at that in the extras page! 👀</p> 
+                <p>I'm a frontend (and sometimes backend) developer that's been programming since 2015. I've found
+                    myself in a range of settings; from teaching, to 3d modeling and programming for games, all the way
+                    to building full stack web applications. No matter what the situation is, I live for the product
+                    building process. To me, software development is like a puzzle game; the fun of it all is finding
+                    creative solutions to real problems people are dealing with on the daily.</p>
+                <p>To be a bit more formal, you should take a look at my <a id="resumeLink"
+                        href="assets/resume.pdf">resume</a></p>
+                <p>I love the intricacies that come with programming and hope that, with the social competence I've
+                    built over my time as a tutor, teaching assistant, and instructor, I can go on to share the fun of
+                    it all with those around me.</p>
+                <p>I also like making art, so maybe take a peek at that in the extras page! 👀</p>
             </div>
             <div id="intro-pic">
                 <picture id="intro-pic-inner">
@@ -19,22 +28,38 @@
             </div>
         </div>
     </div>
-    <div id="about-content-divider"></div> 
+    <div id="about-content-divider"></div>
     <div class="about-content-item" id="stats">
         <div id="about-stats-inner">
             <div id="time-wrap">
                 <h2>
-                    <span *ngIf = 'totalTime !== "0 secs"; else elseBlock'>
-                        {{totalTime}}
-                    </span>
+                    <ng-container *ngIf='totalTime !== "0 secs"; else elseBlock'>
+                        <span class="minified" *ngIf='totalTime === "waka-error"; else secondElseBlock'>
+                            Uh Oh...
+                        </span>
+
+                        <ng-template #secondElseBlock>
+                            {{totalTime}}
+                        </ng-template>
+                    </ng-container>
                 </h2>
+
                 <ng-template #elseBlock>
-                    <span class = "minified">
+                    <span>
                         Nothing!
                     </span>
                 </ng-template>
 
-                <p *ngIf = 'totalTime != "0 secs"; else elseMsgBlock'>spent over the last 7 days, coding at the speed of light!</p>
+                <ng-container *ngIf='totalTime != "0 secs"; else elseMsgBlock'>
+                    <p *ngIf='totalTime === "waka-error"; else secondElseMsgBlock'>
+                        Seems there was an error fetching my data. Try viewing it directly with the button below!
+                    </p>
+
+                    <ng-template #secondElseMsgBlock>
+                        <p>spent over the last 7 days, coding at the speed of light!</p>
+                    </ng-template>
+                </ng-container>
+
                 <ng-template #elseMsgBlock>
                     <p>
                         I've done nothing over the past week! Must be on vacay...!
@@ -43,9 +68,10 @@
             </div>
 
             <!-- must get the objs that filled the statBarStyles going backwards, as we pushed into stack sequentially intitially -->
-            <div id="stats-data-bars" *ngIf = 'totalTime != "0 secs"'>
-                <ng-container *ngFor = "let lang of topLangs; let i = index;">
-                    <div #codingStats class="stats-bar" [ngStyle]="statBarStyles[iterAmt - 1 - i]" [@fadeIn]="{value: false, params: {index: i, statWidth: statBarStyles[iterAmt - 1 - i]['width'], statBackground: statBarStyles[iterAmt - 1 - i]['background']}}">
+            <div id="stats-data-bars" *ngIf='totalTime != "0 secs"'>
+                <ng-container *ngFor="let lang of topLangs; let i = index;">
+                    <div #codingStats class="stats-bar" [ngStyle]="statBarStyles[iterAmt - 1 - i]"
+                        [@fadeIn]="{value: false, params: {index: i, statWidth: statBarStyles[iterAmt - 1 - i]['width'], statBackground: statBarStyles[iterAmt - 1 - i]['background']}}">
                         <p>{{topLangs[i]["lang"]}}</p>
                         <p>{{timeCheck(topLangs[i]["hrs"], topLangs[i]["mins"])}}</p>
                     </div>
@@ -53,7 +79,7 @@
             </div>
         </div>
 
-        <a id="outbound-waka-link-wrap"href="https://wakatime.com/@keemkorn">
+        <a id="outbound-waka-link-wrap" href="https://wakatime.com/@keemkorn">
             <div id="outbound-waka-outter-wrap">
                 <div id="outbound-waka-wrap">
                     <img id="waka-img" src="assets/contact-imgs/waka.webp">
@@ -62,8 +88,12 @@
             </div>
         </a>
 
-        <div id="best-day-msg-wrap" *ngIf = 'totalTime != "0 secs"'>
-            <h2>My most productive day in the past 7 days was <span style="background-color: #e0a674;color:white; padding: 1px">{{bestDay}}</span>. {{dayComments[bestDay]}}</h2>
+        <div id="best-day-msg-wrap" *ngIf='totalTime != "0 secs"'>
+            <ng-container *ngif='totalTime !== "waka-error"'>
+                <h2>My most productive day in the past 7 days was <span
+                        style="background-color: #5a5d7a;color:white; padding: 1px">{{bestDay}}</span>.
+                    {{dayComments[bestDay]}}</h2>
+            </ng-container>
         </div>
     </div>
 </div>
