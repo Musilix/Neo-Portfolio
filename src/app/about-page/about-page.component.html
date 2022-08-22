@@ -29,7 +29,8 @@
         </div>
     </div>
     <div id="about-content-divider"></div>
-    <div class="about-content-item" id="stats">
+    <div class="about-content-item" id="stats"
+        [ngClass]="{'waka-error-handler': totalTime === '0 secs' || totalTime === 'waka-error'}">
         <div id="about-stats-inner">
             <div id="time-wrap">
                 <h2>
