@@ -1,4 +1,4 @@
-.art-bio-wrap{
+.art-bio-wrap {
     width: 100%;
     height: 100%;
 
@@ -10,7 +10,7 @@
     align-items: center;
 
     /* background-image: linear-gradient(to top, white, rgba(0,0,0,0), white); */
-    background-color: rgba(255,255,255,.8);
+    background-color: rgba(255, 255, 255, .8);
 
     display: none;
     opacity: 0;
@@ -19,7 +19,7 @@
     transition: opacity .25s ease-in-out;
 }
 
-.art-bio-detail-wrap{
+.art-bio-detail-wrap {
     height: 90vh;
     display: flex;
     flex-direction: column;
@@ -27,7 +27,7 @@
     justify-content: center;
 }
 
-.art-bio-detail-wrap img{
+.art-bio-detail-wrap img {
     background: black;
     border-radius: 10px;
     width: 100%;
@@ -38,24 +38,24 @@
     transition: width 1s;
 }
 
-.bio-bottom-lip-wrap{
+.bio-bottom-lip-wrap {
     text-align: center;
     border-radius: 0px 00px 10px 10px;
     padding: 15px 25px;
 
     background-color: white;
-    box-shadow: 0 2px 8px 0 rgba(50,50,93,.25);
+    box-shadow: 0 2px 8px 0 rgba(50, 50, 93, .25);
 
-    max-width: fit-content;
+    width: 50%;
 }
 
-.bio-bottom-lip-wrap > *{
+.bio-bottom-lip-wrap>* {
     margin: 5px 0px !important;
 }
 
-.bio-bottom-lip-wrap h2{
+.bio-bottom-lip-wrap h2 {
     color: #747fe0;
-    font-family: Inter var,sans-serif !important;
+    font-family: Inter var, sans-serif !important;
     margin: 0;
     padding: 5px 0px;
 
@@ -64,8 +64,8 @@
     font-size: 45px;
 }
 
-.bio-bottom-lip-wrap p{
-    font-family: JetBrains Mono,monospace;
+.bio-bottom-lip-wrap p {
+    font-family: JetBrains Mono, monospace;
     color: #636979;
     margin: 0;
 
@@ -73,16 +73,16 @@
     font-size: 16px;
 }
 
-.art-img-exit-wrap{
+.art-img-exit-wrap {
     display: flex;
     /* width: 85%; */
-    height: 60%;
+    /* height: 60%; */
     position: relative;
 
     justify-content: center;
 }
 
-.art-exit-wrap{
+.art-exit-wrap {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -96,53 +96,59 @@
     transition: filter .25s ease-in-out;
 }
 
-.art-exit-wrap:hover{
+.art-exit-wrap:hover {
     cursor: pointer;
     filter: invert(1);
 }
 
-.art-exit-wrap:hover > .art-img-close{
+.art-exit-wrap:hover>.art-img-close {
     cursor: pointer;
     filter: invert(1);
 }
 
-.art-img-close{
+.art-img-close {
     width: 25px !important;
     height: 25px !important;
-    background: rgba(0,0,0,0) !important;
+    background: rgba(0, 0, 0, 0) !important;
     filter: invert(1);
 
     transition: filter .25s ease-in-out;
 }
 
-.art-img-close:hover{
+.art-img-close:hover {
     cursor: pointer;
     filter: invert(0);
 }
 
-@media screen and (max-width: 1400px){
-    .art-bio-detail-wrap{
+@media screen and (max-width: 1400px) {
+    .art-bio-detail-wrap {
         /* width: auto;
         height: auto;
         min-width: auto; */
     }
 }
 
-@media screen and (max-width: 800px){
-    .art-bio-detail-wrap{
+@media screen and (max-width: 1170px) {
+    .bio-bottom-lip-wrap {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .art-bio-detail-wrap {
         width: auto;
         height: auto;
         min-width: auto;
     }
 }
 
-@media screen and (max-width: 600px){
-    .art-bio-detail-wrap h2{
+@media screen and (max-width: 600px) {
+    .art-bio-detail-wrap h2 {
         font-size: 35px;
         margin: 5px 2px;
     }
 
-    .art-bio-detail-wrap p{
+    .art-bio-detail-wrap p {
         font-size: 13px;
     }
 }
