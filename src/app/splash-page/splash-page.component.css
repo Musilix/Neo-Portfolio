@@ -1,18 +1,18 @@
-#splash-content-wrap{
-    height:100%;
+#splash-content-wrap {
+    height: 100%;
     width: 100%;
 
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     overflow: hidden;
 
-    background:#e3ecf5;
+    background: #e3ecf5;
 }
 
-#nav-wrap{
+#nav-wrap {
     /* background-color: rgba(0,0,0,0); */
-    width:100%;
+    width: 100%;
     height: 100%;
 
     display: flex;
@@ -20,20 +20,21 @@
     justify-content: center;
     align-items: center;
 
-    position:absolute;
+    position: absolute;
     z-index: 1;
 }
 
-.nav#left, .nav#right{
+.nav#left,
+.nav#right {
     /* width: 50%; */
     height: inherit;
 }
 
-.nav#right{
+.nav#right {
     width: 50%;
 }
 
-.nav#left{
+.nav#left {
     /* background: #e3ecf5; */
     width: 50%;
 
@@ -42,7 +43,7 @@
     align-items: center;
 }
 
-.nav#left picture{
+.nav#left picture {
     height: 100%;
     width: 100%;
 
@@ -51,7 +52,7 @@
     align-items: center;
 }
 
-#bg-accent{
+#bg-accent {
     width: 400%;
     height: 400%;
     /* height: 1000px; */
@@ -62,13 +63,13 @@
     transform: rotateX(-170deg);
 }
 
-#follower-wrap{
-    width:110%;
+#follower-wrap {
+    width: 110%;
     /* height: 90%; */
 }
 
-.nav#right{
-    background-color: rgb(0,0,0,0);
+.nav#right {
+    background-color: rgb(0, 0, 0, 0);
 
     display: flex;
     flex-direction: column;
@@ -89,7 +90,7 @@
     transform: rotateX(-170deg);
 } */
 
-.nav#right ul{
+.nav#right ul {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -97,8 +98,8 @@
     padding: 0px;
 }
 
-.nav#right h2{
-    font-family: Inter var,sans-serif;
+.nav#right h2 {
+    font-family: Inter var, sans-serif;
     font-size: 5.2em;
     font-weight: 800 !important;
     line-height: 1.1;
@@ -108,24 +109,24 @@
     margin: 0px;
 }
 
-.nav#right p{
+.nav#right p {
     font-size: 18px;
     line-height: 1.35;
     font-weight: 100;
     font-family: "Open Sans";
     color: #525f7f;
 
-    max-width: 465px;
+    max-width: 559px;
 }
 
-#splash-intro-text{
+#splash-intro-text {
     margin: 0px 0px 0px 10px;
 }
 
-.nav#right ul li{
+.nav#right ul li {
     color: #525f7f;
 
-    font-family: Inter var,sans-serif;
+    font-family: Inter var, sans-serif;
     font-size: 1em;
 
     padding: 7.5px;
@@ -139,30 +140,30 @@
 
     background: #f6f9fc;
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(50,50,93,.1);
+    box-shadow: 0 4px 8px 0 rgba(50, 50, 93, .1);
 
     transition: background .25s linear, color .25s linear;
 }
 
-.nav#right ul li:hover{
+.nav#right ul li:hover {
     background: #f3e9e4;
     /* color: #525f7f !important; */
 }
 
-.nav#right ul li a{
+.nav#right ul li a {
     text-decoration: none;
     color: #525f7f;
 }
 
-#left-wrap{
+#left-wrap {
     position: absolute;
 }
 
-.nav#right ul li a::after {    
+.nav#right ul li a::after {
     background: none repeat scroll 0 0 transparent;
     position: absolute;
     bottom: 0;
-    left:50%;
+    left: 50%;
 
     content: "";
     display: block;
@@ -174,31 +175,31 @@
     /* margin: 2px 0px; */
 }
 
-@media only screen and (max-width: 950px){
+@media only screen and (max-width: 950px) {
 
-    #bg-accent{
+    #bg-accent {
         left: -125%;
         bottom: -180%;
     }
 
-    #nav-wrap{
+    #nav-wrap {
         flex-direction: column;
         flex-flow: column-reverse;
     }
 
-    .nav#left{
+    .nav#left {
         width: 100%;
         height: 0%;
     }
-    
-    .nav#right{
+
+    .nav#right {
         width: 100%;
         height: 80%;
         justify-content: center;
         align-items: center;
     }
 
-    #splash-intro-text{
+    #splash-intro-text {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -207,11 +208,11 @@
         margin: 0px;
     }
 
-    #right-nav-wrap{
+    #right-nav-wrap {
         width: 100%;
     }
 
-    #right-nav-wrap nav{
+    #right-nav-wrap nav {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -219,29 +220,29 @@
 
 
 
-    .nav#right h2{
+    .nav#right h2 {
         font-size: 4.5em;
         text-align: center;
     }
-    
-    .nav#right p{
+
+    .nav#right p {
         font-size: 15px;
         text-align: center;
     }
 }
 
-@media only screen and (max-width: 450px){
-    .nav#right ul{
+@media only screen and (max-width: 450px) {
+    .nav#right ul {
         width: 100%;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .nav#right ul li{
+    .nav#right ul li {
         width: 25%;
     }
 
-    .nav#right{
+    .nav#right {
         height: 90%;
     }
 }
