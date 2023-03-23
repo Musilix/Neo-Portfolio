@@ -8,7 +8,7 @@
   "scripts": {
     "ng": "ng",
     "heroku-postbuild": "ng build --configuration production --output-path docs --base-href /",
-    "start": "ng serve",
+    "start": "node index.js",
     "dev": "nodemon --watch src --exec npm run dev:fresh",
     "dev:fresh": "npm run build-local && npm run start",
     "watch": "npm run build-local && node index.js",
