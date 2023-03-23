@@ -1,7 +1,11 @@
 {
-    "/api/*":{
+    "/api/*": {
         "target": "https://wakatime.com/",
         "secure": false,
         "logLevel": "debug"
+    },
+    "/.netlify/functions": {
+        "target": "http://localhost:8888",
+        "secure": false
     }
 }

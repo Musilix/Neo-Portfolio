@@ -153,3 +153,5 @@ Thumbs.db
 
 .angular
 /nodemon.json
+# Local Netlify folder
+.netlify
