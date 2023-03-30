@@ -7,29 +7,17 @@ const fetch = require("node-fetch");
 const nodemailer = require("nodemailer");
 const enforce = require("express-sslify");
 
-const ENV_DIR = process.env.NODE_ENV === "production" ? "/docs" : "/src";
+const ENV_DIR = process.env.NODE_ENV === "production";
 
 //REMOVE?
 app.enable("trust proxy");
 app.disable("strict routing");
 
-app.use(enforce.HTTPS({ trustProtoHeader: true }));
-
 app.use(express.json());
 app.use(cors());
-// app.use(enforce.HTTPS());
 app.use(express.static(__dirname + "/docs"));
 
 const routes = ["/", "/about", "/projects", "/contact", "/extras"];
-
-// app.use((req, res, next) => {
-//   console.log(req.secure);
-//   if(!req.secure){
-//     res.redirect(301, `https://${req.get('host')}${req.originalUrl}`);
-//   }else{
-//     next();
-//   }
-// });
 
 routes.forEach((route) => {
   app.get(route, (req, res) => {

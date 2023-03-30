@@ -155,3 +155,5 @@ Thumbs.db
 /nodemon.json
 # Local Netlify folder
 .netlify
+
+.vscode
