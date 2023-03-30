@@ -13,6 +13,10 @@ const ENV_DIR = process.env.NODE_ENV === "production";
 app.enable("trust proxy");
 app.disable("strict routing");
 
+if (ENV_DIR) {
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+}
+
 app.use(express.json());
 app.use(cors());
 app.use(express.static(__dirname + "/docs"));
