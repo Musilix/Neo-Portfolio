@@ -60,7 +60,6 @@
     "dotenv": "^16.0.3",
     "netlify-cli": "^13.2.2",
     "nodemon": "^2.0.22",
-    "protractor": "~7.0.0",
     "ts-node": "~10.9.1",
     "tslint": "~6.1.2"
   },
