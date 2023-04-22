@@ -71,12 +71,12 @@
     /* background: #dbdddf; */
 }
 
-#intro-text p {
+.intro-text p {
     margin: 15px 0px 15px 0px;
 }
 
 .intro-content {
-    margin: 25px 0px;
+    margin: 25px 0px 0px 0px;
 }
 
 #intro h2 {
@@ -456,7 +456,7 @@
         grid-template-columns: auto;
     }
 
-    #intro-text {
+    .intro-text {
         grid-row: 2;
         text-align: center;
     }

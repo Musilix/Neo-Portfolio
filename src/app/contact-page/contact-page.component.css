@@ -413,7 +413,7 @@ input:disabled:hover {
     }
 
     #contact-content-wrap {
-        height: auto;
+        height: 75%;
         flex-direction: column;
         overflow: inherit;
         position: static;
