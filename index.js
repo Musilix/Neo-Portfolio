@@ -15,6 +15,9 @@ app.disable("strict routing");
 
 if (ENV_DIR) {
   app.use(enforce.HTTPS({ trustProtoHeader: true }));
+} else {
+  // Somewhat hacky way to only use dotenv if we're in local dev
+  require("dotenv").config();
 }
 
 app.use(express.json());
@@ -33,8 +36,13 @@ app.get("/stats", async (req, res) => {
   const waka_url =
     "https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key=" +
     process.env.WAKA_API_KEY;
-  const waka_res = await fetch(waka_url);
-  const waka_data = await waka_res.json();
+
+  const waka_data = await fetch(waka_url)
+    .then((res) => res.json())
+    .catch((err) => {
+      res.errored();
+      console.error(err);
+    });
 
   res.send(waka_data);
 });
