@@ -3,8 +3,8 @@ import {
   FormBuilder,
   ReactiveFormsModule,
   FormsModule,
-  FormGroup,
-  FormControl,
+  UntypedFormGroup,
+  UntypedFormControl,
   Validators,
 } from "@angular/forms";
 import { Observable } from "rxjs";
@@ -16,10 +16,10 @@ import { SiteEmailService } from "../site-email.service";
   styleUrls: ["./contact-page.component.css"],
 })
 export class ContactPageComponent implements OnInit {
-  emailForm: FormGroup = new FormGroup({
-    email: new FormControl("", Validators.required),
-    topic: new FormControl("", Validators.required),
-    message: new FormControl("", Validators.required),
+  emailForm: UntypedFormGroup = new UntypedFormGroup({
+    email: new UntypedFormControl("", Validators.required),
+    topic: new UntypedFormControl("", Validators.required),
+    message: new UntypedFormControl("", Validators.required),
   });
 
   messageSent: boolean;

@@ -1,22 +1,9 @@
-<app-nav-bar context = "contact"></app-nav-bar>
+<app-nav-bar context="contact"></app-nav-bar>
 <div id="contact-content-wrap">
-    <!-- <div id="left-contact-wrap">
-        <div id="left-contact-content">
-            <h2>
-                GET
-            </h2>
-            <h2>
-                IN
-            </h2>
-            <h2>
-                TOUCH
-            </h2>
-        </div>
-    </div> -->
     <div id="right-contact-wrap">
         <div id="right-contact-content">
             <div class="contact-section">
-                <h1>Connect</h1>
+                <!-- <h1>Connect</h1> -->
                 <section id="nav-links">
                     <ul>
                         <li>
@@ -42,13 +29,12 @@
                     </ul>
                 </section>
             </div>
-            <div class="contact-section">
+            <!-- <div class="contact-section">
                 <h1>Message me directly!</h1>
                 <form id="message-wrap" [formGroup]="emailForm" (ngSubmit) = "onEmail()">
                     <input type="text" id="email" name="email" formControlName="email" placeholder="Your email" required>
                     <input type="text" id="topic" name="topic" formControlName="topic" placeholder="Topic" required>
                     <textarea id="message" name="message" formControlName="message" form="message-wrap" placeholder="Whatever you'd like to say"required>Whatever you'd like to say</textarea>
-                    <!-- <input type="text" id="message" name="message" placeholder="Whatever you'd like to say"> -->
                     <input [ngClass] = "this.emailForm.valid ? 'form-valid' : 'form-invalid'" type="submit" id="submit" value="send" [disabled]="!this.emailForm.valid">
                 </form>
                 
@@ -60,7 +46,7 @@
                     <div id = "fail-msg" *ngIf="messageSent === false">
                         <p>Aw man, something went wrong for some reason. :( Try clicking the Outlook link up there instead.</p>
                     </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

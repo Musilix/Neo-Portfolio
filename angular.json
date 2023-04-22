@@ -120,6 +120,9 @@
           }
         }
       }
-    }},
-  "defaultProject": "portfolio-website"
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
 }
