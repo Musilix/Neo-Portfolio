@@ -1,10 +1,6 @@
 {
   "name": "portfolio-website",
   "version": "0.0.0",
-  "engines": {
-    "npm": "8.x",
-    "node": "16.x"
-  },
   "scripts": {
     "ng": "ng",
     "heroku-postbuild": "ng build --configuration production --output-path docs --base-href /",
