@@ -269,7 +269,7 @@
 
     width: 80%;
 
-    transition: ;
+    transition: all .25s ease-in-out;
 }
 
 #success-msg p,
