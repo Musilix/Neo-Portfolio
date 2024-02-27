@@ -26,10 +26,44 @@ export class ProjectsService {
   private projects: Project[] = [
     {
       index: "1",
+      title: "Purrcast",
+      description:
+        "A fun little toy that I'm currently working on that'll use pictures of cats to predict the daily weather.",
+      miniImg: "assets/projects/purr-rot.png",
+      bioImg: "assets/projects/purr-bio.webp",
+      stack: ["React", "Node", "Supabase", "Prisma", "Postgres"],
+      links: [
+        {
+          name: "external",
+          link: "https://www.purrcast.xyz",
+        },
+        {
+          name: "git",
+          link: "https://github.com/Musilix/Purrcast",
+        },
+      ],
+    },
+    {
+      index: "2",
+      title: "Queuetube",
+      description:
+        "A Google Chrome extension which serves to improve users' experiences on YouTube by providing a means to queue up various videos they are interested, all at once! Circa: before Youtube added this functionality itself.",
+      miniImg: "assets/projects/qtube-rot.gif",
+      bioImg: "assets/projects/qtube-bio.webp",
+      stack: ["HTML/CSS", "JavaScript"],
+      links: [
+        {
+          name: "git",
+          link: "https://github.com/Musilix/QueueTube",
+        },
+      ],
+    },
+    {
+      index: "3",
       title: "Mymyc",
       description:
         "Mymyc is a reusable test data management solution, providing a pleasing UX for those who need to generate synthetic test data for varying business scenarios.",
-      miniImg: "assets/projects/mymyc-rot.webm",
+      miniImg: "assets/projects/mymyc-rot.gif",
       bioImg: "assets/projects/mymyc-bio.webp",
       stack: ["Python", "Flask", "Angular"],
       links: [
@@ -40,11 +74,11 @@ export class ProjectsService {
       ],
     },
     {
-      index: "2",
+      index: "4",
       title: "BBTransit",
       description:
         "BBTransit is a web based transport alert app that aims to simplify the daily life of a commuter by offering access to simple yet meaningful info such as bus arrival times, destinations, locations, and their adherence to the schedule; all in real time.",
-      miniImg: "assets/projects/bbtransit-rot.webm",
+      miniImg: "assets/projects/bbtransit-rot.gif",
       miniImgBackUp: "assets/projects/bbtransit-rot-vp9.webm",
       bioImg: "assets/projects/bbtransit-bio.webp",
       stack: ["PHP", "JavaScript", "HTML"],
@@ -56,26 +90,11 @@ export class ProjectsService {
       ],
     },
     {
-      index: "3",
-      title: "Queuetube",
-      description:
-        "A Google Chrome extension which serves to improve users' experiences on YouTube by providing a means to queue up various videos they are interested, all at once! Circa: before Youtube added this functionality itself.",
-      miniImg: "assets/projects/qtube-rot.webm",
-      bioImg: "assets/projects/qtube-bio.webp",
-      stack: ["HTML/CSS", "JavaScript"],
-      links: [
-        {
-          name: "git",
-          link: "https://github.com/Musilix/QueueTube",
-        },
-      ],
-    },
-    {
-      index: "4",
+      index: "5",
       title: "On the Cuff",
       description:
         "A web app which aims to centralize crowd sourced info on food competitions, events with free food, and simply everything food. ",
-      miniImg: "assets/projects/onthecuff-rot.webm",
+      miniImg: "assets/projects/onthecuff-rot.gif",
       bioImg: "assets/projects/onthecuff-bio.webp",
       stack: ["PHP", "JavaScript", "HTML/CSS"],
       links: [

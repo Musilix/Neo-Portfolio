@@ -23,12 +23,12 @@
     margin: 30px;
 }
 
-#projects-inner video{
+#projects-inner img{
     width:150px;
     height:150px;
 }
 
-#projects-inner video:hover{
+#projects-inner img:hover{
     cursor: pointer;
 }
 
@@ -89,8 +89,12 @@
 }
 
 
-video{
+/* img{
     animation: twist1 4s linear infinite;
+} */
+
+#proj1{
+    animation: twist1 5s linear infinite;
 }
 
 #proj2{

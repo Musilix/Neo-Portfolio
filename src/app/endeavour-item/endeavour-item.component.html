@@ -5,11 +5,7 @@
             <img [ngClass] = "{'endeavour-nav-active': hasLeftEnd(), 'endeavour-nav-inactive': !hasLeftEnd()}" (click)="hasLeftEnd() ? handleLeftNavClick() : null" src="assets/nav-left.webp">
         </div>
 
-        <!-- decide whether to show video or img format of prev... use field thats part of the endeavour items... -->
-        <video *ngIf="endObj.mediaType === 'video'" class="end-img" muted autoplay playsinline loop oncanplay="this.play()" onloadedmetadata="this.muted = true">
-            <source src="{{endObj.image}}" type="video/webm">
-        </video>
-        <img *ngIf="endObj.mediaType === 'image/gif'" class="end-img" src="{{endObj.image}}">
+        <img class="end-img" src="{{endObj.image}}">
 
         <div class="right-nav-button">
             <img [ngClass] = "{'endeavour-nav-active': hasRightEnd(), 'endeavour-nav-inactive': !hasRightEnd()}" (click)="hasRightEnd() ? handleRightNavClick() : null" src="assets/nav-right.webp">
