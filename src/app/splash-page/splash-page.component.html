@@ -1,47 +1,61 @@
-<script type="module" src="https://unpkg.com/@splinetool/viewer@1.1.5/build/spline-viewer.js"></script>
+<script type="importmap">
+  {
+    "imports": {
+      "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@1.1.5/build/runtime.js"
+    }
+  }
+</script>
+<script type="module">
+  import { Application } from "@splinetool/runtime";
+
+  const canvas = document.getElementById("canvas3d");
+  const app = new Application(canvas);
+  app.load("https://prod.spline.design/jP8IbqmJhlklnLIY/scene.splinecode");
+</script>
 
 <div id="splash-content-wrap">
-    <div id="nav-wrap">
-        <spline-viewer loading-anim-type="none"
-            url="https://prod.spline.design/jP8IbqmJhlklnLIY/scene.splinecode"></spline-viewer>
-
-        <!-- make fake div to just make aligning right easier for other div... -->
-        <div class="nav" id="left">
-            <!-- stuff both img tags in one picture tag if u want the accent to cover more of the screen -->
-            <picture id="left-wrap">
-                <img id="bg-accent" src="assets/blobs/subblobs/blob2.svg">
-            </picture>
-            <!-- <picture id="follower-wrap">
-                <img src="assets/head.gif">
-
-            </picture> -->
-            <!-- <video id="follower-wrap" muted autoplay playsinline loop oncanplay="this.play()"
-                onloadedmetadata="this.muted = true">
-                <source src="assets/myBigHead.webm" type="video/webm">
-            </video> -->
-        </div>
-        <div class="nav" id="right">
-            <div id="right-nav-wrap">
-                <div id="splash-intro-text">
-                    <h2>Hi there! I'm Kareem</h2>
-                    <p>A seasoned full stack web developer with 8 years of experience in software development. I’m a
-                        self-driven individual who is passionate about coding and eager to learn and grow in a fast
-                        paced environment. I specialize in building user-centered web apps that aim to bring about the
-                        best experience, down to the smallest details.</p>
-                </div>
-                <nav>
-                    <ul>
-                        <li class="link-button" id="splash-button"><a routerLink="/about"
-                                routerLinkActive="active">ABOUT</a></li>
-                        <li class="link-button" id="splash-button"><a routerLink="/projects"
-                                routerLinkActive="active">PROJECTS</a></li>
-                        <li class="link-button" id="splash-button"><a routerLink="/contact"
-                                routerLinkActive="active">CONTACT</a></li>
-                        <li class="link-button" id="splash-button"><a routerLink="/extras"
-                                routerLinkActive="active">EXTRAS</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+  <div id="nav-wrap">
+    <div id="me-container">
+      <canvas id="canvas3d" style="width: 100%; height: 100%"></canvas>
     </div>
+
+    <!-- make fake div to just make aligning right easier for other div... -->
+    <div class="nav" id="left">
+      <!-- stuff both img tags in one picture tag if u want the accent to cover more of the screen -->
+      <picture id="left-wrap">
+        <img id="bg-accent" src="assets/blobs/subblobs/blob2.svg" />
+      </picture>
+    </div>
+    <div class="nav" id="right">
+      <div id="right-nav-wrap">
+        <div id="splash-intro-text">
+          <h2>Hi there! I'm Kareem</h2>
+          <p>
+            A seasoned full stack web developer with 8 years of experience in
+            software development. I’m a self-driven individual who is passionate
+            about coding and eager to learn and grow in a fast paced
+            environment. I specialize in building user-centered web apps that
+            aim to bring about the best experience, down to the smallest
+            details.
+          </p>
+        </div>
+        <nav>
+          <ul>
+            <li class="link-button" id="splash-button">
+              <a routerLink="/about" routerLinkActive="active">ABOUT</a>
+            </li>
+            <li class="link-button" id="splash-button">
+              <a routerLink="/projects" routerLinkActive="active">PROJECTS</a>
+            </li>
+            <li class="link-button" id="splash-button">
+              <a routerLink="/contact" routerLinkActive="active">CONTACT</a>
+            </li>
+            <li class="link-button" id="splash-button">
+              <a routerLink="/extras" routerLinkActive="active">EXTRAS</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
 </div>
