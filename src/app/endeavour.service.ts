@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 interface Endeavour {
   index: string;
   mediaType?: string;
+  link?: string;
   image: string;
   title: string;
   prevDesc: string;
@@ -18,6 +19,7 @@ export class EndeavourService {
       mediaType: "image/png",
       image: "assets/projects/purr-rot.png",
       title: "Purrcast",
+      link: "https://www.purrcast.xyz",
       prevDesc:
         "I'm currently developing an app that uses pictures of cats to predict the daily weather.",
       readMore:

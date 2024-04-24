@@ -1,26 +1,43 @@
-<div id="end-1" class ="endeavours-preview-wrap" *ngIf="displayEnd">
+<div id="end-1" class="endeavours-preview-wrap" *ngIf="displayEnd">
 
-    <div class ="endeavours-img-prev-wrap">
+    <div class="endeavours-img-prev-wrap">
         <div class="left-nav-button">
-            <img [ngClass] = "{'endeavour-nav-active': hasLeftEnd(), 'endeavour-nav-inactive': !hasLeftEnd()}" (click)="hasLeftEnd() ? handleLeftNavClick() : null" src="assets/nav-left.webp">
+            <img [ngClass]="{'endeavour-nav-active': hasLeftEnd(), 'endeavour-nav-inactive': !hasLeftEnd()}"
+                (click)="hasLeftEnd() ? handleLeftNavClick() : null" src="assets/nav-left.webp">
         </div>
 
         <img class="end-img" src="{{endObj.image}}">
 
         <div class="right-nav-button">
-            <img [ngClass] = "{'endeavour-nav-active': hasRightEnd(), 'endeavour-nav-inactive': !hasRightEnd()}" (click)="hasRightEnd() ? handleRightNavClick() : null" src="assets/nav-right.webp">
+            <img [ngClass]="{'endeavour-nav-active': hasRightEnd(), 'endeavour-nav-inactive': !hasRightEnd()}"
+                (click)="hasRightEnd() ? handleRightNavClick() : null" src="assets/nav-right.webp">
         </div>
     </div>
 
-    <div class ="endeavours-desc-prev-wrap">
-        <h2>{{endObj.title}}</h2>
-        <p class ="endeavour-desc">
+    <div class="endeavours-desc-prev-wrap">
+        <div *ngIf="hasLink; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+            <a href={{endObj.link}} style="text-decoration: dotted; color: #3d458f">
+                <h2 class="colorfy" style="
+                outline:  black !important;
+                text-shadow: 1px 1px 0 #000,
+                -1px 2px 0 #000,
+                -1px -1px 0 #000,
+                1px -2px 0 #000;
+            ">{{endObj.title}}</h2>
+            </a>
+        </ng-template>
+
+        <ng-template #elseBlock>
+            <h2>{{endObj.title}}</h2>
+        </ng-template>
+        <p class="endeavour-desc">
             {{endObj.prevDesc}}
         </p>
     </div>
 
-    <div class ="more-info-butt-wrap" id="more-info-1" (click)="displayEndeavour(endObj.index)">
-        <div class ="more-info-butt">
+    <div class="more-info-butt-wrap" id="more-info-1" (click)="displayEndeavour(endObj.index)">
+        <div class="more-info-butt">
             <p>Read more</p>
         </div>
     </div>
@@ -32,7 +49,7 @@
                     <h2 class="endeavour-title">{{endObj.title}}</h2>
                     <p class="endeavour-desc">{{endObj.readMore}}</p>
                 </div>
-    
+
                 <div class="end-exit-wrap" (click)="closeCurrEndeavour()">
                     <img src="assets/close.webp">
                 </div>

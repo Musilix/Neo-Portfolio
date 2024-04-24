@@ -1,6 +1,54 @@
 const artData = {
   data: [
     {
+      title: "A Solicitor",
+      img: "assets/art/solicitor.png",
+      medium: "Blender",
+      description:
+        "A friendly neighbor stops by to offer you a killer find: The Magna Carta. \nMade in Blender\n04/2024",
+    },
+    {
+      title: "The Great Milenko",
+      img: "assets/art/greatmilenko.png",
+      medium: "Blender",
+      description:
+        "Come one! Come all! Come to see The Great Milenko! \nMade in Blender\n02/2024",
+    },
+    {
+      title: "Gonzo Interview",
+      img: "assets/art/interview.png",
+      medium: "Blender",
+      description:
+        "Clawdius Slickwhisker stops you in a dark alley to finally get his hit piece finished. \nMade in Blender\n02/2024",
+    },
+    {
+      title: "Keep on Truckin'",
+      img: "assets/art/motivation.png",
+      medium: "Blender",
+      description:
+        "A trucker offers you some advice during your quick stop in the 7-11. \nMade in Blender\n01/2024",
+    },
+    {
+      title: "Decisions",
+      img: "assets/art/decision.png",
+      medium: "Blender",
+      description: "You have a decision to make. \nMade in Blender\n11/2023",
+    },
+    {
+      title: "Shiner",
+      img: "assets/art/throbber.png",
+      medium: "Blender",
+      description:
+        "Poor lil' fellahs got himself a shiner :( \nMade in Blender\n08/2023",
+    },
+    {
+      title: "The Bean Thief",
+      img: "assets/art/thief.png",
+      medium: "Blender",
+      description:
+        "Your first night on the job and you're already dealing with robbers and thiefs. \nMade in Blender\n06/2023",
+    },
+    {
       title: "Leopold",
       img: "assets/art/leopold.png",
       medium: "Blender",

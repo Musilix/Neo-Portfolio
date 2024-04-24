@@ -5,10 +5,12 @@
         <div id="index-divider"></div>
         <p>{{getEndeavours().length}}</p>
     </div>
-    <ng-container *ngFor = "let endeavour of getEndeavours()">
+    <ng-container *ngFor="let endeavour of getEndeavours()">
         <!-- <p>{{getEndeavours().length}}</p>
         <p>hi</p> -->
 
-        <app-endeavour-item [endeavourLen] = "getEndeavours().length" [endObj] = "endeavour" [displayEnd] = "currIdx == endeavour.index" (nav)="handleNavClick($event)"></app-endeavour-item>
+        <app-endeavour-item [endeavourLen]="getEndeavours().length" [endObj]="endeavour"
+            [displayEnd]="currIdx == endeavour.index" (nav)="handleNavClick($event)"
+            [hasLink]="!!endeavour.link"></app-endeavour-item>
     </ng-container>
 </div>
