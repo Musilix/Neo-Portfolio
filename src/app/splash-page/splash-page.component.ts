@@ -12,7 +12,7 @@ export class SplashPageComponent implements OnInit {
   ngOnInit() {
     const canvas = document.getElementById("canvas3d") as HTMLCanvasElement;
     const app = new Application(canvas);
-    app.load("https://prod.spline.design/jP8IbqmJhlklnLIY/scene.splinecode");
+    app.load("https://prod.spline.design/2POZdu2KYCCM3-Ke/scene.splinecode");
 
     // const destroySplineWatermarkSorry = () => {
     //   const watermarks = [
